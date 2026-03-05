@@ -1,0 +1,291 @@
+/**
+ * typography.css - Styles typographiques
+ * Configuration des polices, titres, paragraphes, etc.
+ */
+
+@layer base {
+    /* === CONFIGURATION DE BASE === */
+    
+    body {
+        font-family: var(--font-primary);
+        font-size: var(--font-size-base);
+        font-weight: var(--font-weight-normal);
+        line-height: var(--line-height-normal);
+        color: var(--text-dark);
+        background-color: var(--bg-light);
+    }
+
+    
+    
+    /* === TITRES === */
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-headings);
+        font-weight: var(--font-weight-semibold);
+        line-height: var(--line-height-tight);
+        margin-bottom: var(--spacing-md);
+        color: var(--text-dark);
+    }
+    
+    h1 {
+        font-size: var(--font-size-4xl);
+        font-weight: var(--font-weight-bold);
+    }
+    
+    h2 {
+        font-size: var(--font-size-3xl);
+    }
+    
+    h3 {
+        font-size: var(--font-size-2xl);
+    }
+    
+    h4 {
+        font-size: var(--font-size-xl);
+    }
+    
+    h5 {
+        font-size: var(--font-size-lg);
+    }
+    
+    h6 {
+        font-size: var(--font-size-md);
+    }
+    
+    /* Responsive : titres plus petits sur mobile */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: var(--font-size-3xl);
+        }
+        
+        h2 {
+            font-size: var(--font-size-2xl);
+        }
+        
+        h3 {
+            font-size: var(--font-size-xl);
+        }
+    }
+    
+    /* === PARAGRAPHES ET TEXTE === */
+    
+    p {
+        margin-bottom: var(--spacing-md);
+        line-height: var(--line-height-relaxed);
+    }
+    
+    p:last-child {
+        margin-bottom: 0;
+    }
+    
+    /* Lead paragraph - texte d'introduction */
+    .lead {
+        font-size: var(--font-size-lg);
+        font-weight: var(--font-weight-light);
+        line-height: var(--line-height-relaxed);
+        color: var(--text-medium);
+    }
+    
+    /* === LISTES === */
+    
+    ul,
+    ol {
+        margin-bottom: var(--spacing-md);
+        padding-left: var(--spacing-lg);
+    }
+    
+    ul {
+        list-style-type: disc;
+    }
+    
+    ol {
+        list-style-type: decimal;
+    }
+    
+    li {
+        margin-bottom: var(--spacing-sm);
+        line-height: var(--line-height-relaxed);
+    }
+    
+    li:last-child {
+        margin-bottom: 0;
+    }
+    
+    /* Listes imbriquées */
+    ul ul,
+    ol ul {
+        list-style-type: circle;
+        margin-top: var(--spacing-sm);
+    }
+    
+    ul ol,
+    ol ol {
+        list-style-type: lower-alpha;
+        margin-top: var(--spacing-sm);
+    }
+    
+    /* === LIENS === */
+    
+    a {
+        color: var(--primary);
+        text-decoration: none;
+        transition: color var(--transition-base);
+    }
+    
+    a:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+    }
+    
+    a:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 2px;
+        border-radius: var(--border-radius-sm);
+    }
+    
+    /* === CODE ET PRÉFORMATAGE === */
+    
+    code,
+    kbd,
+    samp,
+    pre {
+        font-family: var(--font-mono);
+    }
+    
+    code {
+        padding: 0.125rem 0.375rem;
+        background-color: var(--bg-alt);
+        border-radius: var(--border-radius-sm);
+        font-size: 0.9em;
+        color: var(--accent-dark);
+    }
+    
+    pre {
+        padding: var(--spacing-md);
+        background-color: var(--bg-dark);
+        color: var(--text-light);
+        border-radius: var(--border-radius-md);
+        overflow-x: auto;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    pre code {
+        padding: 0;
+        background-color: transparent;
+        color: inherit;
+        font-size: var(--font-size-sm);
+    }
+    
+    /* === CITATIONS === */
+    
+    blockquote {
+        padding-left: var(--spacing-lg);
+        border-left: var(--border-width-thick) solid var(--accent);
+        font-style: italic;
+        color: var(--text-medium);
+        margin: var(--spacing-lg) 0;
+    }
+    
+    blockquote cite {
+        display: block;
+        margin-top: var(--spacing-sm);
+        font-style: normal;
+        font-size: var(--font-size-sm);
+        color: var(--text-muted);
+    }
+    
+    blockquote cite::before {
+        content: "— ";
+    }
+    
+    /* === ÉLÉMENTS SÉMANTIQUES === */
+    
+    strong,
+    b {
+        font-weight: var(--font-weight-bold);
+    }
+    
+    em,
+    i {
+        font-style: italic;
+    }
+    
+    mark {
+        background-color: rgba(255, 87, 10, 0.2);
+        color: var(--text-dark);
+        padding: 0.125rem 0.25rem;
+    }
+    
+    small {
+        font-size: var(--font-size-sm);
+    }
+    
+    sub,
+    sup {
+        font-size: 0.75em;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+    }
+    
+    sub {
+        bottom: -0.25em;
+    }
+    
+    sup {
+        top: -0.5em;
+    }
+    
+    abbr[title] {
+        text-decoration: underline dotted;
+        cursor: help;
+    }
+    
+    /* === CLASSES UTILITAIRES TYPOGRAPHIQUES === */
+    
+    .text-xs { font-size: var(--font-size-xs); }
+    .text-sm { font-size: var(--font-size-sm); }
+    .text-base { font-size: var(--font-size-base); }
+    .text-lg { font-size: var(--font-size-lg); }
+    .text-xl { font-size: var(--font-size-xl); }
+    .text-2xl { font-size: var(--font-size-2xl); }
+    .text-3xl { font-size: var(--font-size-3xl); }
+    .text-4xl { font-size: var(--font-size-4xl); }
+    
+    .font-light { font-weight: var(--font-weight-light); }
+    .font-normal { font-weight: var(--font-weight-normal); }
+    .font-medium { font-weight: var(--font-weight-medium); }
+    .font-semibold { font-weight: var(--font-weight-semibold); }
+    .font-bold { font-weight: var(--font-weight-bold); }
+    
+    .text-primary { color: var(--primary); }
+    .text-secondary { color: var(--secondary); }
+    .text-accent { color: var(--accent); }
+    .text-muted { color: var(--text-muted); }
+    
+    .text-center { text-align: center; }
+    .text-left { text-align: left; }
+    .text-right { text-align: right; }
+    .text-justify { text-align: justify; }
+    
+    .uppercase { text-transform: uppercase; }
+    .lowercase { text-transform: lowercase; }
+    .capitalize { text-transform: capitalize; }
+    
+    .italic { font-style: italic; }
+    .not-italic { font-style: normal; }
+    
+    .underline { text-decoration: underline; }
+    .line-through { text-decoration: line-through; }
+    .no-underline { text-decoration: none; }
+    
+    /* Mono pour le code inline */
+    .font-mono {
+        font-family: var(--font-mono);
+    }
+}

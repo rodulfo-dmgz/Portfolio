@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets - Rodulfo DOMINGUEZ</title>
+    <meta name="description" content="Découvrez mes projets de développement web et créations pédagogiques">
+    
+    <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/icons/icon.svg" alt="RD Logo" style="height: 40px; width: 40px; margin-right: 8px;">
+                    <span>RODULFO</span>
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="parcours.html">Parcours</a></li>
+                <li><a href="projets.html" class="active">Projets</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Mes Projets</h1>
+            <p>Applications web pédagogiques, outils de gestion et cours interactifs sur l'IA</p>
+        </div>
+    </div>
+
+    <main>
+        <section class="projects-section">
+            <div class="container" style="max-width: 1200px;">
+
+                <div class="projects-intro">
+                    <span class="section-label">
+                        <i data-lucide="layers" style="width:13px;height:13px;"></i>
+                        Projets réels et en production
+                    </span>
+                    <h2>Du code au terrain pédagogique</h2>
+                    <p>
+                        Chaque projet est conçu, développé et utilisé dans des contextes de formation professionnelle réels — 
+                        pour des apprenants en reconversion, des stagiaires en gestion ou des publics découvrant l'intelligence artificielle.
+                    </p>
+                </div>
+
+                <!-- ═══════════════════════════════════════ -->
+                <!-- CATÉGORIE 1 : Site web pédagogique      -->
+                <!-- ═══════════════════════════════════════ -->
+                <div class="category-block">
+                    <div class="category-header">
+                        <div class="category-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                            <i data-lucide="globe" style="width:22px;height:22px;color:white;"></i>
+                        </div>
+                        <div>
+                            <h2>Site web pédagogique</h2>
+                            <p>Application web réaliste simulant une boutique e-commerce — terrain d'apprentissage HTML/CSS/JS</p>
+                        </div>
+                    </div>
+
+                    <div class="cards-grid">
+                        <div class="project-card card-featured">
+                            <div class="card-visual" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                <span class="card-badge">E-commerce pédagogique</span>
+                                <i data-lucide="shopping-bag"></i>
+                            </div>
+                            <div class="card-body">
+                                <h3>L'Échoppe Gauloise</h3>
+                                    <p>
+                                        Site e-commerce complet simulant une entreprise internationale, conçu comme 
+                                        support de formation aux outils de gestion tertiaire. Les apprenants 
+                                        travaillent sur des cas réalistes couvrant la comptabilité (Pennylane, Eurecia, PCG), 
+                                        la gestion de paie, les ressources humaines et la gestion commerciale — 
+                                        adaptés aux titres Assistant Ressources Humaines, Gestionnaire de Paie, Gestionnaire Comptable et Fiscal, Comptable Assistant et Secrétaire Comptable.
+                                        Un environnement professionnel clé en main pour apprendre par la pratique.
+                                    </p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">HTML5</span>
+                                    <span class="tech-tag">CSS3</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">REST API</span>
+                                    <span class="tech-tag">WCAG</span>
+                                    <span class="tech-tag">GitHub Pages</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="https://github.com/rodulfo-dmgz/web-sites" target="_blank" rel="noopener" class="btn-card btn-ghost">
+                                        <i data-lucide="github"></i> Repository
+                                    </a>
+                                    <a href="https://rodulfo-dmgz.github.io/web-sites/lechoppe-gauloise/" target="_blank" rel="noopener" class="btn-card btn-primary-card">
+                                        <i data-lucide="external-link"></i> Voir le site
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ════════════════════════════════════════════ -->
+                <!-- CATÉGORIE 2 : Gestion, KPI, Cours interactifs -->
+                <!-- ════════════════════════════════════════════ -->
+                <div class="category-block">
+                    <div class="category-header">
+                        <div class="category-icon" style="background: linear-gradient(135deg, #0066cc, #4285f4);">
+                            <i data-lucide="bar-chart-2" style="width:22px;height:22px;color:white;"></i>
+                        </div>
+                        <div>
+                            <h2>Gestion, KPI et Cours interactifs</h2>
+                            <p>Outils de formation pour la comptabilité, la gestion et l'analyse de données dans le secteur tertiaire</p>
+                        </div>
+                    </div>
+
+                    <div class="cards-grid">
+
+                        <!-- RD Gestion Beta -->
+                        <div class="project-card">
+                            <div class="card-visual" style="background: linear-gradient(135deg, #0066cc 0%, #4285f4 100%);">
+                                <span class="card-badge">Multi-rôles</span>
+                                <i data-lucide="database"></i>
+                            </div>
+                            <div class="card-body">
+                                <h3>RD Gestion — Plateforme ERP pédagogique</h3>
+                                <p>
+                                    Système ERP/comptable multi-tenant conçu pour la formation. 
+                                    33 à 99 tables interconnectées, accès par rôles (admin, formateur, stagiaire), 
+                                    données fictives d'entreprises pour des mises en situation réelles. 
+                                    Utilisé par 8 apprenants en simultané sur Supabase + GitHub Pages.
+                                </p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Supabase</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">RLS</span>
+                                    <span class="tech-tag">GitHub Pages</span>
+                                    <span class="tech-tag">Multi-tenant</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="https://github.com/rodulfo-dmgz/rd-gestion/tree/main/rdgestion-beta" target="_blank" rel="noopener" class="btn-card btn-ghost">
+                                        <i data-lucide="github"></i> Code
+                                    </a>
+                                    <a href="https://rodulfo-dmgz.github.io/rd-gestion/rdgestion-beta/" target="_blank" rel="noopener" class="btn-card btn-primary-card">
+                                        <i data-lucide="external-link"></i> Démo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CA KPI -->
+                        <div class="project-card">
+                            <div class="card-visual" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                                <span class="card-badge">Analytique</span>
+                                <i data-lucide="trending-up"></i>
+                            </div>
+                            <div class="card-body">
+                                <h3>Masterclass KPI — Tableau de bord CA</h3>
+                                <p>
+                                    Cours interactif multi-pages sur les indicateurs de performance commerciale. 
+                                    Chaque module dispose d'une identité couleur distincte, avec des visualisations 
+                                    dynamiques et des exercices pratiques pour analyser un chiffre d'affaires réel. 
+                                    Idéal pour les apprenants en gestion et contrôle de gestion.
+                                </p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">HTML/CSS/JS</span>
+                                    <span class="tech-tag">Data Viz</span>
+                                    <span class="tech-tag">KPI</span>
+                                    <span class="tech-tag">Interactif</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="https://github.com/rodulfo-dmgz/rd-gestion/tree/main/CA_KPI" target="_blank" rel="noopener" class="btn-card btn-ghost">
+                                        <i data-lucide="github"></i> Code
+                                    </a>
+                                    <a href="https://rodulfo-dmgz.github.io/rd-gestion/CA_KPI/index.html" target="_blank" rel="noopener" class="btn-card btn-primary-card">
+                                        <i data-lucide="external-link"></i> Démo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comptable Assistant -->
+                        <div class="project-card">
+                            <div class="card-visual" style="background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);">
+                                <span class="card-badge">Certification</span>
+                                <i data-lucide="calculator"></i>
+                            </div>
+                            <div class="card-body">
+                                <h3>Comptable Assistant — Parcours certifiant</h3>
+                                <p>
+                                    Parcours pédagogique complet pour la formation Comptable Assistant 
+                                    (niveaux TOSA 4–5). Fiches d'activités, matrices d'amortissement automatisées, 
+                                    exercices sur le Plan Comptable Général et mises en situation 
+                                    professionnelles avec cas d'entreprises fictives réalistes.
+                                </p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">PCG</span>
+                                    <span class="tech-tag">TOSA</span>
+                                    <span class="tech-tag">Excel/VBA</span>
+                                    <span class="tech-tag">Interactif</span>
+                                    <span class="tech-tag">RNCP</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="https://github.com/rodulfo-dmgz/rd-gestion/tree/main/Comptable_assistant" target="_blank" rel="noopener" class="btn-card btn-ghost">
+                                        <i data-lucide="github"></i> Code
+                                    </a>
+                                    <a href="https://rodulfo-dmgz.github.io/rd-gestion/Comptable_assistant/" target="_blank" rel="noopener" class="btn-card btn-primary-card">
+                                        <i data-lucide="external-link"></i> Démo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════════════════ -->
+                <!-- CATÉGORIE 3 : Cours IA interactifs      -->
+                <!-- ═══════════════════════════════════════ -->
+                <div class="category-block">
+                    <div class="category-header">
+                        <div class="category-icon" style="background: linear-gradient(135deg, #8B5CF6, #EC4899);">
+                            <i data-lucide="brain" style="width:22px;height:22px;color:white;"></i>
+                        </div>
+                        <div>
+                            <h2>Intelligence Artificielle — Cours interactifs</h2>
+                            <p>4 modules ludiques pour comprendre le fonctionnement réel du machine learning, sans prérequis techniques</p>
+                        </div>
+                    </div>
+
+                    <!-- Description intro IA -->
+                    <div style="background: linear-gradient(135deg, rgba(139,92,246,0.07), rgba(236,72,153,0.07)); border-radius: 16px; padding: 1.5rem 1.75rem; margin-bottom: 1.5rem; border: 1px solid rgba(139,92,246,0.15);">
+                        <div style="display:flex; align-items:flex-start; gap:1rem;">
+                            <div style="width:42px;height:42px;background:linear-gradient(135deg,#8B5CF6,#EC4899);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i data-lucide="sparkles" style="width:20px;height:20px;color:white;"></i>
+                            </div>
+                            <div>
+                                <strong>
+                                    Une série de 4 laboratoires pédagogiques sur l'IA
+                                </strong>
+                                <p style="margin:0;font-size:0.875rem;color:var(--text-medium);line-height:1.6;">
+                                    Chaque module combine théorie visuelle et expérimentation directe dans le navigateur : 
+                                    entraîner un modèle, observer les erreurs, ajuster les paramètres. 
+                                    Conçu pour des publics non-techniques en formation professionnelle continue.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ia-modules">
+
+                        <a href="https://rodulfo-dmgz.github.io/IA_exercices/ml-lab" target="_blank" rel="noopener" class="ia-module-card">
+                            <div class="ia-module-icon" style="background: linear-gradient(135deg, #8B5CF6, #6D28D9);">
+                                <i data-lucide="flask-conical"></i>
+                            </div>
+                            <div class="ia-module-info">
+                                <strong>ML Lab</strong>
+                                <span>Laboratoire d'expérimentation machine learning</span>
+                            </div>
+                            <i data-lucide="arrow-right" class="ia-module-arrow" style="width:16px;height:16px;"></i>
+                        </a>
+
+                        <a href="https://rodulfo-dmgz.github.io/IA_exercices/ml_non_supervise" target="_blank" rel="noopener" class="ia-module-card">
+                            <div class="ia-module-icon" style="background: linear-gradient(135deg, #EC4899, #BE185D);">
+                                <i data-lucide="scatter-chart"></i>
+                            </div>
+                            <div class="ia-module-info">
+                                <strong>ML Non Supervisé</strong>
+                                <span>Clustering, K-means, détection de patterns</span>
+                            </div>
+                            <i data-lucide="arrow-right" class="ia-module-arrow" style="width:16px;height:16px;"></i>
+                        </a>
+
+                        <a href="https://rodulfo-dmgz.github.io/IA_exercices/ml_supervise" target="_blank" rel="noopener" class="ia-module-card">
+                            <div class="ia-module-icon" style="background: linear-gradient(135deg, #0EA5E9, #0369A1);">
+                                <i data-lucide="git-branch"></i>
+                            </div>
+                            <div class="ia-module-info">
+                                <strong>ML Supervisé</strong>
+                                <span>Classification, régression, évaluation de modèles</span>
+                            </div>
+                            <i data-lucide="arrow-right" class="ia-module-arrow" style="width:16px;height:16px;"></i>
+                        </a>
+
+                        <a href="https://rodulfo-dmgz.github.io/IA_exercices/reseau_neurones" target="_blank" rel="noopener" class="ia-module-card">
+                            <div class="ia-module-icon" style="background: linear-gradient(135deg, #F59E0B, #D97706);">
+                                <i data-lucide="network"></i>
+                            </div>
+                            <div class="ia-module-info">
+                                <strong>Réseaux de neurones</strong>
+                                <span>Perceptron, couches, rétropropagation</span>
+                            </div>
+                            <i data-lucide="arrow-right" class="ia-module-arrow" style="width:16px;height:16px;"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 — RODULFO DOMINGUEZ — TOUS DROITS RESERVES —   MONTPELLIER, FR</p>
+            <div class="footer-dot"></div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

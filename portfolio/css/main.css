@@ -1,0 +1,81 @@
+/**
+ * main.css - Point d'entrée CSS
+ * Architecture en couches pour RD FORMATION
+ * 
+ * Ordre de priorité (du plus faible au plus fort) :
+ * reset → tokens → base → layout → components → modules → print
+ */
+
+/* Déclaration des couches dans l'ordre de priorité */
+@layer reset, tokens, base, layout, components, modules, print;
+
+/* Imports des fichiers par couche */
+@import url("base/reset.css") layer(reset);
+@import url("base/variables.css") layer(tokens);
+@import url("base/typography.css") layer(base);
+
+@import url("layout/grid.css") layer(layout);
+@import url("layout/navbar.css") layer(layout);
+@import url("layout/navigation.css") layer(layout);
+@import url("layout/footer.css") layer(layout);
+
+@import url("components/buttons.css") layer(components);
+@import url("components/cards.css") layer(components);
+@import url("components/forms.css") layer(components);
+@import url("components/tags.css") layer(components);
+@import url("components/utilities.css") layer(components);
+
+@import url("modules/hero.css") layer(modules);
+@import url("modules/parcours.css") layer(modules);
+@import url("modules/creations.css") layer(modules);
+@import url("modules/a-propos.css") layer(modules);
+@import url("modules/skills.css") layer(modules);
+
+/* Styles utilitaires hors couches (priorité maximale) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 85%;
+    }
+}
+
+@media print {
+    @layer print {
+        * {
+            background: white !important;
+            color: black !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+        }
+        
+        nav, footer, .no-print {
+            display: none !important;
+        }
+        
+        a, a:visited {
+            text-decoration: underline;
+        }
+        
+        a[href]:after {
+            content: " (" attr(href) ")";
+        }
+    }
+}

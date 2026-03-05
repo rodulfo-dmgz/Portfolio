@@ -1,0 +1,657 @@
+/**
+ * Créations.css — Timeline & Projets
+ * Style Nothing.tech fusionné
+ */
+
+/* ═══════════════════════════════════════
+   VARIABLES NOTHING
+═══════════════════════════════════════ */
+
+:root {
+    --n-black:  #0a0a0a;
+    --n-dark:   #0f0f0f;
+    --n-panel:  #141414;
+    --n-border: rgba(255,255,255,0.07);
+    --n-white:  #f0f0f0;
+    --n-gray:   #666;
+    --n-red:    #0066cc;
+    --n-mono:   'JetBrains Mono', monospace;
+}
+
+
+ 
+   SECTION TIMELINE
+═══════════════════════════════════════ */
+
+.timeline {
+    padding: 5rem 0;
+    background: var(--n-dark);
+    position: relative;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg) 0 calc(var(--spacing-lg) + 2.5rem);
+}
+
+/* Ligne verticale Nothing — fine, rouge */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: var(--spacing-lg);
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--n-red) 10%,
+        rgba(255,59,59,0.3) 90%,
+        transparent
+    );
+}
+
+/* ═══════════════════════════════════════
+   ITEMS TIMELINE
+═══════════════════════════════════════ */
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-item:nth-child(2) { transition-delay: 0.1s; }
+.timeline-item:nth-child(3) { transition-delay: 0.2s; }
+.timeline-item:nth-child(4) { transition-delay: 0.3s; }
+.timeline-item:nth-child(5) { transition-delay: 0.4s; }
+
+/* ═══════════════════════════════════════
+   MARQUEUR
+═══════════════════════════════════════ */
+
+.timeline-marker {
+    position: absolute;
+    left: calc(-2.5rem - var(--spacing-lg) + 2px);
+    top: 1.5rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--n-red);
+    border: 2px solid var(--n-black);
+    box-shadow: 0 0 0 1px var(--n-red);
+    z-index: 2;
+    transition: all 0.25s ease;
+}
+
+.timeline-item:hover .timeline-marker {
+    transform: scale(1.4);
+    box-shadow: 0 0 0 3px rgba(255,59,59,0.25);
+}
+
+/* Pulsation */
+@keyframes pulse-ring {
+    0%   { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(2.2); opacity: 0; }
+}
+
+.timeline-marker::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border: 1px solid var(--n-red);
+    border-radius: 50%;
+    animation: pulse-ring 2.5s ease-out infinite;
+}
+
+.timeline-item:nth-child(even) .timeline-marker::after {
+    animation-delay: 0.8s;
+}
+
+/* ═══════════════════════════════════════
+   CONTENU TIMELINE
+═══════════════════════════════════════ */
+
+.timeline-content {
+    background: var(--n-panel);
+    padding: 1.75rem 2rem;
+    border-radius: 0;
+    border: 1px solid var(--n-border);
+    border-left: 2px solid var(--n-red);
+    position: relative;
+    transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    background: #1a1a1a;
+    border-left-color: var(--n-red);
+    transform: none;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Suppression de la flèche originale, remplacée par le border-left */
+.timeline-content::before {
+    display: none;
+}
+
+.timeline-content h2 {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 700;
+    color: var(--n-white);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.timeline-content p {
+    color: var(--n-gray);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 0.88rem;
+}
+
+.timeline-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.timeline-content li {
+    padding-left: 1.25rem;
+    margin-bottom: 0.6rem;
+    position: relative;
+    line-height: 1.65;
+    font-size: 0.85rem;
+    color: var(--n-gray);
+}
+
+.timeline-content li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--n-red);
+    font-weight: 700;
+    font-family: var(--n-mono);
+}
+
+.timeline-content li strong {
+    color: rgba(255,255,255,0.75);
+    font-family: var(--n-mono);
+    font-size: 0.78rem;
+}
+
+/* ═══════════════════════════════════════
+   DATES
+═══════════════════════════════════════ */
+
+.dates {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.68rem;
+    font-family: var(--n-mono);
+    color: var(--n-red);
+    font-weight: 600;
+    background: rgba(255,59,59,0.08);
+    border: 1px solid rgba(255,59,59,0.2);
+    padding: 0.2rem 0.65rem;
+    border-radius: 2px;
+    letter-spacing: 0.08em;
+}
+
+/* ═══════════════════════════════════════
+   DRAPEAUX
+═══════════════════════════════════════ */
+
+.country-flag {
+    position: absolute;
+    top: 1.75rem;
+    right: 1.75rem;
+    width: 44px;
+    height: 30px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2px;
+    opacity: 0.5;
+    border: 1px solid var(--n-border);
+    transition: all 0.25s ease;
+}
+
+.timeline-item:hover .country-flag {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+.flag-mx { background: linear-gradient(to right, #006847 33%, white 33% 66%, #CE1126 66%); }
+.flag-af { background: linear-gradient(to bottom, #009639 33%, #FCDD09 33% 66%, #DA121A 66%); }
+.flag-fr { background: linear-gradient(to right, #002395 33%, white 33% 66%, #ED2939 66%); }
+
+/* ═══════════════════════════════════════
+   SECTION PROJETS
+═══════════════════════════════════════ */
+
+.projects-section {
+    padding: 5rem 0;
+    background: var(--n-black);
+}
+
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--n-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--n-red);
+    background: rgba(59, 114, 255, 0.08);
+    border: 1px solid rgba(59, 82, 255, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+}
+
+.projects-intro {
+    max-width: 680px;
+    margin: 0 auto 3.5rem;
+    text-align: center;
+}
+
+.projects-intro h2 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 800;
+    color: var(--n-white);
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.projects-intro p {
+    color: var(--n-gray);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════
+   CATÉGORIES
+═══════════════════════════════════════ */
+
+.category-block {
+    margin-bottom: 4rem;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--n-border);
+}
+
+.category-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid var(--n-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.category-header h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--n-white);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.category-header p {
+    font-size: 0.78rem;
+    color: var(--n-gray);
+    margin: 0.2rem 0 0;
+    font-family: var(--n-mono);
+}
+
+/* ═══════════════════════════════════════
+   PROJECT CARDS
+═══════════════════════════════════════ */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1px;
+    background: var(--n-border);
+    border: 1px solid var(--n-border);
+}
+
+.project-card {
+    background: var(--n-panel);
+    overflow: hidden;
+    border-radius: 0;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.25s ease;
+}
+
+.project-card:hover {
+    background: #1a1a1a;
+    transform: none;
+    box-shadow: none;
+}
+
+.card-visual {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--n-border);
+}
+
+.card-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+}
+
+.card-visual i {
+    width: 44px;
+    height: 44px;
+    color: white;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+}
+
+.card-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--n-white);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+}
+
+.card-body p {
+    font-size: 0.8rem;
+    color: var(--n-gray);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.tech-tag {
+    font-size: 0.65rem;
+    padding: 0.18rem 0.5rem;
+    background: transparent;
+    border: 1px solid var(--n-border);
+    border-radius: 2px;
+    color: var(--n-gray);
+    font-family: var(--n-mono);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    transition: border-color 0.15s, color 0.15s;
+}
+
+.project-card:hover .tech-tag {
+    border-color: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.55);
+}
+
+.card-actions {
+    display: flex;
+    gap: 1px;
+    background: var(--n-border);
+    border-top: 1px solid var(--n-border);
+    margin: 0 -1.5rem -1.5rem;
+}
+
+.btn-card {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.75rem;
+    font-family: var(--n-mono);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    border: none;
+    cursor: pointer;
+    background: var(--n-panel);
+    color: var(--n-gray);
+}
+
+.btn-card i { width: 12px; height: 12px; }
+
+.btn-ghost:hover {
+    background: #1e1e1e;
+    color: var(--n-white);
+}
+
+.btn-primary-card {
+    background: rgba(59, 128, 255, 0.08);
+    color: var(--n-red);
+    border-left: 1px solid var(--n-border);
+}
+
+.btn-primary-card:hover {
+    background: var(--n-red);
+    color: white;
+    opacity: 1;
+}
+
+/* Badge */
+.card-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 3;
+    background: rgba(10,10,10,0.85);
+    color: var(--n-white);
+    font-family: var(--n-mono);
+    font-size: 0.58rem;
+    font-weight: 700;
+    padding: 0.18rem 0.5rem;
+    border-radius: 2px;
+    letter-spacing: 0.08em;
+    border: 1px solid rgba(255,59,59,0.2);
+}
+
+/* Card featured */
+.project-card.card-featured {
+    grid-column: 1 / -1;
+    flex-direction: row;
+}
+
+.project-card.card-featured .card-visual {
+    width: 240px;
+    min-width: 240px;
+    height: auto;
+    border-bottom: none;
+    border-right: 1px solid var(--n-border);
+}
+
+/* ═══════════════════════════════════════
+   MODULES IA
+═══════════════════════════════════════ */
+
+.ia-modules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--n-border);
+    border: 1px solid var(--n-border);
+    margin-top: 0.5rem;
+}
+
+.ia-module-card {
+    background: var(--n-panel);
+    border: none;
+    border-radius: 0;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: background 0.2s ease, padding-left 0.2s ease;
+    text-decoration: none;
+}
+
+.ia-module-card:hover {
+    background: #1a1a1a;
+    padding-left: 1.6rem;
+    transform: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.ia-module-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid var(--n-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: border-color 0.2s;
+}
+
+.ia-module-card:hover .ia-module-icon {
+    border-color: var(--n-red);
+}
+
+.ia-module-icon i {
+    width: 17px;
+    height: 17px;
+    color: rgba(255,255,255,0.5);
+}
+
+.ia-module-card:hover .ia-module-icon i {
+    color: var(--n-red);
+}
+
+.ia-module-info strong {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--n-white);
+    margin-bottom: 0.15rem;
+    letter-spacing: -0.01em;
+}
+
+.ia-module-info span {
+    font-size: 0.72rem;
+    color: var(--n-gray);
+    font-family: var(--n-mono);
+}
+
+.ia-module-arrow {
+    margin-left: auto;
+    color: var(--n-red);
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.ia-module-card:hover .ia-module-arrow {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    .timeline { padding: 3rem 0; }
+
+    .timeline-container {
+        padding-left: calc(var(--spacing-md) + 1.5rem);
+        padding-right: var(--spacing-md);
+    }
+
+    .timeline-container::before { left: var(--spacing-md); }
+
+    .timeline-marker {
+        left: calc(-1.5rem - var(--spacing-md) + 1.5px);
+        width: 8px;
+        height: 8px;
+    }
+
+    .timeline-content {
+        padding: 1.25rem;
+    }
+
+    .timeline-content h2 {
+        font-size: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .country-flag {
+        position: static;
+        margin: 0.75rem 0;
+        width: 36px;
+        height: 24px;
+    }
+
+    .project-card.card-featured {
+        flex-direction: column;
+    }
+
+    .project-card.card-featured .card-visual {
+        width: 100%;
+        height: 120px;
+        border-right: none;
+        border-bottom: 1px solid var(--n-border);
+    }
+
+    .cards-grid,
+    .ia-modules { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .timeline-item {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .timeline-marker::after { animation: none; }
+}
