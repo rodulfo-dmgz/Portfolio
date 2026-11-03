@@ -1,22 +1,243 @@
 /* Composition de la page d'accueil. */
 @layer components {
-  /* ── Hero ── */
+  /* ── Hero : le portrait au centre, les trois phrases autour ── */
   .hero {
     display: grid;
-    gap: var(--space-10);
-    padding-block: var(--space-12) var(--space-16);
+    gap: var(--space-8);
+    padding-block: var(--space-10) var(--space-12);
+  }
+
+  .hero__eyebrow { text-align: center; }
+
+  /* Zone pleine largeur : la pluie de lettres s'y étend, le contenu reste dans la grille. */
+  .hero-zone { position: relative; overflow: clip; isolation: isolate; }
+  .hero { position: relative; z-index: 1; }
+
+  .hero__scene {
+    --portrait: clamp(13rem, 62vw, 17rem);
+    position: relative;
+    display: grid;
+    justify-items: center;
+    gap: var(--space-8);
+  }
+
+  .hero__centre {
+    position: relative;
+    display: grid;
+    order: -1;
+    place-items: center;
+  }
+
+  .hero__portrait {
+    position: relative;
+    z-index: 1;
+    width: var(--portrait);
+    max-width: none;
+  }
+
+  .hero__portrait .portrait__vide,
+  .hero__portrait .portrait__image {
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Repères d'angle du cadre, façon viseur. */
+  .hero__portrait::before,
+  .hero__portrait::after {
+    content: '';
+    position: absolute;
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+    border: var(--border-width-2) solid var(--color-secondary-600);
+    pointer-events: none;
+  }
+
+  .hero__portrait::before {
+    inset-block-start: -0.75rem;
+    inset-inline-start: -0.75rem;
+    border-inline-end: 0;
+    border-block-end: 0;
+  }
+
+  .hero__portrait::after {
+    inset-block-end: -0.75rem;
+    inset-inline-end: -0.75rem;
+    border-inline-start: 0;
+    border-block-start: 0;
+  }
+
+  .hero__anneaux {
+    display: none;
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    width: calc(var(--portrait) * 1.85);
+    height: calc(var(--portrait) * 1.85);
+    translate: -50% -50%;
+    overflow: visible;
+    fill: none;
+    pointer-events: none;
+  }
+
+  .anneau { fill: none; stroke: var(--border-strong); stroke-width: 1; vector-effect: non-scaling-stroke; }
+  .anneau--points { stroke-dasharray: 1 7; stroke-linecap: round; opacity: 0.7; }
+  .anneau--fin { opacity: 0.45; }
+  .anneau--accent { stroke: var(--color-accent-600); stroke-width: 2; stroke-linecap: round; opacity: 1; }
+  .anneau--repere { opacity: 0.8; }
+
+
+  /* ── Fond du hero : pluie de lettres et pistes orbitales (scripts/fond-hero.js) ── */
+  .hero__pluie {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse 55% 60% at 50% 42%, transparent 20%, #000 78%), linear-gradient(#000 70%, transparent 96%);
+    mask-composite: intersect;
+  }
+
+  .goutte {
+    position: absolute;
+    inset: 0 auto auto 0;
+    font-family: var(--font-subtitle);
+    line-height: 1;
+    color: var(--text-primary);
+    will-change: transform;
+  }
+
+  .goutte--p0 { font-size: 0.75rem; opacity: 0.16; }
+  .goutte--p1 { font-size: 1.125rem; opacity: 0.2; }
+  .goutte--p2 { font-size: 1.625rem; opacity: 0.26; }
+  .goutte--mot { letter-spacing: 0.08em; text-transform: uppercase; }
+  .goutte--accent { color: var(--color-accent-600); }
+
+  .goutte--forme,
+  .orbite__objet--forme {
+    inline-size: 0.5em;
+    block-size: 0.5em;
+    border: var(--border-width-1) solid currentColor;
+  }
+
+  .goutte--cercle { border-radius: var(--radius-full); background: currentColor; }
+  .goutte--anneau { border-radius: var(--radius-full); inline-size: 0.8em; block-size: 0.8em; }
+  .goutte--carre { rotate: 45deg; }
+  .goutte--croix { border: 0; background: linear-gradient(currentColor, currentColor) center / 100% 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 100% no-repeat; inline-size: 0.8em; block-size: 0.8em; }
+
+  .hero__orbites {
+    --diametre: calc(var(--portrait) * 1.8);
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    z-index: 0;
+    inline-size: var(--diametre);
+    block-size: var(--diametre);
+    translate: -50% -50%;
+    pointer-events: none;
+  }
+
+  .orbite__piste {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    inline-size: calc(var(--rx) * 200%);
+    block-size: calc(var(--ry) * 200%);
+    border: var(--border-width-1) dashed var(--border-strong);
+    border-radius: var(--radius-full);
+    translate: -50% -50%;
+    rotate: var(--incl);
+    opacity: 0.55;
+  }
+
+  .orbite__objet {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    font-family: var(--font-subtitle);
+    font-size: var(--font-caption-size);
+    letter-spacing: 0.1em;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--text-primary);
+    will-change: transform, opacity;
+  }
+
+  .orbite__objet--accent { color: var(--color-accent-700); }
+  html.dark .orbite__objet--accent { color: var(--color-accent-400); }
+
+  .orbite__objet--forme { font-size: 0.875rem; color: var(--color-primary-600); }
+  html.dark .orbite__objet--forme { color: var(--color-primary-300); }
+  .orbite__objet--forme.orbite__objet--accent { color: var(--color-accent-600); }
+
+  .orbite__objet--image img {
+    display: block;
+    inline-size: 3rem;
+    block-size: 3.75rem;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .goutte--p0,
+    .goutte--p1 { display: none; }
   }
 
   .hero__titre {
-    margin-block-start: var(--space-4);
-    font-size: var(--font-display-lg-size);
-    font-weight: var(--font-display-weight);
-    line-height: var(--font-display-lg-line);
-    letter-spacing: var(--font-display-lg-spacing);
-    text-wrap: balance;
+    display: grid;
+    gap: var(--space-5);
+    width: 100%;
+    max-width: 30rem;
+    margin: 0;
   }
 
-  .hero__titre span { display: block; }
+  .phrase {
+    position: relative;
+    display: grid;
+    gap: var(--space-1);
+    padding-block-end: var(--space-3);
+    font-size: var(--font-display-md-size);
+    font-weight: var(--font-display-weight);
+    line-height: var(--font-display-md-line);
+    letter-spacing: var(--font-display-md-spacing);
+  }
+
+  .phrase__index {
+    font-family: var(--font-subtitle);
+    font-size: var(--font-caption-size);
+    font-weight: var(--font-weight-regular);
+    letter-spacing: 0.12em;
+    color: var(--color-accent-700);
+  }
+
+  html.dark .phrase__index { color: var(--color-accent-400); }
+
+  .ligne { display: block; overflow: hidden; padding-block-end: 0.12em; margin-block-end: -0.12em; }
+  .ligne__texte { display: block; text-wrap: balance; }
+
+  .phrase__trait {
+    position: relative;
+    display: block;
+    height: 1px;
+    background: var(--border-strong);
+    transform-origin: left center;
+  }
+
+  .phrase__trait::after {
+    content: '';
+    position: absolute;
+    inset-block-start: -2.5px;
+    inset-inline-end: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-full);
+    background: var(--color-secondary-600);
+  }
+
+  .hero__bas {
+    display: grid;
+    gap: var(--space-8);
+  }
 
   .hero__intro p {
     max-width: 36rem;
@@ -32,38 +253,74 @@
 
   .hero__domaines h2 { margin-block-end: var(--space-3); }
 
-  .hero__portrait { max-width: 18rem; }
-
   .hero__defiler { display: none; }
 
-  @media (width >= 64rem) {
-    .hero {
+  /* Le contenu n'est masqué que si l'entrée GSAP (scripts/hero.js) va le montrer ; une sécurité l'affiche au bout de 2,6 s. */
+  @keyframes secours { to { opacity: 1; } }
+
+  .js .hero [data-hero] {
+    opacity: 0;
+    animation: secours 1ms linear 2.6s forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .js .hero [data-hero] { opacity: 1; animation: none; }
+  }
+
+  @media (width >= 56rem) {
+    .hero { gap: var(--space-6); padding-block: var(--space-8) var(--space-10); }
+
+    .hero__scene {
+      --portrait: clamp(14rem, 21vw, 19rem);
+      display: grid;
+      place-items: center;
+      min-height: clamp(26rem, 60vh, 35rem);
+    }
+
+    .hero__anneaux { display: block; }
+    .hero__orbites { --diametre: calc(var(--portrait) * 2.4); }
+
+    .hero__titre {
+      position: absolute;
+      inset: 0;
+      display: block;
+      max-width: none;
+      pointer-events: none;
+    }
+
+    .phrase {
+      position: absolute;
+      inline-size: calc(50% - var(--portrait) / 2 - var(--space-8));
+      pointer-events: auto;
+      font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    }
+
+    .phrase--1 { inset-inline-start: 0; inset-block-start: 6%; }
+    .phrase--3 { inset-inline-start: 0; inset-block-end: 6%; }
+
+    .phrase--2 {
+      inset-inline-end: 0;
+      inset-block-start: 50%;
+      translate: 0 -50%;
+    }
+
+    .phrase--2 .phrase__trait::after { inset-inline-end: auto; inset-inline-start: 0; }
+    .phrase--2 .phrase__trait { transform-origin: right center; }
+
+    .hero__bas {
       grid-template-columns: repeat(12, minmax(0, 1fr));
       column-gap: var(--space-8);
-      row-gap: var(--space-12);
-      align-content: start;
-      min-height: min(52rem, calc(100svh - var(--header-height)));
-      padding-block: var(--space-16) var(--space-8);
+      align-items: start;
     }
 
-    .hero__titrage { grid-column: 1 / span 9; grid-row: 1; }
-    .hero__intro { grid-column: 1 / span 5; grid-row: 2; }
-    .hero__domaines { grid-column: 6 / span 4; grid-row: 2; }
-
-    .hero__portrait {
-      grid-column: 10 / -1;
-      grid-row: 1 / span 2;
-      align-self: start;
-      max-width: none;
-    }
+    .hero__intro { grid-column: 1 / span 6; }
+    .hero__domaines { grid-column: 8 / span 5; }
 
     .hero__defiler {
-      grid-column: 1 / -1;
       display: inline-flex;
       align-items: center;
       gap: var(--space-2);
       justify-self: start;
-      align-self: end;
       min-height: 2.75rem;
       font-family: var(--font-subtitle);
       font-size: var(--font-caption-size);
@@ -73,14 +330,56 @@
       text-decoration: none;
     }
 
-    .hero__defiler .icon {
-      width: 1.25rem;
-      height: 1.25rem;
-    }
+    .hero__defiler .icon { width: 1.25rem; height: 1.25rem; }
   }
 
-  @media (width >= 64rem) and (hover: hover) {
+  @media (width >= 56rem) and (hover: hover) {
     .hero__defiler:hover { color: var(--text-primary); }
+  }
+
+  /* ── Un seul écran : le hero occupe toute la hauteur disponible ── */
+  @media (width >= 64rem) and (height >= 40rem) {
+    .hero-zone { block-size: 100%; }
+
+    .hero {
+      block-size: 100%;
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      gap: var(--space-3);
+      padding-block: var(--space-4) var(--space-5);
+    }
+
+    .hero__scene {
+      --portrait: clamp(10rem, 33dvh, 19rem);
+      min-block-size: 0;
+    }
+
+    .hero__orbites { --diametre: calc(var(--portrait) * 2.3); }
+
+    .hero__bas { align-items: end; }
+
+    .hero__intro p { max-width: 34rem; font-size: var(--font-body1-size); }
+
+    .hero__actions { margin-block-start: var(--space-4); }
+
+    .hero__domaines-liste {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-1) var(--space-5);
+      padding: 0;
+      font-size: var(--font-body2-size);
+      color: var(--text-secondary);
+    }
+
+    .hero__domaines-liste li::before {
+      content: '';
+      display: inline-block;
+      inline-size: 0.3rem;
+      block-size: 0.3rem;
+      margin-inline-end: var(--space-2);
+      border-radius: var(--radius-full);
+      background: var(--color-secondary-600);
+      vertical-align: middle;
+    }
   }
 
   /* ── Réalisations sélectionnées ── */

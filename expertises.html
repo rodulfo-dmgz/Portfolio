@@ -8,29 +8,36 @@
     <meta property="og:description" content="Ingénierie pédagogique, conception de parcours, formation professionnelle et digital learning." />
     <meta property="og:type" content="website" />
   </head>
-  <body data-page="expertises">
+  <body data-page="expertises" class="ecran-unique" data-fond>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
     <!--@include header-->
 
-    <main id="contenu">
-      <header class="page-tete container">
-        <p class="eyebrow">{{profil.titre}}</p>
-        <h1 class="page-tete__titre">Expertises</h1>
-        <p class="page-tete__intro">Quatre domaines qui se complètent : de l'analyse du besoin à l'évaluation des apprentissages, en présentiel comme en numérique.</p>
-        <nav class="sommaire" aria-label="Domaines d'expertise">
-          <ul role="list" data-rendu="sommaire"></ul>
-        </nav>
-      </header>
-
-      <div data-rendu="expertises-detail"></div>
-
-      <section class="section container appel" aria-labelledby="appel-titre">
-        <h2 class="text-display-md" id="appel-titre">Un besoin de formation à cadrer ?</h2>
-        <div class="hero__actions">
-          <a class="btn btn--cta" href="/contact">Me contacter<!--@icon arrow-right--></a>
-          <a class="btn btn--outline" href="/realisations">Voir les réalisations</a>
+    <main id="contenu" class="expertises-ecran">
+      <div class="fond-ecran" aria-hidden="true">
+        <div class="fond-ecran__pluie" data-pluie></div>
+        <div class="fond-ecran__orbites" data-orbites></div>
+        <div class="fond-ecran__texte defilement" data-defilement>
+          <div class="defilement__ligne"><div class="defilement__piste" data-piste>Analyser — Concevoir — Produire — Déployer — Évaluer — </div></div>
+          <div class="defilement__ligne"><div class="defilement__piste" data-piste data-sens="1">Pédagogie — Design — Digital learning — Formation — </div></div>
         </div>
-      </section>
+      </div>
+
+      <div class="expertises-ecran__contenu">
+        <header class="page-tete container">
+          <p class="eyebrow" data-scramble>{{profil.titre}}</p>
+          <h1 class="page-tete__titre">Expertises</h1>
+          <p class="page-tete__intro">Quatre domaines qui se complètent : de l'analyse du besoin à l'évaluation des apprentissages, en présentiel comme en numérique.</p>
+        </header>
+
+        <section class="container volets-zone" aria-label="Domaines d'expertise">
+          <div class="volets" data-rendu="volets"></div>
+        </section>
+
+        <section class="container methode-bande" aria-labelledby="methode-titre">
+          <h2 class="eyebrow" id="methode-titre">Une méthode en cinq étapes</h2>
+          <ol role="list" data-rendu="methode"></ol>
+        </section>
+      </div>
     </main>
 
     <!--@include footer-->

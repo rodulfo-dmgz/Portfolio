@@ -9,7 +9,11 @@
 @import './layout.css';
 @import './components.css';
 @import './elements.css';
+@import './ecran.css';
 @import './home.css';
 @import './pages.css';
 @import './visionneuse.css';
+@import './voyage.css';
+@import './volets.css';
+@import './bureau.css';
 @import './animations.css';

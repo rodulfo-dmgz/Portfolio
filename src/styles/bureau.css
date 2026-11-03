@@ -1,0 +1,353 @@
+/* Réalisations : l'ordinateur et son bureau (components/bureau.js).
+   Le bureau est dessiné en pixels « virtuels » (1280 × 800, ou 520 × 700 sur petit écran), puis mis à l'échelle de l'écran. */
+@layer components {
+  .realisations-ecran { position: relative; overflow-x: clip; }
+
+  .realisations-ecran__contenu {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: var(--space-8);
+    inline-size: 100%;
+    max-inline-size: var(--content-max-width);
+    margin-inline: auto;
+    padding: var(--space-8) var(--gutter) var(--space-12);
+  }
+
+  .realisations-ecran__contenu[hidden] { display: none; }
+  .realisations-ecran__texte .page-tete__titre { font-size: var(--font-display-md-size); margin-block: var(--space-3); }
+  .realisations-ecran__texte .page-tete__intro { font-size: var(--font-body2-size); }
+
+  .bureau-zone__commandes {
+    display: grid;
+    justify-items: center;
+    gap: var(--space-4);
+    margin-block-start: var(--space-6);
+    text-align: start;
+    justify-items: start;
+    color: var(--text-secondary);
+  }
+
+  .bureau-zone__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+  .bureau-zone__actions[hidden] { display: none; }
+
+  /* ── L'ordinateur ── */
+  .ordinateur { max-inline-size: 72rem; margin-inline: auto; }
+
+  .ordinateur__cadre {
+    padding: clamp(0.5rem, 1.4vw, 1rem);
+    border: var(--border-width-1) solid rgb(255 255 255 / 0.12);
+    border-radius: var(--radius-2xl);
+    background: linear-gradient(160deg, var(--color-neutral-700), var(--color-neutral-900));
+    box-shadow: var(--shadow-2xl);
+  }
+
+  .ordinateur__ecran {
+    position: relative;
+    inline-size: 100%;
+    aspect-ratio: var(--vl, 1280) / var(--vh, 800);
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: var(--color-primary-950);
+  }
+
+  .ordinateur__pied { display: none; }
+
+  @media (width >= 48rem) {
+    .ordinateur__pied {
+      display: block;
+      inline-size: 16%;
+      block-size: 2.25rem;
+      margin-inline: auto;
+      background: linear-gradient(var(--color-neutral-700), var(--color-neutral-800));
+      clip-path: polygon(12% 0, 88% 0, 100% 100%, 0 100%);
+    }
+  }
+
+  /* ── Bureau (unités virtuelles : px) ── */
+  .bureau {
+    position: absolute;
+    inset: 0 auto auto 0;
+    inline-size: calc(var(--vl) * 1px);
+    block-size: calc(var(--vh) * 1px);
+    transform-origin: top left;
+    overflow: hidden;
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: #fff;
+    background: linear-gradient(150deg, var(--color-primary-700), var(--color-primary-950) 60%, var(--color-secondary-900));
+  }
+
+  .bureau button,
+  .bureau a { -webkit-tap-highlight-color: transparent; }
+
+  .bureau :focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+  .bureau__fond {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(circle at 70% 55%, transparent 0 18%, rgb(255 255 255 / 0.06) 18.2% 18.6%, transparent 18.8% 30%, rgb(255 255 255 / 0.05) 30.2% 30.5%, transparent 30.7%),
+      radial-gradient(circle at 70% 55%, rgb(28 160 152 / 0.18), transparent 45%);
+  }
+
+  .bureau__fond span {
+    font-family: var(--font-heading);
+    font-size: 150px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(255 255 255 / 0.12);
+    translate: 12% 8%;
+    white-space: nowrap;
+  }
+
+  .bureau__barre {
+    position: absolute;
+    inset: 0 0 auto 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    block-size: 32px;
+    padding-inline: 16px;
+    background: rgb(6 15 33 / 0.55);
+    backdrop-filter: blur(8px);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .bureau__marque {
+    display: grid;
+    place-items: center;
+    inline-size: 22px;
+    block-size: 18px;
+    border-radius: 4px;
+    background: var(--color-accent-700);
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  .bureau__barre time { margin-inline-start: auto; font-family: var(--font-subtitle); font-weight: 400; }
+
+  /* Raccourcis */
+  .bureau__icones {
+    position: absolute;
+    inset: 48px auto auto 20px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(4, 104px);
+    gap: 4px 6px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .raccourci {
+    display: grid;
+    justify-items: center;
+    align-content: start;
+    gap: 6px;
+    inline-size: 104px;
+    block-size: 100px;
+    padding: 6px 4px;
+    border-radius: 8px;
+    color: #fff;
+    text-align: center;
+    transition: background-color 150ms var(--ease-out);
+  }
+
+  .raccourci__tuile {
+    display: grid;
+    place-items: center;
+    inline-size: 60px;
+    block-size: 60px;
+    border-radius: 14px;
+    border: 1px solid rgb(255 255 255 / 0.25);
+    background: linear-gradient(150deg, var(--c1, #3d6bb8), var(--c2, #152d5c));
+    box-shadow: 0 6px 16px rgb(0 0 0 / 0.35);
+    font-family: var(--font-subtitle);
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .raccourci[style*='--teinte:0'] { --c1: #3d6bb8; --c2: #152d5c; }
+  .raccourci[style*='--teinte:1'] { --c1: #2bc4b8; --c2: #105e56; }
+  .raccourci[style*='--teinte:2'] { --c1: #ff6b24; --c2: #a33100; }
+  .raccourci[style*='--teinte:3'] { --c1: #8b5cf6; --c2: #4c1d95; }
+
+  .raccourci__nom {
+    font-size: 12px;
+    line-height: 1.2;
+    text-shadow: 0 1px 3px rgb(0 0 0 / 0.6);
+  }
+
+  @media (hover: hover) {
+    .raccourci:hover { background: rgb(255 255 255 / 0.12); }
+  }
+
+  /* Navigateur */
+  .navigateur {
+    position: absolute;
+    inset: 0 auto auto 0;
+    z-index: 4;
+    display: grid;
+    grid-template-rows: 38px 38px minmax(0, 1fr);
+    overflow: hidden;
+    border-radius: 12px;
+    background: #fff;
+    color: #12355b;
+    box-shadow: 0 30px 80px rgb(0 0 0 / 0.5), 0 0 0 1px rgb(255 255 255 / 0.2);
+  }
+
+  .navigateur[hidden] { display: none; }
+
+  .navigateur__titre {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    padding: 0 12px;
+    background: #e2e8f0;
+    cursor: grab;
+  }
+
+  .navigateur__feux { display: flex; gap: 7px; align-self: center; }
+
+  .feu {
+    inline-size: 12px;
+    block-size: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .feu--fermer { background: #ff5f57; }
+  .feu--reduire { background: #febc2e; }
+  .feu--agrandir { background: #28c840; }
+
+  .navigateur__onglets { display: flex; gap: 4px; min-inline-size: 0; overflow: hidden; }
+
+  .onglet {
+    display: flex;
+    align-items: center;
+    max-inline-size: 200px;
+    border-radius: 8px 8px 0 0;
+    background: #cbd5e1;
+  }
+
+  .onglet:has([aria-selected='true']) { background: #fff; }
+
+  .onglet__titre {
+    min-inline-size: 0;
+    padding: 8px 6px 8px 12px;
+    overflow: hidden;
+    font-size: 12px;
+    font-weight: 500;
+    color: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .onglet__fermer { padding: 6px 10px 6px 4px; font-size: 15px; line-height: 1; color: #475569; }
+
+  .navigateur__outils {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 12px;
+    border-block-end: 1px solid #e2e8f0;
+  }
+
+  .navigateur__bouton { font-size: 16px; color: #475569; }
+
+  .navigateur__adresse {
+    flex: 1;
+    padding: 5px 14px;
+    border-radius: 999px;
+    background: #f1f5f9;
+    font-family: var(--font-subtitle);
+    font-size: 12px;
+    color: #475569;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .navigateur__page { position: relative; background: #fff; }
+
+  .navigateur__page iframe { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; border: 0; background: #fff; }
+  .navigateur__page iframe[hidden] { display: none; }
+
+  .navigateur__chargement {
+    position: absolute;
+    inset: 0 0 auto 0;
+    z-index: 1;
+    block-size: 3px;
+    background: var(--color-accent-600);
+    transform-origin: left;
+    transform: scaleX(0);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .navigateur__vide { position: absolute; inset: 0; display: grid; place-items: center; font-size: 14px; color: #64748b; }
+  .navigateur__vide[hidden] { display: none; }
+
+  /* Dock */
+  .bureau__dock {
+    position: absolute;
+    inset: auto auto 12px 50%;
+    z-index: 6;
+    display: flex;
+    gap: 12px;
+    padding: 8px 14px;
+    translate: -50% 0;
+    border: 1px solid rgb(255 255 255 / 0.2);
+    border-radius: 20px;
+    background: rgb(6 15 33 / 0.55);
+    backdrop-filter: blur(10px);
+  }
+
+  .dock__app {
+    display: grid;
+    place-items: center;
+    inline-size: 48px;
+    block-size: 48px;
+    border-radius: 12px;
+    background: rgb(255 255 255 / 0.14);
+    color: #fff;
+    font-family: var(--font-subtitle);
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .dock__app[aria-pressed='true'] { background: var(--color-accent-700); }
+
+  /* Petit écran : raccourcis en quatre colonnes, navigateur toujours agrandi. */
+  @media (width < 48rem) {
+    .bureau__icones { grid-auto-flow: row; grid-template-columns: repeat(4, 112px); grid-template-rows: none; inset-inline-start: 16px; }
+    .bureau__fond span { font-size: 80px; }
+    .navigateur__titre { cursor: default; }
+  }
+
+  /* Un seul écran : texte à gauche, ordinateur à droite, dimensionné par la hauteur disponible. */
+  @media (width >= 64rem) and (height >= 40rem) {
+    .realisations-ecran__contenu {
+      block-size: 100%;
+      grid-template-columns: minmax(15rem, 21rem) minmax(0, 1fr);
+      align-items: center;
+      column-gap: var(--space-10);
+      padding-block: var(--space-4);
+    }
+
+    .realisations-ecran .ordinateur {
+      inline-size: min(100%, calc((100dvh - 12.5rem) * 1.6));
+      justify-self: end;
+    }
+
+    .realisations-ecran .ordinateur__pied { display: none; }
+    .bureau-zone__actions { flex-direction: column; align-items: stretch; }
+  }
+}

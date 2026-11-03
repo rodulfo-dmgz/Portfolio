@@ -15,3 +15,16 @@ PLAN DE DÉVELOPPEMENT*.md
 
 # Configuration locale des outils
 .claude/
+
+# Maquettes de travail, hors du site
+/try.html
+/dual-lab.html
+/a-propos-proto.html
+/expertises-proto.html
+/a-proposv1.html
+/expertisesv1.html
+/src/main.js
+/src/style.css
+/src/a-propos.*
+/src/expertises.*
+/src/dual-lab.*

@@ -16,12 +16,38 @@
       "lieu": "Mexique",
       "precision": "Tapachula, Chiapas",
       "texte": "J'ai grandi à Tapachula, ville frontalière entre le Pacifique et le Guatemala. Dans ce contexte multiculturel est née ma passion pour l'éducation et le partage : j'ai collaboré avec des organisations locales sur des projets éducatifs pour des jeunes de milieux défavorisés et animé des ateliers de formation en informatique.",
-      "competences": ["Animation de groupes", "Adaptation culturelle", "Gestion de projets communautaires"],
+      "competences": [
+        "Animation de groupes",
+        "Adaptation culturelle",
+        "Gestion de projets communautaires"
+      ],
       "experiences": [
-        { "periode": "Sept. 2016 – mai 2017", "structure": "Xplora Tours", "role": "Guide touristique anglophone", "points": [] },
-        { "periode": "Août 2014 – mars 2015", "structure": "Fiscalía General del Estado", "role": "Traduction anglais-espagnol (indépendant)", "points": [] },
-        { "periode": "Févr. 2012 – févr. 2014", "structure": "Quesería Charito", "role": "Supervision administrative", "points": [] }
-      ]
+        {
+          "periode": "Sept. 2016 – mai 2017",
+          "structure": "Xplora Tours",
+          "role": "Guide touristique anglophone",
+          "points": []
+        },
+        {
+          "periode": "Août 2014 – mars 2015",
+          "structure": "Fiscalía General del Estado",
+          "role": "Traduction anglais-espagnol (indépendant)",
+          "points": []
+        },
+        {
+          "periode": "Févr. 2012 – févr. 2014",
+          "structure": "Quesería Charito",
+          "role": "Supervision administrative",
+          "points": []
+        }
+      ],
+      "resume": "Tapachula, entre le Pacifique et le Guatemala : là où est née ma passion pour l'éducation et le partage.",
+      "coordonnees": "14,91° N · 92,26° O",
+      "ville": "tapachula",
+      "photos": [],
+      "lat": 14.91,
+      "lon": -92.26,
+      "fuseau": "America/Mexico_City"
     },
     {
       "id": "guinee-equatoriale",
@@ -29,7 +55,11 @@
       "lieu": "Guinée équatoriale",
       "precision": "Malabo",
       "texte": "À Malabo, au Lycée français, j'ai découvert une culture riche qui a élargi ma vision du monde et renforcé mon engagement pour l'éducation multiculturelle. J'y ai expérimenté des approches d'enseignement adaptées à des contextes variés et contribué à des projets numériques pour améliorer l'accès aux ressources éducatives.",
-      "competences": ["Pédagogie interculturelle", "Flexibilité méthodologique", "Formation digitale"],
+      "competences": [
+        "Pédagogie interculturelle",
+        "Flexibilité méthodologique",
+        "Formation digitale"
+      ],
       "experiences": [
         {
           "periode": "Janv. 2018 – sept. 2019",
@@ -43,7 +73,14 @@
             "Communication institutionnelle de l'établissement"
           ]
         }
-      ]
+      ],
+      "resume": "Malabo, au Lycée français : une culture riche et des approches d'enseignement adaptées à des contextes variés.",
+      "coordonnees": "3,75° N · 8,78° E",
+      "ville": "malabo",
+      "photos": [],
+      "lat": 3.75,
+      "lon": 8.78,
+      "fuseau": "Africa/Malabo"
     },
     {
       "id": "france",
@@ -51,7 +88,12 @@
       "lieu": "France",
       "precision": "Montpellier, Occitanie",
       "texte": "Montpellier est devenu le cœur de mon activité d'ingénierie pédagogique dans la formation professionnelle du secteur tertiaire, là où expertise technique et accompagnement humain se rejoignent. Chaque dispositif repose sur une ingénierie rigoureuse (analyse des besoins, positionnement, séquençage pédagogique, évaluation par compétences) alignée sur les référentiels du tertiaire : RNCP, TOSA, Qualiopi.",
-      "competences": ["Ingénierie pédagogique", "Développement web full-stack", "Gestion de projets de formation", "Design créatif"],
+      "competences": [
+        "Ingénierie pédagogique",
+        "Développement web full-stack",
+        "Gestion de projets de formation",
+        "Design créatif"
+      ],
       "experiences": [
         {
           "periode": "Depuis août 2021",
@@ -80,7 +122,14 @@
             "Intégration d'outils d'IA dans les pratiques pédagogiques et les processus métiers"
           ]
         }
-      ]
+      ],
+      "resume": "Montpellier : l'ingénierie pédagogique en formation professionnelle, là où expertise technique et accompagnement humain se rejoignent.",
+      "coordonnees": "43,61° N · 3,88° E",
+      "ville": "montpellier",
+      "photos": [],
+      "lat": 43.61,
+      "lon": 3.88,
+      "fuseau": "Europe/Paris"
     }
   ],
   "approche": {
@@ -89,17 +138,44 @@
       "Mon approche s'inspire de mes passions artistiques : je conçois chaque parcours comme une œuvre pédagogique, où le design, le storytelling et l'interactivité s'allient pour créer des moments mémorables."
     ],
     "principes": [
-      { "titre": "Apprentissage actif", "texte": "Les apprenants sont acteurs de leur formation, pas spectateurs." },
-      { "titre": "Pratique immédiate", "texte": "Chaque concept s'accompagne d'exercices concrets et applicables." },
-      { "titre": "Personnalisation", "texte": "Adaptation des parcours aux profils et aux objectifs de chacun." },
-      { "titre": "Créativité", "texte": "Encouragement de l'expérimentation et de la pensée originale." },
-      { "titre": "Bienveillance", "texte": "Un environnement sécurisant où l'erreur est source d'apprentissage." }
+      {
+        "titre": "Apprentissage actif",
+        "texte": "Les apprenants sont acteurs de leur formation, pas spectateurs."
+      },
+      {
+        "titre": "Pratique immédiate",
+        "texte": "Chaque concept s'accompagne d'exercices concrets et applicables."
+      },
+      {
+        "titre": "Personnalisation",
+        "texte": "Adaptation des parcours aux profils et aux objectifs de chacun."
+      },
+      {
+        "titre": "Créativité",
+        "texte": "Encouragement de l'expérimentation et de la pensée originale."
+      },
+      {
+        "titre": "Bienveillance",
+        "texte": "Un environnement sécurisant où l'erreur est source d'apprentissage."
+      }
     ],
     "valeurs": [
-      { "titre": "Partage", "texte": "Transmission ouverte des savoirs" },
-      { "titre": "Innovation", "texte": "Toujours un temps d'avance" },
-      { "titre": "Adaptabilité", "texte": "S'ajuster à chaque contexte" },
-      { "titre": "Ouverture", "texte": "Mexique, Guinée équatoriale, France" }
+      {
+        "titre": "Partage",
+        "texte": "Transmission ouverte des savoirs"
+      },
+      {
+        "titre": "Innovation",
+        "texte": "Toujours un temps d'avance"
+      },
+      {
+        "titre": "Adaptabilité",
+        "texte": "S'ajuster à chaque contexte"
+      },
+      {
+        "titre": "Ouverture",
+        "texte": "Mexique, Guinée équatoriale, France"
+      }
     ]
   },
   "competencesTransversales": [
@@ -113,16 +189,121 @@
     "Suivi des financements : CPF, OPCO, France Travail, Transitions Pro"
   ],
   "outils": [
-    { "groupe": "Outils auteurs et LMS", "elements": ["Moodle", "H5P", "Articulate 360", "Genially", "Google Workspace", "Microsoft 365", "Wooclap", "Klaxoon", "Mentimeter", "Kahoot", "Padlet", "Socrative"] },
-    { "groupe": "Développement web", "elements": ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Vue.js", "Next.js", "Tailwind CSS", "PHP", "Symfony", "Node.js", "Python", "MySQL", "PostgreSQL", "Supabase", "Firebase", "Git", "GitHub", "Docker"] },
-    { "groupe": "Données et pilotage", "elements": ["Power BI", "Looker Studio", "Power Query", "Excel VBA"] },
-    { "groupe": "Intelligence artificielle", "elements": ["Claude", "ChatGPT", "Gemini", "NotebookLM", "Mistral", "Ingénierie de prompts"] },
-    { "groupe": "Design et création", "elements": ["Figma", "Adobe Creative Cloud", "Photoshop", "Premiere Pro", "Canva"] }
+    {
+      "groupe": "Outils auteurs et LMS",
+      "elements": [
+        "Moodle",
+        "H5P",
+        "Articulate 360",
+        "Genially",
+        "Google Workspace",
+        "Microsoft 365",
+        "Wooclap",
+        "Klaxoon",
+        "Mentimeter",
+        "Kahoot",
+        "Padlet",
+        "Socrative"
+      ]
+    },
+    {
+      "groupe": "Développement web",
+      "elements": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Vue.js",
+        "Next.js",
+        "Tailwind CSS",
+        "PHP",
+        "Symfony",
+        "Node.js",
+        "Python",
+        "MySQL",
+        "PostgreSQL",
+        "Supabase",
+        "Firebase",
+        "Git",
+        "GitHub",
+        "Docker"
+      ]
+    },
+    {
+      "groupe": "Données et pilotage",
+      "elements": [
+        "Power BI",
+        "Looker Studio",
+        "Power Query",
+        "Excel VBA"
+      ]
+    },
+    {
+      "groupe": "Intelligence artificielle",
+      "elements": [
+        "Claude",
+        "ChatGPT",
+        "Gemini",
+        "NotebookLM",
+        "Mistral",
+        "Ingénierie de prompts"
+      ]
+    },
+    {
+      "groupe": "Design et création",
+      "elements": [
+        "Figma",
+        "Adobe Creative Cloud",
+        "Photoshop",
+        "Premiere Pro",
+        "Canva"
+      ]
+    }
   ],
   "passions": [
-    { "titre": "Musique", "texte": "Multi-instrumentiste et créateur audio, je compose des univers sonores qui racontent des histoires. La musique est mon langage universel." },
-    { "titre": "Cinéma et photographie", "texte": "Le cinéma et la photographie m'enseignent l'art du cadrage, de la lumière et de la narration visuelle." },
-    { "titre": "Peinture", "texte": "Fasciné par le surréalisme de Dalí, je trouve dans la peinture une liberté d'expression absolue." },
-    { "titre": "Cuisine", "texte": "Mes racines mexicaines se mêlent aux influences africaines et françaises pour une cuisine métissée." }
+    {
+      "titre": "Musique",
+      "texte": "Multi-instrumentiste et créateur audio, je compose des univers sonores qui racontent des histoires. La musique est mon langage universel.",
+      "photo": null
+    },
+    {
+      "titre": "Cinéma et photographie",
+      "texte": "Le cinéma et la photographie m'enseignent l'art du cadrage, de la lumière et de la narration visuelle.",
+      "photo": null
+    },
+    {
+      "titre": "Peinture",
+      "texte": "Fasciné par le surréalisme de Dalí, je trouve dans la peinture une liberté d'expression absolue.",
+      "photo": null
+    },
+    {
+      "titre": "Cuisine",
+      "texte": "Mes racines mexicaines se mêlent aux influences africaines et françaises pour une cuisine métissée.",
+      "photo": null
+    }
+  ],
+  "langues": [
+    {
+      "langue": "Espagnol",
+      "code": "es",
+      "salut": "Hola",
+      "niveau": "Langue maternelle",
+      "rang": 6
+    },
+    {
+      "langue": "Français",
+      "code": "fr",
+      "salut": "Bonjour",
+      "niveau": "C2",
+      "rang": 6
+    },
+    {
+      "langue": "Anglais",
+      "code": "en",
+      "salut": "Hello",
+      "niveau": "B2",
+      "rang": 4
+    }
   ]
 }

@@ -1,0 +1,89 @@
+/* Pages « plein écran » : accueil, à propos, expertises et réalisations tiennent sur un seul écran, sans défilement.
+   Le mode n'est actif que sur un écran assez grand (largeur et hauteur) ; en dessous, les pages se lisent en défilant
+   comme d'habitude, ce qui garde le texte lisible à 200 % de zoom et sur téléphone (WCAG 1.4.4 et 1.4.10). */
+@layer components {
+  /* Fond partagé : pluie de lettres et pistes orbitales (scripts/fond-hero.js), derrière le contenu. */
+  .fond-ecran {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: clip;
+    pointer-events: none;
+  }
+
+  .fond-ecran__pluie {
+    position: absolute;
+    inset: 0;
+    mask-image: radial-gradient(ellipse 60% 65% at 50% 45%, transparent 22%, #000 80%);
+  }
+
+  .fond-ecran__orbites {
+    --diametre: min(88dvh, 78vw);
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    inline-size: var(--diametre);
+    block-size: var(--diametre);
+    translate: -50% -50%;
+  }
+
+  .fond-ecran__texte {
+    position: absolute;
+    inset: 50% 0 auto;
+    translate: 0 -50%;
+    opacity: 0.1;
+    mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
+  }
+
+  /* Mots en « pop » de l'accueil (scripts/mots-pop.js), derrière le contenu. */
+  .fond-particules,
+  .fond-mots {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    pointer-events: none;
+  }
+
+  /* Bouton de pause du fond animé (scripts/pause.js), visible seulement sur les pages qui ont un fond animé. */
+  .pause-fond { display: none; }
+
+  body[data-fond] .pause-fond {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    color: inherit;
+    font-size: var(--font-body2-size);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .ecran-unique .pause-fond { min-height: 2rem; }
+
+  @media (hover: hover) {
+    body[data-fond] .pause-fond:hover { color: var(--text-inverse); }
+  }
+
+  @media (width >= 64rem) and (height >= 40rem) {
+    body.ecran-unique {
+      block-size: 100dvh;
+      overflow: hidden;
+    }
+
+    .ecran-unique main {
+      position: relative;
+      min-block-size: 0;
+      overflow: hidden;
+    }
+
+    .ecran-unique .site-footer__haut { display: none; }
+
+    .ecran-unique .site-footer__bas { padding-block: var(--space-1); }
+
+    .ecran-unique .site-footer__bas a { min-height: 2rem; }
+
+    .ecran-unique .progression { display: none; }
+  }
+}

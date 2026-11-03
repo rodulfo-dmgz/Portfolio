@@ -1,17 +1,19 @@
 /**
  * Apparition progressive des sections au défilement.
  * La classe `reveal-ready` n'est posée que si ce script s'exécute : sans lui, rien n'est masqué.
+ * Le déclenchement a lieu avant l'entrée à l'écran, pour que le contenu soit déjà en place à l'arrivée.
  */
 const CIBLES = [
-  '.section-tete', '.filtres', '.projets .projet',
-  '.expertises__tete', '.expertise', '.etape',
-  '.apropos > *', '.faits', '.chapitre', '.approche__texte', '.principes li', '.valeurs li', '.passions li',
-  '.deux-colonnes > *', '.domaine__grille > *',
-  '.contact-accueil > *', '.contact > *', '.appel > *',
+  'main h2.text-display-md',
+  '.filtres', '.projets .projet',
+  '.expertise', '.etape',
+  '.apropos__portrait', '.apropos__presentation', '.faits',
+  '.deux-colonnes > :last-child', '.domaine__grille > .liste-trait', '.domaine__resume',
+  '.contact-accueil > :not(h2)', '.contact > *', '.appel > :not(h2)',
   '.etude__visuel', '.etude__fiche', '.etude__section', '.etude__suite',
 ].join(',');
 
-const PAS_DE_DECALAGE_MS = 100;
+const PAS_DE_DECALAGE_MS = 60;
 const DECALAGE_MAX = 3;
 
 if ('IntersectionObserver' in window) {
@@ -35,7 +37,7 @@ if ('IntersectionObserver' in window) {
       if (!entree.isIntersecting && entree.boundingClientRect.top < 0) afficher(entree.target);
     }
     entrants.forEach((entree, rang) => afficher(entree.target, rang));
-  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px 14% 0px' });
 
   const inscrire = (noeud) => {
     if (suivis.has(noeud)) return;

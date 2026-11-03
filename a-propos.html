@@ -3,97 +3,37 @@
   <head>
     <!--@include head-->
     <title>À propos — Rodulfo Dominguez</title>
-    <meta name="description" content="Parcours international, approche pédagogique, compétences et outils de Rodulfo Dominguez, concepteur et ingénieur pédagogique à Montpellier." />
+    <meta name="description" content="Parcours international, approche pédagogique, langues, compétences et outils de Rodulfo Dominguez, concepteur et ingénieur pédagogique à Montpellier." />
     <meta property="og:title" content="À propos — Rodulfo Dominguez" />
-    <meta property="og:description" content="Parcours international, approche pédagogique, compétences et outils." />
+    <meta property="og:description" content="Du Chiapas à Montpellier, en passant par la Guinée équatoriale : parcours, langues, approche et outils." />
     <meta property="og:type" content="profile" />
   </head>
-  <body data-page="a-propos">
+  <body data-page="a-propos" class="ecran-unique">
     <a class="skip-link" href="#contenu">Aller au contenu</a>
     <!--@include header-->
 
-    <main id="contenu">
-      <header class="page-tete container">
-        <p class="eyebrow">{{profil.titre}} · {{profil.ville}}</p>
-        <h1 class="page-tete__titre">À propos</h1>
-        <p class="page-tete__intro">Un parcours entre le Mexique, la Guinée équatoriale et la France, au service de la formation.</p>
-      </header>
-
-      <section class="section container" aria-label="Présentation">
-        <div class="apropos">
-          <div class="portrait apropos__portrait" data-rendu="portrait"></div>
-          <div class="apropos__texte">
-            <div class="apropos__presentation" data-rendu="intro"></div>
-            <dl class="faits" data-rendu="faits"></dl>
-          </div>
-        </div>
-      </section>
-
-      <section class="section container" aria-labelledby="parcours-titre">
-        <header class="section-tete">
-          <div>
-            <p class="eyebrow">01 — Parcours</p>
-            <h2 class="text-display-md" id="parcours-titre">Un parcours en trois étapes</h2>
-          </div>
+    <main id="contenu" class="voyage" data-voyage>
+      <div class="voyage__scene">
+        <header class="voyage__tete">
+          <h1 class="voyage__titre">À propos</h1>
+          <p class="voyage__position" data-position aria-hidden="true"></p>
         </header>
-        <div class="chapitres" data-rendu="chapitres"></div>
-      </section>
 
-      <section class="bande" aria-labelledby="approche-titre">
-        <div class="container">
-          <header class="section-tete">
-            <div>
-              <p class="eyebrow">02 — Approche</p>
-              <h2 class="text-display-md" id="approche-titre">Ma vision de la formation</h2>
-            </div>
-          </header>
-          <div class="approche">
-            <div class="approche__texte" data-rendu="approche-texte"></div>
-            <ul class="principes" role="list" data-rendu="principes"></ul>
+        <div class="voyage__carte" data-carte aria-hidden="true">
+          <svg class="voyage__monde" data-monde preserveAspectRatio="xMidYMid slice"></svg>
+          <div class="voyage__reperes" data-reperes></div>
+          <div class="voyage__avion" data-avion>
+            <svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" /></svg>
           </div>
-          <h3 class="bande__sous-titre">Valeurs</h3>
-          <ul class="valeurs" role="list" data-rendu="valeurs"></ul>
         </div>
-      </section>
 
-      <section class="section container" aria-labelledby="competences-titre">
-        <div class="deux-colonnes">
-          <header class="deux-colonnes__tete">
-            <p class="eyebrow">03 — Compétences</p>
-            <h2 class="text-display-md" id="competences-titre">Compétences transversales</h2>
-          </header>
-          <ul class="liste-trait" role="list" data-rendu="competences"></ul>
-        </div>
-      </section>
-
-      <section class="section container" aria-labelledby="outils-titre">
-        <div class="deux-colonnes">
-          <header class="deux-colonnes__tete">
-            <p class="eyebrow">04 — Outils</p>
-            <h2 class="text-display-md" id="outils-titre">Outils et technologies</h2>
-          </header>
-          <div class="outils" data-rendu="outils"></div>
-        </div>
-      </section>
-
-      <section class="section container" aria-labelledby="passions-titre">
-        <header class="section-tete">
-          <div>
-            <p class="eyebrow">05 — Au-delà de la formation</p>
-            <h2 class="text-display-md" id="passions-titre">Ce qui nourrit ma pratique</h2>
-          </div>
-        </header>
-        <ul class="passions" role="list" data-rendu="passions"></ul>
-      </section>
-
-      <section class="section container appel" aria-labelledby="appel-titre">
-        <h2 class="text-display-md" id="appel-titre">Voyons ce que nous pouvons construire ensemble.</h2>
-        <div class="hero__actions">
-          <a class="btn btn--cta" href="/realisations">Voir les réalisations<!--@icon arrow-right--></a>
-          <a class="btn btn--outline" href="/contact">Me contacter</a>
-          <a class="btn btn--outline" href="" data-cv hidden>Télécharger mon CV<!--@icon arrow-down--></a>
-        </div>
-      </section>
+        <div class="voyage__etapes" data-etapes></div>
+        <p class="voyage__indice" aria-hidden="true">Molette ou flèches : changer d’étape</p>
+        <p class="visually-hidden" role="status" data-annonce></p>
+        <nav class="voyage__rail" data-rail aria-label="Étapes du parcours"></nav>
+        <nav class="voyage__sujets" data-sujets aria-label="Sujets"></nav>
+        <div class="voyage__panneaux" data-panneaux></div>
+      </div>
     </main>
 
     <!--@include footer-->

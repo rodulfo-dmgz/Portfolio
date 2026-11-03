@@ -12,6 +12,10 @@
     "Concevoir avec intention.",
     "Créer avec précision."
   ],
+  "accrocheLangues": [
+    { "lang": "es", "phrases": ["Formar con método.", "Diseñar con intención.", "Crear con precisión."] },
+    { "lang": "en", "phrases": ["Train with method.", "Design with intention.", "Create with precision."] }
+  ],
   "presentationCourte": "Je conçois et déploie des parcours de formation certifiants et qualifiants pour le secteur tertiaire.",
   "presentation": [
     "Formateur professionnel d'adultes et ingénieur pédagogique basé à Montpellier, je conçois et déploie des parcours de formation certifiants et qualifiants pour le secteur tertiaire : comptabilité, paie, RH, gestion, outils numériques et transformation digitale.",

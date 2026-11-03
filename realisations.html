@@ -8,28 +8,39 @@
     <meta property="og:description" content="Réalisations en ingénierie pédagogique, conception de parcours et digital learning." />
     <meta property="og:type" content="website" />
   </head>
-  <body data-page="realisations">
+  <body data-page="realisations" class="ecran-unique" data-fond>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
     <!--@include header-->
 
-    <main id="contenu">
-      <header class="page-tete container">
-        <p class="eyebrow">{{profil.titre}}</p>
-        <h1 class="page-tete__titre">Réalisations</h1>
-        <p class="page-tete__intro">Les projets de formation, de parcours et d'outils pédagogiques, classés par domaine.</p>
-      </header>
+    <main id="contenu" class="realisations-ecran">
+      <div class="fond-ecran" aria-hidden="true">
+        <div class="fond-ecran__pluie" data-pluie></div>
+        <div class="fond-ecran__orbites" data-orbites></div>
+      </div>
 
-      <section class="section container section--serree" aria-label="Liste des réalisations">
-        <div class="filtres" role="group" aria-label="Filtrer par catégorie" data-rendu="filtres"></div>
-        <p class="filtres__compte" role="status" data-compte></p>
-        <div class="galerie" data-rendu="galerie"></div>
+      <div class="realisations-ecran__contenu" data-bureau>
+        <header class="realisations-ecran__texte">
+          <p class="eyebrow" data-scramble>{{profil.titre}}</p>
+          <h1 class="page-tete__titre">Réalisations</h1>
+          <p class="page-tete__intro">Mes projets en ligne, comme sur mon bureau : un raccourci par projet, ouvert dans le navigateur de l’ordinateur.</p>
 
-        <div class="etat-vide" data-vide hidden>
-          <h2 class="etat-vide__titre" data-vide-titre></h2>
-          <p>Les projets de cette catégorie seront ajoutés au fil des publications.</p>
-          <button class="btn btn--outline" type="button" data-vide-action>Voir toutes les réalisations</button>
+          <div class="bureau-zone__commandes" role="status" data-commandes>
+            <p data-aide>Cliquez sur un raccourci pour l’ouvrir.</p>
+            <div class="bureau-zone__actions" data-actions hidden>
+              <a class="btn btn--outline" href="" target="_blank" rel="noopener noreferrer" data-externe>Ouvrir dans un nouvel onglet<span class="visually-hidden"> (nouvel onglet)</span><!--@icon arrow-up-right--></a>
+              <a class="btn btn--outline" href="" data-etude>Lire l’étude de cas</a>
+              <button class="btn btn--outline" type="button" data-fermer-nav>Fermer le navigateur</button>
+            </div>
+          </div>
+        </header>
+
+        <div class="ordinateur">
+          <div class="ordinateur__cadre">
+            <div class="ordinateur__ecran" data-ecran></div>
+          </div>
+          <div class="ordinateur__pied" aria-hidden="true"></div>
         </div>
-      </section>
+      </div>
     </main>
 
     <!--@include footer-->

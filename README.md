@@ -47,6 +47,36 @@ Les pages passent par `src/services/contentRepository.js`. Pour brancher une bas
 
 Un champ `null` ou vide n'est pas affiché : une réalisation sans année, sans contexte ou sans résultats reste présentable.
 
+## Pages sur un seul écran
+
+L'accueil, À propos, Expertises et Réalisations tiennent sur un seul écran, sans défilement, dès que la fenêtre fait au moins 64 rem de large et 40 rem de haut (`src/styles/ecran.css`, `src/scripts/ecran.js`). En dessous, ces pages se lisent en défilant, ce qui garde le texte lisible à 200 % de zoom et sur téléphone.
+
+- **À propos :** la carte change d'étape avec les boutons, la molette, les flèches ou un balayage ; les autres sujets s'ouvrent en panneaux (`src/pages/a-propos.js`).
+- **Fond commun :** pluie de lettres et réseau de points qui tourne (`src/scripts/fond-hero.js`), ondes émeraude très pâles à chaque arrêt de la souris (`src/scripts/ondes.js`), mots en « pop » (`src/scripts/mots-pop.js`), sur l'accueil seulement.
+
+## Animations
+
+Les animations avancées utilisent [GSAP](https://gsap.com/) (licence gratuite). Chaque module est chargé uniquement sur la page qui en a besoin et reste inactif avec « réduire les animations ».
+
+| Page | Effets | Fichiers |
+|---|---|---|
+| Toutes | Titre de page lettre par lettre, libellés « scramble » | `src/scripts/titres.js` |
+| Accueil | Portrait central, pluie de lettres, réseau de points type IA, phrases qui changent de langue (français, espagnol, anglais), profondeur au pointeur | `src/scripts/hero.js`, `src/scripts/fond-hero.js` |
+| À propos | Carte épinglée : un avion vole du Chiapas à Montpellier, la caméra le suit | `src/components/voyage.js`, `src/data/carte.json` |
+| Expertises | Volets qui s'ouvrent, bandeaux de mots cinétiques | `src/components/volets.js`, `src/components/defilement.js` |
+| Réalisations | Ordinateur : raccourcis vers les projets en ligne et navigateur intégré | `src/components/bureau.js` |
+
+**Photos à fournir :**
+- Portrait : `portrait` dans `src/data/profile.json` (image 4:5, par exemple `/assets/images/portrait.webp`).
+- Photos de chaque étape du voyage : `photos` (`{ "src", "alt" }`) de chaque chapitre dans `src/data/apropos.json`.
+- Photos des passions : `photo` (`{ "src", "alt" }`) de chaque passion dans `apropos.json`.
+
+En développement, des cadres « Photo à venir » marquent leur emplacement ; ils n'apparaissent pas en production.
+
+**Ordinateur :** un raccourci est créé pour chaque réalisation dont `content.resources` contient une ressource de type `demo`. Les projets s'affichent dans un `iframe` : un site qui interdit l'affichage dans un cadre (`X-Frame-Options`) reste ouvrable avec « Ouvrir dans un nouvel onglet ».
+
+**Carte :** `src/data/carte.json` contient les terres (Natural Earth, via `world-atlas`) et la position des trois villes, projetées en Mercator.
+
 ## Design system
 
 Les variables CSS sont dans `src/styles/tokens.css` : couleurs, typographie (Cabinet Grotesk, Switzer, Space Mono), espacements, rayons, ombres. Le thème sombre repose sur la classe `dark` de `<html>` ; le choix (clair, sombre, système) est mémorisé dans `localStorage` sous `rd-theme`.

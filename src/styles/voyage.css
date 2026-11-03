@@ -1,0 +1,617 @@
+/* À propos : la carte du voyage et les panneaux de sujets (components/voyage.js).
+   Par défaut (petit écran), tout se lit à la suite ; sur un grand écran (voir ecran.css), la page tient sur une seule vue. */
+@layer components {
+  .voyage {
+    position: relative;
+    background: var(--color-primary-950);
+    color: var(--text-inverse);
+  }
+
+  .voyage :focus-visible { outline-color: var(--text-inverse); }
+
+  .voyage__scene { display: grid; }
+
+  .voyage__tete { padding: var(--space-6) var(--gutter) var(--space-3); }
+
+  .voyage__titre {
+    font-size: var(--font-display-md-size);
+    font-weight: var(--font-display-weight);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--text-inverse);
+  }
+
+  .voyage__position {
+    display: none;
+    margin-block-start: var(--space-2);
+    font-family: var(--font-subtitle);
+    font-size: var(--font-caption-size);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgb(255 255 255 / 0.72);
+  }
+
+  /* ── Carte ── */
+  .voyage__carte {
+    position: relative;
+    block-size: min(52svh, 26rem);
+    overflow: hidden;
+  }
+
+  .voyage__carte::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 80% at 60% 50%, transparent 35%, var(--color-primary-950) 100%);
+    pointer-events: none;
+  }
+
+  .voyage__monde {
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+
+  #voyage-points circle { fill: rgb(141 179 240 / 0.6); }
+
+  #voyage-grille path {
+    fill: none;
+    stroke: rgb(255 255 255 / 0.07);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .voyage__cote {
+    fill: none;
+    stroke: rgb(141 179 240 / 0.32);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .voyage__route {
+    fill: none;
+    stroke: rgb(255 255 255 / 0.3);
+    stroke-width: 0.5;
+    stroke-dasharray: 1.5 3;
+  }
+
+  .voyage__trace {
+    fill: none;
+    stroke: var(--color-accent-500);
+    stroke-width: 0.9;
+    stroke-linecap: round;
+  }
+
+  /* Repères des villes et avion : superposés à la carte, à taille d'écran constante. */
+  .repere {
+    position: absolute;
+    inset: 0 auto auto 0;
+    pointer-events: none;
+  }
+
+  .repere__point {
+    position: absolute;
+    inline-size: 0.875rem;
+    block-size: 0.875rem;
+    translate: -50% -50%;
+    border: var(--border-width-2) solid rgb(255 255 255 / 0.55);
+    border-radius: var(--radius-full);
+    background: var(--color-primary-950);
+    transition: background-color 250ms var(--ease-out), border-color 250ms var(--ease-out), box-shadow 250ms var(--ease-out);
+  }
+
+  .repere__nom {
+    position: absolute;
+    translate: -50% -2.5rem;
+    font-family: var(--font-subtitle);
+    font-size: var(--font-caption-size);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: rgb(255 255 255 / 0.72);
+  }
+
+  .repere.est-passe .repere__point { background: rgb(255 255 255 / 0.85); border-color: rgb(255 255 255 / 0.85); }
+
+  .repere.est-actif .repere__point {
+    background: var(--color-accent-600);
+    border-color: var(--color-accent-600);
+    box-shadow: 0 0 0 7px rgb(255 87 10 / 0.22);
+  }
+
+  .repere.est-actif .repere__nom { color: var(--text-inverse); }
+
+  .voyage__avion {
+    position: absolute;
+    inset: 0 auto auto 0;
+    inline-size: 2.25rem;
+    block-size: 2.25rem;
+    margin: -1.125rem 0 0 -1.125rem;
+    pointer-events: none;
+  }
+
+  .voyage__avion svg {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    fill: var(--text-inverse);
+    filter: drop-shadow(0 0 10px rgb(255 87 10 / 0.7));
+  }
+
+  /* ── Carte d'étape ── */
+  .voyage__etapes { display: grid; gap: var(--space-4); padding: var(--space-4) var(--gutter); }
+
+  .voyage__texte {
+    display: grid;
+    gap: var(--space-2);
+    padding: var(--space-5);
+    border: var(--border-width-1) solid rgb(255 255 255 / 0.14);
+    border-radius: var(--radius-xl);
+    background: color-mix(in srgb, var(--color-primary-950) 84%, transparent);
+    backdrop-filter: blur(10px);
+  }
+
+  .voyage__numero {
+    font-family: var(--font-subtitle);
+    font-size: var(--font-caption-size);
+    letter-spacing: 0.1em;
+    color: rgb(255 255 255 / 0.72);
+  }
+
+  .voyage__numero span { color: var(--color-accent-300); }
+
+  .voyage__lieu {
+    font-size: clamp(1.75rem, 1rem + 2.6vw, 2.75rem);
+    font-weight: var(--font-display-weight);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--text-inverse);
+  }
+
+  .voyage__precision {
+    font-family: var(--font-subtitle);
+    font-size: var(--font-caption-size);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(255 255 255 / 0.72);
+  }
+
+  .voyage__resume {
+    font-size: var(--font-body2-size);
+    color: rgb(255 255 255 / 0.9);
+  }
+
+  .voyage__infos { display: grid; gap: var(--space-1); margin-block-start: var(--space-1); }
+
+  .voyage__infos > div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: var(--space-2); align-items: baseline; }
+
+  .voyage__infos dt {
+    font-family: var(--font-subtitle);
+    font-size: var(--font-caption-size);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgb(255 255 255 / 0.72);
+  }
+
+  .voyage__infos dd { font-size: var(--font-body2-size); font-variant-numeric: tabular-nums; color: #fff; }
+  .voyage__detail { color: rgb(255 255 255 / 0.76); }
+
+  .voyage .etiquettes { margin-block-start: var(--space-2); }
+
+  .voyage .etiquettes li {
+    border-color: rgb(255 255 255 / 0.28);
+    color: rgb(255 255 255 / 0.86);
+  }
+
+  .voyage__photos { display: none; }
+
+  .voyage__photo {
+    inline-size: clamp(7rem, 12vw, 10rem);
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border: var(--border-width-1) solid rgb(255 255 255 / 0.3);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .voyage__photo:nth-child(odd) { rotate: -3deg; }
+  .voyage__photo:nth-child(even) { rotate: 2.5deg; translate: 0 -1.5rem; }
+
+  .voyage__photo img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  .voyage__photo--vide {
+    display: grid;
+    place-items: center;
+    border-style: dashed;
+    font-family: var(--font-subtitle);
+    font-size: var(--font-caption-size);
+    text-align: center;
+    color: rgb(255 255 255 / 0.72);
+  }
+
+  /* Commandes réservées à la vue unique. */
+  .voyage__indice,
+  .voyage__rail,
+  .voyage__sujets { display: none; }
+
+  /* ── Panneaux de sujets ── */
+  .voyage__panneaux { display: grid; gap: var(--space-4); padding: var(--space-4) var(--gutter) var(--space-10); }
+
+  .sujet {
+    /* Les composants du site (étiquettes, listes, titres) se relisent sur fond sombre grâce à ces jetons. */
+    --text-primary: #fff;
+    --text-secondary: rgb(255 255 255 / 0.88);
+    --text-muted: rgb(255 255 255 / 0.76);
+    --border-default: rgb(255 255 255 / 0.24);
+    --border-strong: rgb(255 255 255 / 0.42);
+    padding: var(--space-5);
+    border: var(--border-width-1) solid rgb(255 255 255 / 0.14);
+    border-radius: var(--radius-xl);
+    background: color-mix(in srgb, var(--color-primary-950) 94%, transparent);
+    color: #fff;
+  }
+
+  .sujet:focus { outline: none; }
+  .sujet:focus-visible { outline: var(--border-width-2) solid #fff; }
+  .sujet[hidden] { display: none; }
+
+  .sujet__tete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-block-end: var(--space-4);
+  }
+
+  .sujet__titre {
+    font-size: var(--font-h3-size);
+    line-height: 1.1;
+  }
+
+  .sujet__fermer {
+    display: none;
+    place-items: center;
+    inline-size: 2.75rem;
+    block-size: 2.75rem;
+    border: var(--border-width-1) solid rgb(255 255 255 / 0.3);
+    border-radius: var(--radius-full);
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .sujet__corps { font-size: var(--font-body2-size); }
+  .sujet__corps p + p { margin-block-start: var(--space-2); }
+  .sujet__corps h3 { font-size: var(--font-h5-size); margin-block: var(--space-4) var(--space-2); }
+  .sujet__corps h3:first-child { margin-block-start: 0; }
+
+  /* Présentation */
+  .presentation { display: grid; gap: var(--space-4); }
+  .presentation__portrait { max-inline-size: 11rem; }
+  .presentation__portrait .portrait__initiales { font-size: 3.5rem; }
+  .presentation .faits { margin-block-start: var(--space-4); }
+  .presentation__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block-start: var(--space-4); }
+  .presentation__actions .btn { min-height: 2.75rem; padding-inline: var(--space-4); font-size: var(--font-body2-size); }
+  .sujet .btn--outline { color: #fff; border-color: rgb(255 255 255 / 0.5); }
+
+  /* Expériences */
+  .experiences-grille { display: grid; gap: var(--space-6); }
+  .exp-colonne h3 { display: flex; gap: var(--space-2); align-items: baseline; }
+  .exp-colonne h3 span { font-family: var(--font-subtitle); font-size: var(--font-caption-size); color: var(--color-accent-300); }
+  .sujet .experience__periode { color: var(--color-accent-300); }
+  .sujet .experience__role { font-size: var(--font-body2-size); }
+  .sujet .experience__points li { font-size: 0.75rem; line-height: 1.35; }
+  .sujet .experiences { gap: var(--space-4); margin-block-start: var(--space-3); }
+  .sujet .experience__points { gap: var(--space-1); margin-block-start: var(--space-2); }
+  .sujet .experience__structure { font-size: var(--font-body2-size); }
+
+  /* Vision */
+  .vision { display: grid; gap: var(--space-6); }
+  .sujet .principes li,
+  .sujet .valeurs li { padding-block: var(--space-2); }
+  .sujet .principes h3,
+  .sujet .valeurs h3 { font-size: var(--font-body2-size); margin: 0; }
+  .sujet .principes p,
+  .sujet .valeurs p { font-size: 0.8125rem; }
+  .sujet .valeurs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  /* Outils */
+  .sujet .outils__groupe + .outils__groupe { margin-block-start: var(--space-4); }
+  .sujet .outils__groupe h3 { margin-block: 0 var(--space-2); font-size: var(--font-body2-size); }
+  .sujet .etiquettes li { font-size: 0.6875rem; padding-block: 0.125rem; }
+
+  /* Langues */
+  .langues {
+    display: grid;
+    gap: var(--space-6);
+    padding: 0;
+  }
+
+  .langue {
+    display: grid;
+    gap: var(--space-2);
+    padding-block-start: var(--space-4);
+    border-block-start: var(--border-width-1) solid var(--border-default);
+  }
+
+  .langue__salut {
+    font-family: var(--font-heading);
+    font-size: var(--font-display-md-size);
+    font-weight: var(--font-display-weight);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+  }
+
+  /* Trait, puis remplissage : le salut se dessine à l'ouverture du panneau avant de se colorer. */
+  @media (width >= 64rem) and (height >= 40rem) {
+    .langue__salut {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1.5px var(--text-primary);
+      transition: -webkit-text-fill-color 700ms var(--ease-out) 400ms;
+    }
+
+    .sujet:not([hidden]) .langue__salut { -webkit-text-fill-color: var(--text-primary); }
+  }
+
+  .langue__nom { font-size: var(--font-h4-size); margin: 0; }
+  .langue__niveau { font-family: var(--font-subtitle); font-size: var(--font-caption-size); letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
+
+  .langue__echelle {
+    display: flex;
+    gap: var(--space-2);
+    margin-block-start: var(--space-2);
+  }
+
+  .langue__echelle span {
+    inline-size: 0.75rem;
+    block-size: 0.75rem;
+    border: var(--border-width-1) solid var(--border-strong);
+    border-radius: var(--radius-full);
+  }
+
+  .langue__echelle .est-plein {
+    background: var(--color-accent-500);
+    border-color: var(--color-accent-500);
+  }
+
+  /* Passions */
+  .passions { display: grid; gap: var(--space-5); padding: 0; }
+
+  .passion { padding-block-start: var(--space-3); border-block-start: var(--border-width-2) solid var(--color-accent-500); }
+
+  .passion__visuel {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 4 / 3;
+    margin-block-end: var(--space-3);
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background: rgb(255 255 255 / 0.08);
+    font-family: var(--font-subtitle);
+    font-size: var(--font-caption-size);
+    color: var(--text-muted);
+  }
+
+  .passion__visuel:empty { display: none; }
+
+  .passion__visuel img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  .passion__numero {
+    margin-block-end: var(--space-1);
+    font-family: var(--font-subtitle);
+    font-size: var(--font-caption-size);
+    letter-spacing: 0.1em;
+    color: var(--color-accent-300);
+  }
+
+  .passion h3 { margin-block: 0 var(--space-1); font-size: var(--font-h5-size); }
+
+  @media (width >= 40rem) {
+    .langues { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .passions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .experiences-grille { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .vision { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  /* ── Une seule vue ── */
+  @media (width >= 64rem) and (height >= 40rem) {
+    .voyage__scene {
+      position: absolute;
+      inset: 0;
+      display: block;
+      overflow: hidden;
+    }
+
+    .voyage__tete {
+      position: absolute;
+      inset-block-start: var(--space-4);
+      inset-inline-start: var(--gutter);
+      z-index: 3;
+      padding: 0;
+    }
+
+    .voyage__titre { font-size: var(--font-h2-size); }
+    .voyage__position { display: block; }
+
+    .voyage__carte {
+      position: absolute;
+      inset: 0;
+      block-size: auto;
+    }
+
+    .voyage__etapes {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: block;
+      padding: 0;
+      pointer-events: none;
+      transition: opacity 250ms var(--ease-out);
+    }
+
+    .voyage__scene[data-sujet] .voyage__etapes { opacity: 0; }
+
+    .voyage__etape {
+      position: absolute;
+      inset-block: var(--space-16) 5rem;
+      inset-inline: var(--gutter);
+      display: grid;
+      grid-template-columns: minmax(0, 27rem) minmax(0, 1fr);
+      align-items: end;
+      gap: var(--space-8);
+      padding-inline: max(0px, calc((100% - var(--content-max-width)) / 2));
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .voyage__etape { grid-template-columns: minmax(0, 30rem) minmax(0, 1fr); }
+
+    /* La carte d'étape s'adapte à la hauteur de la fenêtre : tout le texte reste visible. */
+    .voyage__texte { padding: clamp(1rem, 2.6dvh, 1.5rem); gap: clamp(0.25rem, 0.9dvh, 0.5rem); }
+    .voyage__lieu { font-size: clamp(1.5rem, 4.6dvh, 2.75rem); }
+    .voyage__resume { font-size: clamp(0.75rem, 1.65dvh, 0.875rem); line-height: 1.4; }
+    .voyage__infos > div { grid-template-columns: max-content minmax(0, 1fr); column-gap: var(--space-3); }
+    .voyage__infos dd { font-size: clamp(0.75rem, 1.65dvh, 0.875rem); }
+    .voyage .etiquettes { gap: var(--space-1); }
+    .voyage .etiquettes li { font-size: 0.6875rem; padding-block: 0.125rem; }
+
+    .voyage__photos {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      gap: var(--space-4);
+    }
+
+    .voyage__indice {
+      position: absolute;
+      inset-block-end: 4.75rem;
+      inset-inline: 0;
+      z-index: 2;
+      display: block;
+      text-align: center;
+      font-family: var(--font-subtitle);
+      font-size: var(--font-caption-size);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgb(255 255 255 / 0.72);
+      pointer-events: none;
+      transition: opacity 400ms var(--ease-out);
+    }
+
+    .voyage__indice.est-masque,
+    .voyage__scene[data-sujet] .voyage__indice { opacity: 0; }
+
+    .voyage__rail {
+      position: absolute;
+      inset-block-end: var(--space-4);
+      inset-inline: var(--gutter);
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+    }
+
+    .voyage__rail ol {
+      display: flex;
+      gap: var(--space-2);
+      padding: 0;
+      list-style: none;
+    }
+
+    .voyage__rail button,
+    .voyage__sujets button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      min-block-size: 2.75rem;
+      padding-inline: var(--space-4);
+      border: var(--border-width-1) solid rgb(255 255 255 / 0.3);
+      border-radius: var(--radius-full);
+      background: rgb(6 15 33 / 0.7);
+      color: var(--text-inverse);
+      font-size: var(--font-body2-size);
+      -webkit-tap-highlight-color: transparent;
+      transition: background-color 150ms var(--ease-out), border-color 150ms var(--ease-out);
+    }
+
+    .voyage__rail button > span:first-child { font-family: var(--font-subtitle); font-size: var(--font-caption-size); color: var(--color-accent-300); }
+
+    .voyage__rail .voyage__fleche { min-inline-size: 2.75rem; padding-inline: 0; }
+    .voyage__rail .voyage__fleche > span:first-child { font-family: inherit; font-size: 1.125rem; color: inherit; }
+
+    .voyage__rail button[aria-current='true'] { background: var(--action-cta); border-color: var(--action-cta); }
+    .voyage__rail button[aria-current='true'] > span:first-child { color: var(--text-inverse); }
+
+    .voyage__sujets {
+      position: absolute;
+      inset-block-start: var(--space-4);
+      inset-inline-end: var(--gutter);
+      z-index: 5;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: var(--space-2);
+      max-inline-size: 62%;
+    }
+
+    .voyage__sujets button[aria-expanded='true'] { background: var(--text-inverse); border-color: var(--text-inverse); color: var(--color-primary-950); }
+
+    .voyage__panneaux {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      display: block;
+      padding: 0;
+      pointer-events: none;
+    }
+
+    .sujet {
+      position: absolute;
+      inset-block-start: 4.5rem;
+      inset-inline-end: var(--gutter);
+      inline-size: min(34rem, calc(100% - 2 * var(--gutter)));
+      max-block-size: calc(100% - 4.5rem - 5rem);
+      overflow: auto;
+      overscroll-behavior: contain;
+      padding: var(--space-6);
+      pointer-events: auto;
+      backdrop-filter: blur(12px);
+    }
+
+    .sujet--large { inline-size: min(66rem, calc(100% - 2 * var(--gutter))); }
+    .sujet__fermer { display: grid; }
+    .presentation { grid-template-columns: 11rem minmax(0, 1fr); }
+    .sujet .outils { columns: 2; column-gap: var(--space-6); }
+    .sujet .outils__groupe { break-inside: avoid; }
+    .passions { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+
+  @media (hover: hover) {
+    .voyage__rail button:hover,
+    .voyage__sujets button:hover,
+    .sujet__fermer:hover { border-color: var(--text-inverse); }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .voyage__rail button:active,
+    .voyage__sujets button:active { scale: 0.96; }
+  }
+
+  @media (width < 64rem) {
+    .voyage__rail-nom { display: none; }
+  }
+}

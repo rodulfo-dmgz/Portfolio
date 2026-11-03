@@ -1,0 +1,358 @@
+/* Expertises : volets (components/volets.js) et bandeaux de mots (components/defilement.js). */
+@layer components {
+  .volets-zone { padding-block-end: var(--space-12); }
+
+  .volets {
+    display: grid;
+    gap: var(--space-3);
+    min-block-size: 20rem;
+  }
+
+  .volet {
+    --volet-accent: var(--color-primary-300);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: var(--radius-2xl);
+    background: var(--volet-fond, var(--color-primary-800));
+    color: var(--text-inverse);
+  }
+
+  .volet:nth-child(1) { --volet-fond: linear-gradient(160deg, var(--color-primary-700), var(--color-primary-950)); }
+  .volet:nth-child(2) { --volet-fond: linear-gradient(160deg, var(--color-secondary-800), var(--color-secondary-950)); --volet-accent: var(--color-secondary-300); }
+  .volet:nth-child(3) { --volet-fond: linear-gradient(160deg, var(--color-accent-900), var(--color-accent-950)); --volet-accent: var(--color-accent-300); }
+  .volet:nth-child(4) { --volet-fond: linear-gradient(160deg, var(--color-primary-800), var(--color-primary-950)); --volet-accent: var(--color-primary-200); }
+
+  /* Anneaux concentriques en fond, façon orbites. */
+  .volet::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: repeating-radial-gradient(circle at 100% 0, rgb(255 255 255 / 0.07) 0 1px, transparent 1px 30px);
+  }
+
+  .volet :focus-visible { outline-color: var(--text-inverse); }
+
+  .volet__titre { margin: 0; font-size: inherit; color: inherit; }
+
+  .volet__bouton {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--space-4);
+    inline-size: 100%;
+    min-block-size: 4.5rem;
+    padding: var(--space-4) var(--space-6);
+    color: inherit;
+    text-align: start;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .volet__numero {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+    font-weight: var(--font-display-weight);
+    line-height: 1;
+    color: var(--volet-accent);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1.5px var(--volet-accent);
+    transition: -webkit-text-fill-color 500ms var(--ease-out);
+  }
+
+  .volet[data-ouvert] .volet__numero { -webkit-text-fill-color: var(--volet-accent); }
+
+  .volet__nom {
+    font-size: var(--font-h4-size);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.15;
+  }
+
+  /* Croix qui devient un trait quand le volet est ouvert. */
+  .volet__marque {
+    position: relative;
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+  }
+
+  .volet__marque::before,
+  .volet__marque::after {
+    content: '';
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline: 0;
+    block-size: 2px;
+    margin-block-start: -1px;
+    background: currentColor;
+    transition: rotate 400ms var(--ease-expo);
+  }
+
+  .volet__marque::after { rotate: 90deg; }
+  .volet[data-ouvert] .volet__marque::after { rotate: 0deg; }
+
+  .volet__corps {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 500ms var(--ease-expo);
+  }
+
+  .volet[data-ouvert] .volet__corps { grid-template-rows: 1fr; }
+
+  .volet__contenu {
+    min-block-size: 0;
+    overflow: hidden;
+    padding-inline: var(--space-6);
+    visibility: hidden;
+    transition: visibility 0s 500ms;
+  }
+
+  .volet[data-ouvert] .volet__contenu {
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  .volet__grand-titre { display: none; }
+
+  .volet__resume {
+    max-inline-size: 38ch;
+    color: rgb(255 255 255 / 0.9);
+  }
+
+  .volet__liste {
+    display: grid;
+    gap: var(--space-2);
+    margin-block: var(--space-5);
+    padding: 0;
+  }
+
+  .volet__liste li {
+    position: relative;
+    padding-inline-start: var(--space-5);
+    font-size: var(--font-body2-size);
+    color: rgb(255 255 255 / 0.86);
+  }
+
+  .volet__liste li::before {
+    content: '—';
+    position: absolute;
+    inset-inline-start: 0;
+    color: var(--volet-accent);
+  }
+
+  .volet__lien {
+    margin-block-end: var(--space-6);
+    color: var(--text-inverse);
+  }
+
+  @media (hover: hover) {
+    .volet__bouton:hover .volet__nom { text-decoration: underline; text-underline-offset: 0.2em; }
+  }
+
+  /* ── Grand écran : volets côte à côte, l'ouvert s'élargit ── */
+  @media (width >= 64rem) {
+    .volets {
+      display: flex;
+      block-size: clamp(28rem, calc(100svh - 25rem), 40rem);
+    }
+
+    .volet {
+      flex: 1 1 0;
+      min-inline-size: 0;
+      transition: flex-grow 700ms var(--ease-expo);
+    }
+
+    .volet[data-ouvert] { flex-grow: 5; }
+
+    .volet__titre { position: absolute; inset: 0; }
+
+    .volet__bouton {
+      position: absolute;
+      inset: 0;
+      display: block;
+      block-size: 100%;
+      padding: var(--space-6);
+    }
+
+    .volet__numero { position: absolute; inset-block-start: var(--space-5); inset-inline-start: var(--space-5); font-size: clamp(2rem, 1.2rem + 1.6vw, 3.5rem); }
+
+    /* Le nom replié se lit de bas en haut sous le numéro ; s'il est long, il passe sur une seconde colonne (jamais coupé). */
+    .volet__nom {
+      position: absolute;
+      top: 6rem;
+      bottom: var(--space-5);
+      left: var(--space-5);
+      writing-mode: vertical-rl;
+      rotate: 180deg;
+      font-size: 1rem;
+      line-height: 1.2;
+      text-wrap: balance;
+      transition: opacity 250ms var(--ease-out);
+    }
+
+    .volet[data-ouvert] .volet__nom { opacity: 0; }
+
+    .volet__marque { position: absolute; inset-block-start: var(--space-5); inset-inline-end: var(--space-5); }
+
+    /* Le contenu garde sa largeur pendant que le volet s'élargit : pas de reflux du texte. */
+    .volet__corps {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      min-block-size: 0;
+      padding: var(--space-8);
+      pointer-events: none;
+      transition: none;
+    }
+
+    .volet__contenu {
+      flex: none;
+      inline-size: 30rem;
+      max-block-size: 100%;
+      min-block-size: 0;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: none;
+      padding-inline: 0;
+      opacity: 0;
+      transition: opacity 250ms var(--ease-out), visibility 0s 250ms;
+    }
+
+    .volet[data-ouvert] .volet__contenu {
+      opacity: 1;
+      pointer-events: auto;
+      transition: opacity 400ms var(--ease-out) 250ms, visibility 0s;
+    }
+
+    .volet__grand-titre {
+      display: block;
+      margin-block-end: var(--space-4);
+      font-family: var(--font-heading);
+      font-size: clamp(1.25rem, 3.4dvh, 2.25rem);
+      font-weight: var(--font-display-weight);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--text-inverse);
+    }
+
+    .volet__liste { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2) var(--space-4); margin-block: var(--space-4); }
+    .volet__liste li { font-size: clamp(0.75rem, 1.55dvh, 0.875rem); line-height: 1.35; }
+    .volet__resume { font-size: clamp(0.8125rem, 1.7dvh, 1rem); line-height: 1.45; }
+    .volet__lien { margin-block-end: 0; }
+  }
+
+  @media (width >= 64rem) and (hover: hover) {
+    .volet:not([data-ouvert]):hover { filter: brightness(1.12); }
+  }
+
+  /* ── Bandeaux de mots ── */
+  .defilement {
+    display: grid;
+    gap: var(--space-2);
+    padding-block: var(--space-12);
+    overflow: clip;
+    user-select: none;
+  }
+
+  .defilement__piste {
+    display: flex;
+    inline-size: max-content;
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 1rem + 9vw, 9rem);
+    font-weight: var(--font-display-weight);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    white-space: pre;
+    color: var(--text-primary);
+    will-change: transform;
+  }
+
+  .defilement__piste {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--text-primary);
+  }
+
+  .defilement span::before { content: attr(data-texte); }
+
+  /* ── Page d'expertises ── */
+  .expertises-ecran { position: relative; overflow-x: clip; }
+  .expertises-ecran__contenu { position: relative; z-index: 1; }
+  .fond-ecran__texte.defilement { padding: 0; gap: 0; }
+
+  .methode-bande { padding-block: var(--space-6) var(--space-8); }
+  .methode-bande ol { display: grid; gap: var(--space-4); margin-block-start: var(--space-3); padding: var(--space-3); list-style: none; }
+
+  /* Les textes courts reposent sur un fond dépoli : le réseau et la pluie ne passent pas derrière eux. */
+  .methode-bande ol,
+  .expertises-ecran .page-tete__intro {
+    background: color-mix(in srgb, var(--surface-app) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius-lg);
+  }
+
+  .methode-bande li {
+    padding-block-start: var(--space-2);
+    border-block-start: var(--border-width-2) solid var(--color-accent-600);
+  }
+
+  .methode-bande__numero { font-family: var(--font-subtitle); font-size: var(--font-caption-size); color: var(--color-accent-700); }
+  html.dark .methode-bande__numero { color: var(--color-accent-400); }
+  .methode-bande h3 { font-size: var(--font-h5-size); }
+  .methode-bande li p:last-child { font-size: var(--font-body2-size); color: var(--text-secondary); }
+
+  @media (width >= 40rem) { .methode-bande ol { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (width >= 64rem) { .methode-bande ol { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+
+  /* Un seul écran : titre compact, volets qui prennent la hauteur restante, méthode en bandeau. */
+  @media (width >= 64rem) and (height >= 40rem) {
+    .expertises-ecran__contenu {
+      block-size: 100%;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr) auto;
+    }
+
+    .expertises-ecran .page-tete {
+      display: grid;
+      grid-template-columns: auto minmax(0, 36rem);
+      align-items: last baseline;
+      justify-content: space-between;
+      column-gap: var(--space-8);
+      padding-block: var(--space-5) var(--space-3);
+    }
+
+    .expertises-ecran .page-tete .eyebrow { grid-column: 1 / -1; margin-block-end: var(--space-1); }
+    .expertises-ecran .page-tete__titre { margin-block: 0; font-size: var(--font-display-lg-size); }
+    .expertises-ecran .page-tete__intro { margin: 0; padding: var(--space-2) var(--space-3); font-size: var(--font-body2-size); }
+
+    .expertises-ecran .volets-zone { min-block-size: 0; padding-block-end: 0; }
+    .expertises-ecran .volets { block-size: 100%; min-block-size: 0; }
+    .methode-bande { padding-block: var(--space-3); }
+    .methode-bande ol { margin-block-start: var(--space-2); padding: var(--space-2) var(--space-3); }
+
+    .volet[data-ouvert] .volet__numero { font-size: var(--font-h3-size); }
+    .volet__corps { padding-block-start: 3.5rem; }
+  }
+
+  /* Écran peu haut : tout reste visible, en plus compact (le texte ne disparaît jamais). */
+  @media (width >= 64rem) and (height >= 40rem) and (height < 50rem) {
+    .expertises-ecran .page-tete { padding-block-end: var(--space-2); }
+    .expertises-ecran .page-tete .eyebrow { display: none; }
+    .expertises-ecran .page-tete__titre { font-size: var(--font-display-md-size); }
+    .volet__contenu { inline-size: 32rem; }
+    .volet__grand-titre { margin-block-end: var(--space-1); font-size: 1.375rem; }
+    .volet__resume { font-size: var(--font-body2-size); }
+    .volet__liste { margin-block: var(--space-1) var(--space-2); gap: 0 var(--space-4); }
+    .volet__liste li { font-size: var(--font-caption-size); }
+    .volet__lien { font-size: var(--font-body2-size); }
+  }
+
+  @media (width >= 75rem) and (height >= 40rem) {
+    .volet__contenu { inline-size: 42rem; }
+    .volet__liste { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .volet__corps { padding: var(--space-4) var(--space-5); padding-block-start: 2.75rem; }
+
+    .methode-bande li { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-2); align-items: baseline; }
+    .methode-bande li p:last-child { grid-column: 1 / -1; font-size: var(--font-caption-size); line-height: 1.35; }
+    .methode-bande h3 { font-size: var(--font-body1-size); }
+  }
+}
