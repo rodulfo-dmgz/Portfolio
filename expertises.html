@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!--@include head-->
+    <title>Expertises — Rodulfo Dominguez</title>
+    <meta name="description" content="Ingénierie pédagogique, conception de parcours, formation professionnelle et digital learning : les expertises de Rodulfo Dominguez." />
+    <meta property="og:title" content="Expertises — Rodulfo Dominguez" />
+    <meta property="og:description" content="Ingénierie pédagogique, conception de parcours, formation professionnelle et digital learning." />
+    <meta property="og:type" content="website" />
+  </head>
+  <body data-page="expertises">
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <!--@include header-->
+
+    <main id="contenu">
+      <header class="page-tete container">
+        <p class="eyebrow">{{profil.titre}}</p>
+        <h1 class="page-tete__titre">Expertises</h1>
+        <p class="page-tete__intro">Quatre domaines qui se complètent : de l'analyse du besoin à l'évaluation des apprentissages, en présentiel comme en numérique.</p>
+        <nav class="sommaire" aria-label="Domaines d'expertise">
+          <ul role="list" data-rendu="sommaire"></ul>
+        </nav>
+      </header>
+
+      <div data-rendu="expertises-detail"></div>
+
+      <section class="section container appel" aria-labelledby="appel-titre">
+        <h2 class="text-display-md" id="appel-titre">Un besoin de formation à cadrer ?</h2>
+        <div class="hero__actions">
+          <a class="btn btn--cta" href="/contact">Me contacter<!--@icon arrow-right--></a>
+          <a class="btn btn--outline" href="/realisations">Voir les réalisations</a>
+        </div>
+      </section>
+    </main>
+
+    <!--@include footer-->
+    <script type="module" src="/src/scripts/main.js"></script>
+    <script type="module" src="/src/pages/expertises.js"></script>
+  </body>
+</html>

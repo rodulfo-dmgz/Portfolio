@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!--@include head-->
+    <title>Contact — Rodulfo Dominguez</title>
+    <meta name="description" content="Contacter Rodulfo Dominguez, concepteur et ingénieur pédagogique à Montpellier, par email ou sur LinkedIn." />
+    <meta property="og:title" content="Contact — Rodulfo Dominguez" />
+    <meta property="og:description" content="Contacter Rodulfo Dominguez par email ou sur LinkedIn." />
+    <meta property="og:type" content="website" />
+  </head>
+  <body data-page="contact">
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <!--@include header-->
+
+    <main id="contenu">
+      <header class="page-tete container">
+        <p class="eyebrow">{{profil.ville}} · {{profil.pays}}</p>
+        <h1 class="page-tete__titre">Contact</h1>
+        <p class="page-tete__intro">Un projet de formation, un parcours à concevoir ou une collaboration : décrivez votre besoin par email ou sur LinkedIn.</p>
+      </header>
+
+      <section class="section container section--serree contact" aria-label="Coordonnées et formulaire">
+        <div class="contact__coordonnees">
+          <p class="eyebrow">Email</p>
+          <a class="contact-accueil__email" href="mailto:{{profil.contact.email}}">{{profil.contact.email}}</a>
+          <ul class="contact__liens" role="list">
+            <li><a class="lien-fleche" href="{{profil.contact.linkedin}}" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (nouvel onglet)</span><!--@icon arrow-up-right--></a></li>
+            <li><a class="lien-fleche" href="{{profil.contact.github}}" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (nouvel onglet)</span><!--@icon arrow-up-right--></a></li>
+          </ul>
+          <p class="contact__note" data-formulaire-indisponible>Le formulaire de contact n'est pas encore en service. Écrivez-moi directement par email ou sur LinkedIn.</p>
+        </div>
+
+        <form class="formulaire" data-formulaire novalidate hidden>
+          <h2 class="formulaire__titre">Écrire un message</h2>
+
+          <div class="champ">
+            <label for="champ-nom">Nom</label>
+            <input id="champ-nom" name="nom" type="text" autocomplete="name" required aria-describedby="erreur-nom" />
+            <p class="champ__erreur" id="erreur-nom" hidden></p>
+          </div>
+
+          <div class="champ">
+            <label for="champ-email">Adresse email</label>
+            <input id="champ-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="nom@exemple.fr" required aria-describedby="erreur-email" />
+            <p class="champ__erreur" id="erreur-email" hidden></p>
+          </div>
+
+          <div class="champ">
+            <label for="champ-message">Message</label>
+            <textarea id="champ-message" name="message" rows="6" required minlength="10" aria-describedby="aide-message erreur-message"></textarea>
+            <p class="champ__aide" id="aide-message">10 caractères minimum.</p>
+            <p class="champ__erreur" id="erreur-message" hidden></p>
+          </div>
+
+          <p class="formulaire__alerte" role="alert" data-alerte hidden></p>
+          <button class="btn btn--cta" type="submit" data-envoyer>Envoyer le message</button>
+          <p class="formulaire__confirmation" role="status" data-confirmation hidden></p>
+        </form>
+      </section>
+    </main>
+
+    <!--@include footer-->
+    <script type="module" src="/src/scripts/main.js"></script>
+    <script type="module" src="/src/pages/contact.js"></script>
+  </body>
+</html>

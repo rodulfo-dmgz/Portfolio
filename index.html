@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!--@include head-->
+    <title>Rodulfo Dominguez — Ingénieur pédagogique à Montpellier</title>
+    <meta name="description" content="Portfolio de Rodulfo Dominguez, concepteur et ingénieur pédagogique à Montpellier. Parcours de formation, digital learning et formation professionnelle." />
+    <meta property="og:title" content="Rodulfo Dominguez — Ingénieur pédagogique à Montpellier" />
+    <meta property="og:description" content="Parcours de formation, digital learning et formation professionnelle." />
+    <meta property="og:type" content="website" />
+  </head>
+  <body data-page="accueil">
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <!--@include header-->
+
+    <main id="contenu">
+      <section class="hero container" aria-labelledby="hero-titre">
+        <div class="hero__titrage">
+          <p class="eyebrow">{{profil.titre}} · {{profil.ville}}</p>
+          <h1 class="hero__titre" id="hero-titre">
+            <span>{{profil.accroche.0}}</span>
+            <span>{{profil.accroche.1}}</span>
+            <span>{{profil.accroche.2}}</span>
+          </h1>
+        </div>
+
+        <div class="hero__intro">
+          <p>{{profil.presentationCourte}}</p>
+          <div class="hero__actions">
+            <a class="btn btn--cta" href="/realisations">Découvrir les réalisations<!--@icon arrow-right--></a>
+            <a class="btn btn--outline" href="/a-propos">À propos</a>
+          </div>
+        </div>
+
+        <div class="hero__domaines">
+          <h2 class="eyebrow">Domaines d’intervention</h2>
+          <ul class="liste-numerotee" role="list">
+            <li>{{profil.domaines.0}}</li>
+            <li>{{profil.domaines.1}}</li>
+            <li>{{profil.domaines.2}}</li>
+            <li>{{profil.domaines.3}}</li>
+          </ul>
+        </div>
+
+        <div class="portrait hero__portrait" data-rendu="portrait"></div>
+
+        <a class="hero__defiler" href="#realisations" aria-label="Défiler vers les réalisations">
+          <span>Défiler</span><!--@icon arrow-down-->
+        </a>
+      </section>
+
+      <section class="section container" id="realisations" aria-labelledby="realisations-titre">
+        <header class="section-tete">
+          <div>
+            <p class="eyebrow">01 — Réalisations</p>
+            <h2 class="text-display-md" id="realisations-titre">Réalisations sélectionnées</h2>
+          </div>
+          <a class="lien-fleche" href="/realisations">Toutes les réalisations<!--@icon arrow-right--></a>
+        </header>
+        <div class="projets" data-rendu="projets"></div>
+      </section>
+
+      <section class="section container" id="expertises" aria-labelledby="expertises-titre">
+        <div class="expertises">
+          <header class="expertises__tete">
+            <p class="eyebrow">02 — Expertises</p>
+            <h2 class="text-display-md" id="expertises-titre">Quatre domaines, une même exigence</h2>
+            <a class="lien-fleche" href="/expertises">Toutes les expertises<!--@icon arrow-right--></a>
+          </header>
+          <div class="expertises__liste" data-rendu="expertises"></div>
+        </div>
+      </section>
+
+      <section class="bande" id="methode" aria-labelledby="methode-titre">
+        <div class="container bande__contenu">
+          <header class="section-tete">
+            <div>
+              <p class="eyebrow">03 — Méthodologie</p>
+              <h2 class="text-display-md" id="methode-titre">Une méthode en cinq étapes</h2>
+            </div>
+          </header>
+          <ol class="etapes" role="list" data-rendu="methode"></ol>
+        </div>
+      </section>
+
+      <section class="section container" id="a-propos" aria-labelledby="apropos-titre">
+        <div class="apropos">
+          <div class="portrait apropos__portrait" data-rendu="portrait"></div>
+          <div class="apropos__texte">
+            <p class="eyebrow">04 — À propos</p>
+            <h2 class="text-display-md" id="apropos-titre">{{profil.nom}}</h2>
+            <div class="apropos__presentation" data-rendu="presentation"></div>
+            <dl class="faits" data-rendu="faits"></dl>
+            <a class="lien-fleche" href="/a-propos">Lire mon parcours<!--@icon arrow-right--></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container contact-accueil" id="contact" aria-labelledby="contact-titre">
+        <p class="eyebrow">05 — Contact</p>
+        <h2 class="text-display-md" id="contact-titre">Un projet de formation à concevoir ?</h2>
+        <p class="contact-accueil__intro">Décrivez votre besoin par email ou sur LinkedIn.</p>
+        <a class="contact-accueil__email" href="mailto:{{profil.contact.email}}">{{profil.contact.email}}</a>
+        <div class="hero__actions">
+          <a class="btn btn--cta" href="mailto:{{profil.contact.email}}">Écrire un email<!--@icon mail--></a>
+          <a class="btn btn--outline" href="{{profil.contact.linkedin}}" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (nouvel onglet)</span><!--@icon arrow-up-right--></a>
+        </div>
+      </section>
+    </main>
+
+    <!--@include footer-->
+    <script type="module" src="/src/scripts/main.js"></script>
+    <script type="module" src="/src/pages/accueil.js"></script>
+  </body>
+</html>

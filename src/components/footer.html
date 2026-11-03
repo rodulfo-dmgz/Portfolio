@@ -1,0 +1,33 @@
+<footer class="site-footer">
+  <div class="site-footer__haut container">
+    <div class="site-footer__signature">
+      <p class="site-footer__nom">{{profil.nom}}</p>
+      <p>{{profil.titre}}</p>
+      <p class="site-footer__lieu">{{profil.ville}} · {{profil.pays}}</p>
+    </div>
+
+    <nav class="site-footer__bloc" aria-labelledby="pied-pages">
+      <h2 class="site-footer__titre" id="pied-pages">Pages</h2>
+      <ul role="list">
+        <li><a href="/a-propos">À propos</a></li>
+        <li><a href="/expertises">Expertises</a></li>
+        <li><a href="/realisations">Réalisations</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-footer__bloc">
+      <h2 class="site-footer__titre" id="pied-reseaux">Contact et réseaux</h2>
+      <ul role="list" aria-labelledby="pied-reseaux">
+        <li><a href="mailto:{{profil.contact.email}}"><!--@icon mail-->Email</a></li>
+        <li><a href="{{profil.contact.linkedin}}" target="_blank" rel="noopener noreferrer"><!--@icon linkedin-->LinkedIn<span class="visually-hidden"> (nouvel onglet)</span></a></li>
+        <li><a href="{{profil.contact.github}}" target="_blank" rel="noopener noreferrer"><!--@icon github-->GitHub<span class="visually-hidden"> (nouvel onglet)</span></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="site-footer__bas container">
+    <p>© <span data-annee>2026</span> {{profil.nom}}</p>
+    <a href="/mentions-legales">Mentions légales</a>
+  </div>
+</footer>

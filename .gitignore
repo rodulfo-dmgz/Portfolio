@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.vercel/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+
+# Sources des polices (seuls les fichiers web de public/assets/fonts sont publiés)
+/Fonts/
+
+# Documents de travail
+PLAN DE DÉVELOPPEMENT*.md
+
+# Configuration locale des outils
+.claude/

@@ -1,0 +1,42 @@
+{
+  "etat": "provisoire",
+  "nom": "Rodulfo Dominguez",
+  "prenom": "Rodulfo",
+  "nomFamille": "Dominguez",
+  "titre": "Concepteur et ingénieur pédagogique",
+  "ville": "Montpellier",
+  "region": "Occitanie",
+  "pays": "France",
+  "accroche": [
+    "Former avec méthode.",
+    "Concevoir avec intention.",
+    "Créer avec précision."
+  ],
+  "presentationCourte": "Je conçois et déploie des parcours de formation certifiants et qualifiants pour le secteur tertiaire.",
+  "presentation": [
+    "Formateur professionnel d'adultes et ingénieur pédagogique basé à Montpellier, je conçois et déploie des parcours de formation certifiants et qualifiants pour le secteur tertiaire : comptabilité, paie, RH, gestion, outils numériques et transformation digitale.",
+    "Parallèlement, je développe des applications web pédagogiques sur mesure (LMS, ERP fictifs, cours interactifs avec IA, plateformes de suivi) qui servent de terrains d'apprentissage réels pour mes apprenants."
+  ],
+  "faits": [
+    { "libelle": "Expérience", "valeur": "5 ans dans le secteur tertiaire" },
+    { "libelle": "Langues", "valeur": "Espagnol (natif), français (C2), anglais (B2)" },
+    { "libelle": "Basé à", "valeur": "Montpellier, Occitanie" }
+  ],
+  "domaines": [
+    "Ingénierie pédagogique",
+    "Conception de parcours",
+    "Formation professionnelle",
+    "Digital learning"
+  ],
+  "contact": {
+    "email": "rodulfo_dominguez@live.com",
+    "linkedin": "https://www.linkedin.com/in/rodulfodominguez/",
+    "github": "https://github.com/rodulfo-dmgz"
+  },
+  "portrait": null,
+  "cv": null,
+  "aConfirmer": {
+    "source": "README du dépôt GitHub (V1)",
+    "champs": ["accroche", "presentationCourte", "presentation", "faits", "contact"]
+  }
+}

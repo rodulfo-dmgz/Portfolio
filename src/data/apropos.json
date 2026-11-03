@@ -1,0 +1,128 @@
+{
+  "etat": "provisoire",
+  "aConfirmer": {
+    "source": "README du dépôt GitHub et pages de la V1",
+    "remarque": "Les chiffres de la V1 (apprenants par an, taille d'équipe, gain de temps de reporting) ne sont pas repris : à ajouter seulement s'ils sont confirmés."
+  },
+  "intro": [
+    "Je suis Rodulfo Dominguez, un créateur dans l'âme qui a trouvé dans la pédagogie et le développement web le terrain idéal pour exprimer ma passion pour l'innovation et le partage.",
+    "Mon parcours international, du Mexique à la Guinée équatoriale puis à la France, m'a donné une vision multiculturelle de l'apprentissage : chaque étape m'a appris que la vraie richesse réside dans la diversité des perspectives et l'ouverture d'esprit.",
+    "Aujourd'hui, je conjugue expertise technique et sensibilité artistique pour concevoir des expériences d'apprentissage qui marquent les esprits et transforment les pratiques."
+  ],
+  "chapitres": [
+    {
+      "id": "mexique",
+      "numero": "01",
+      "lieu": "Mexique",
+      "precision": "Tapachula, Chiapas",
+      "texte": "J'ai grandi à Tapachula, ville frontalière entre le Pacifique et le Guatemala. Dans ce contexte multiculturel est née ma passion pour l'éducation et le partage : j'ai collaboré avec des organisations locales sur des projets éducatifs pour des jeunes de milieux défavorisés et animé des ateliers de formation en informatique.",
+      "competences": ["Animation de groupes", "Adaptation culturelle", "Gestion de projets communautaires"],
+      "experiences": [
+        { "periode": "Sept. 2016 – mai 2017", "structure": "Xplora Tours", "role": "Guide touristique anglophone", "points": [] },
+        { "periode": "Août 2014 – mars 2015", "structure": "Fiscalía General del Estado", "role": "Traduction anglais-espagnol (indépendant)", "points": [] },
+        { "periode": "Févr. 2012 – févr. 2014", "structure": "Quesería Charito", "role": "Supervision administrative", "points": [] }
+      ]
+    },
+    {
+      "id": "guinee-equatoriale",
+      "numero": "02",
+      "lieu": "Guinée équatoriale",
+      "precision": "Malabo",
+      "texte": "À Malabo, au Lycée français, j'ai découvert une culture riche qui a élargi ma vision du monde et renforcé mon engagement pour l'éducation multiculturelle. J'y ai expérimenté des approches d'enseignement adaptées à des contextes variés et contribué à des projets numériques pour améliorer l'accès aux ressources éducatives.",
+      "competences": ["Pédagogie interculturelle", "Flexibilité méthodologique", "Formation digitale"],
+      "experiences": [
+        {
+          "periode": "Janv. 2018 – sept. 2019",
+          "structure": "Lycée français de Malabo",
+          "role": "Chargé de CDI et de communication",
+          "points": [
+            "Création et animation d'un journal télévisé scolaire de la 6e à la 3e",
+            "Partenariats culturels avec plusieurs ambassades : tournois d'échecs, ateliers littéraires, cafés linguistiques",
+            "Activités littéraires trilingues au CDI",
+            "Ouverture du festival du cinéma scolaire aux écoles locales",
+            "Communication institutionnelle de l'établissement"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "france",
+      "numero": "03",
+      "lieu": "France",
+      "precision": "Montpellier, Occitanie",
+      "texte": "Montpellier est devenu le cœur de mon activité d'ingénierie pédagogique dans la formation professionnelle du secteur tertiaire, là où expertise technique et accompagnement humain se rejoignent. Chaque dispositif repose sur une ingénierie rigoureuse (analyse des besoins, positionnement, séquençage pédagogique, évaluation par compétences) alignée sur les référentiels du tertiaire : RNCP, TOSA, Qualiopi.",
+      "competences": ["Ingénierie pédagogique", "Développement web full-stack", "Gestion de projets de formation", "Design créatif"],
+      "experiences": [
+        {
+          "periode": "Depuis août 2021",
+          "structure": "Adrar Formation",
+          "role": "Ingénieur et formateur professionnel d'adultes (CDI)",
+          "points": [
+            "Conception et déploiement de dispositifs de formation hybrides et de blended learning, avec Moodle, H5P, Microsoft 365 et Google Workspace",
+            "Méthodes actives : classe inversée, gamification",
+            "Contribution aux réponses aux appels d'offres : analyse des cahiers des charges, propositions pédagogiques et budgétaires, soutenances",
+            "Pilotage qualité par tableaux de bord (Power BI, Looker Studio) : indicateurs pédagogiques, conformité Qualiopi, bilans",
+            "Coordination et professionnalisation d'une équipe de formateurs permanents et d'intervenants externes",
+            "Veille et intégration d'innovations pédagogiques (IA générative, learning analytics) ; suivi des financements (CPF, OPCO, France Travail, Transitions Pro)",
+            "Automatisation de processus administratifs (VBA, Power Query)"
+          ]
+        },
+        {
+          "periode": "Depuis juin 2021",
+          "structure": "RD Formation",
+          "role": "Fondateur et consultant en ingénierie de formation (auto-entrepreneur)",
+          "points": [
+            "Conseil en ingénierie pédagogique et dispositifs de formation sur mesure pour le secteur tertiaire : comptabilité, paie, gestion, outils numériques",
+            "Centralisation et structuration des ressources pédagogiques : bases documentaires, workflows de gestion de contenu, suivi des apprenants",
+            "Développement web sur mesure : applications métiers, plateformes pédagogiques, interfaces de gestion",
+            "Design graphique et identité visuelle pour des organismes de formation",
+            "Conception et automatisation de workflows administratifs et pédagogiques",
+            "Intégration d'outils d'IA dans les pratiques pédagogiques et les processus métiers"
+          ]
+        }
+      ]
+    }
+  ],
+  "approche": {
+    "paragraphes": [
+      "Je crois profondément que l'apprentissage doit être une expérience immersive et engageante. Trop souvent, la formation est perçue comme une contrainte : je veux qu'elle devienne un moment de découverte et de transformation.",
+      "Mon approche s'inspire de mes passions artistiques : je conçois chaque parcours comme une œuvre pédagogique, où le design, le storytelling et l'interactivité s'allient pour créer des moments mémorables."
+    ],
+    "principes": [
+      { "titre": "Apprentissage actif", "texte": "Les apprenants sont acteurs de leur formation, pas spectateurs." },
+      { "titre": "Pratique immédiate", "texte": "Chaque concept s'accompagne d'exercices concrets et applicables." },
+      { "titre": "Personnalisation", "texte": "Adaptation des parcours aux profils et aux objectifs de chacun." },
+      { "titre": "Créativité", "texte": "Encouragement de l'expérimentation et de la pensée originale." },
+      { "titre": "Bienveillance", "texte": "Un environnement sécurisant où l'erreur est source d'apprentissage." }
+    ],
+    "valeurs": [
+      { "titre": "Partage", "texte": "Transmission ouverte des savoirs" },
+      { "titre": "Innovation", "texte": "Toujours un temps d'avance" },
+      { "titre": "Adaptabilité", "texte": "S'ajuster à chaque contexte" },
+      { "titre": "Ouverture", "texte": "Mexique, Guinée équatoriale, France" }
+    ]
+  },
+  "competencesTransversales": [
+    "Analyse de besoins et cahiers des charges pédagogiques",
+    "Conception de parcours certifiants RNCP, TOSA et Qualiopi",
+    "Ingénierie de séquences selon ADDIE, CRAFT et DigComp 2.2",
+    "Évaluation formative et sommative, positionnement, bilans",
+    "Réponse aux appels d'offres : analyse, propositions pédagogiques et budgétaires",
+    "Pilotage qualité avec indicateurs pédagogiques et tableaux de bord",
+    "Coordination d'équipes pédagogiques pluridisciplinaires",
+    "Suivi des financements : CPF, OPCO, France Travail, Transitions Pro"
+  ],
+  "outils": [
+    { "groupe": "Outils auteurs et LMS", "elements": ["Moodle", "H5P", "Articulate 360", "Genially", "Google Workspace", "Microsoft 365", "Wooclap", "Klaxoon", "Mentimeter", "Kahoot", "Padlet", "Socrative"] },
+    { "groupe": "Développement web", "elements": ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Vue.js", "Next.js", "Tailwind CSS", "PHP", "Symfony", "Node.js", "Python", "MySQL", "PostgreSQL", "Supabase", "Firebase", "Git", "GitHub", "Docker"] },
+    { "groupe": "Données et pilotage", "elements": ["Power BI", "Looker Studio", "Power Query", "Excel VBA"] },
+    { "groupe": "Intelligence artificielle", "elements": ["Claude", "ChatGPT", "Gemini", "NotebookLM", "Mistral", "Ingénierie de prompts"] },
+    { "groupe": "Design et création", "elements": ["Figma", "Adobe Creative Cloud", "Photoshop", "Premiere Pro", "Canva"] }
+  ],
+  "passions": [
+    { "titre": "Musique", "texte": "Multi-instrumentiste et créateur audio, je compose des univers sonores qui racontent des histoires. La musique est mon langage universel." },
+    { "titre": "Cinéma et photographie", "texte": "Le cinéma et la photographie m'enseignent l'art du cadrage, de la lumière et de la narration visuelle." },
+    { "titre": "Peinture", "texte": "Fasciné par le surréalisme de Dalí, je trouve dans la peinture une liberté d'expression absolue." },
+    { "titre": "Cuisine", "texte": "Mes racines mexicaines se mêlent aux influences africaines et françaises pour une cuisine métissée." }
+  ]
+}

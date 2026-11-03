@@ -1,0 +1,245 @@
+{
+  "etat": "réalisations réelles, études de cas à compléter",
+  "categories": [
+    { "id": "ingenierie-pedagogique", "label": "Ingénierie pédagogique" },
+    { "id": "conception-parcours", "label": "Conception de parcours" },
+    { "id": "formation-professionnelle", "label": "Formation professionnelle" },
+    { "id": "digital-learning", "label": "Digital learning" },
+    { "id": "outils-pedagogiques", "label": "Développement d'outils pédagogiques" },
+    { "id": "innovation-ia", "label": "Innovation et intelligence artificielle" }
+  ],
+  "projets": [
+    {
+      "id": "projet-001",
+      "slug": "comptable-assistant",
+      "demo": false,
+      "etudeComplete": false,
+      "title": "Comptable Assistant",
+      "category": "conception-parcours",
+      "year": null,
+      "description": "Parcours certifiant TOSA niveaux 4 et 5 : plan comptable général, VBA et amortissements.",
+      "cover": null,
+      "coverAlt": "",
+      "featured": true,
+      "tags": ["Parcours certifiant", "TOSA", "Comptabilité"],
+      "content": {
+        "presentation": "Parcours certifiant TOSA niveaux 4 et 5 : plan comptable général, VBA et amortissements.",
+        "context": "",
+        "problem": "",
+        "objectives": [],
+        "audience": "",
+        "approach": [],
+        "tools": ["Excel VBA", "Web"],
+        "deliverables": [],
+        "results": "",
+        "gallery": [],
+        "resources": [
+          { "type": "demo", "titre": "Ouvrir le parcours", "url": "https://rodulfo-dmgz.github.io/rd-gestion/Comptable_assistant/" }
+        ]
+      }
+    },
+    {
+      "id": "projet-002",
+      "slug": "masterclass-kpi-ca",
+      "demo": false,
+      "etudeComplete": false,
+      "title": "Masterclass KPI CA",
+      "category": "digital-learning",
+      "year": null,
+      "description": "Cours interactif sur les indicateurs commerciaux : visualisation de données et contrôle de gestion.",
+      "cover": null,
+      "coverAlt": "",
+      "featured": true,
+      "tags": ["Cours interactif", "KPI", "Contrôle de gestion"],
+      "content": {
+        "presentation": "Cours interactif sur les indicateurs commerciaux : visualisation de données et contrôle de gestion.",
+        "context": "",
+        "problem": "",
+        "objectives": [],
+        "audience": "",
+        "approach": [],
+        "tools": ["HTML", "CSS", "JavaScript"],
+        "deliverables": [],
+        "results": "",
+        "gallery": [],
+        "resources": [
+          { "type": "demo", "titre": "Ouvrir le cours", "url": "https://rodulfo-dmgz.github.io/rd-gestion/CA_KPI/index.html" }
+        ]
+      }
+    },
+    {
+      "id": "projet-003",
+      "slug": "rd-gestion-beta",
+      "demo": false,
+      "etudeComplete": false,
+      "title": "RD Gestion Beta",
+      "category": "outils-pedagogiques",
+      "year": null,
+      "description": "ERP multi-tenant avec des rôles d'administrateur, de formateur et de stagiaire.",
+      "cover": null,
+      "coverAlt": "",
+      "featured": true,
+      "tags": ["ERP", "Multi-tenant", "Rôles"],
+      "content": {
+        "presentation": "ERP multi-tenant avec des rôles d'administrateur, de formateur et de stagiaire.",
+        "context": "",
+        "problem": "",
+        "objectives": [],
+        "audience": "",
+        "approach": [],
+        "tools": ["Supabase", "JavaScript", "RLS"],
+        "deliverables": [],
+        "results": "",
+        "gallery": [],
+        "resources": [
+          { "type": "demo", "titre": "Ouvrir l'application", "url": "https://rodulfo-dmgz.github.io/rd-gestion/rdgestion-beta/" }
+        ]
+      }
+    },
+    {
+      "id": "projet-004",
+      "slug": "ml-lab",
+      "demo": false,
+      "etudeComplete": false,
+      "title": "ML Lab",
+      "category": "innovation-ia",
+      "year": null,
+      "description": "Laboratoire de machine learning interactif, dans le navigateur.",
+      "cover": null,
+      "coverAlt": "",
+      "featured": true,
+      "tags": ["Machine learning", "Interactif"],
+      "content": {
+        "presentation": "Laboratoire de machine learning interactif, dans le navigateur.",
+        "context": "",
+        "problem": "",
+        "objectives": [],
+        "audience": "",
+        "approach": [],
+        "tools": ["HTML", "CSS", "JavaScript"],
+        "deliverables": [],
+        "results": "",
+        "gallery": [],
+        "resources": [
+          { "type": "demo", "titre": "Ouvrir le laboratoire", "url": "https://rodulfo-dmgz.github.io/IA_exercices/ml-lab" }
+        ]
+      }
+    },
+    {
+      "id": "projet-005",
+      "slug": "lechoppe-gauloise",
+      "demo": false,
+      "etudeComplete": false,
+      "title": "L'Échoppe Gauloise",
+      "category": "outils-pedagogiques",
+      "year": null,
+      "description": "E-commerce pédagogique pour travailler la paie, les RH et la comptabilité, avec Pennylane.",
+      "cover": null,
+      "coverAlt": "",
+      "featured": false,
+      "tags": ["E-commerce pédagogique", "Paie", "RH", "Comptabilité"],
+      "content": {
+        "presentation": "E-commerce pédagogique pour travailler la paie, les RH et la comptabilité, avec Pennylane.",
+        "context": "",
+        "problem": "",
+        "objectives": [],
+        "audience": "",
+        "approach": [],
+        "tools": ["HTML", "CSS", "JavaScript", "API REST"],
+        "deliverables": [],
+        "results": "",
+        "gallery": [],
+        "resources": [
+          { "type": "demo", "titre": "Ouvrir le site", "url": "https://rodulfo-dmgz.github.io/web-sites/lechoppe-gauloise/" }
+        ]
+      }
+    },
+    {
+      "id": "projet-006",
+      "slug": "ml-non-supervise",
+      "demo": false,
+      "etudeComplete": false,
+      "title": "ML non supervisé",
+      "category": "innovation-ia",
+      "year": null,
+      "description": "Clustering, K-means et détection de motifs.",
+      "cover": null,
+      "coverAlt": "",
+      "featured": false,
+      "tags": ["Machine learning", "Clustering"],
+      "content": {
+        "presentation": "Clustering, K-means et détection de motifs.",
+        "context": "",
+        "problem": "",
+        "objectives": [],
+        "audience": "",
+        "approach": [],
+        "tools": ["HTML", "CSS", "JavaScript"],
+        "deliverables": [],
+        "results": "",
+        "gallery": [],
+        "resources": [
+          { "type": "demo", "titre": "Ouvrir l'exercice", "url": "https://rodulfo-dmgz.github.io/IA_exercices/ml_non_supervise" }
+        ]
+      }
+    },
+    {
+      "id": "projet-007",
+      "slug": "ml-supervise",
+      "demo": false,
+      "etudeComplete": false,
+      "title": "ML supervisé",
+      "category": "innovation-ia",
+      "year": null,
+      "description": "Classification, régression et évaluation de modèles.",
+      "cover": null,
+      "coverAlt": "",
+      "featured": false,
+      "tags": ["Machine learning", "Classification"],
+      "content": {
+        "presentation": "Classification, régression et évaluation de modèles.",
+        "context": "",
+        "problem": "",
+        "objectives": [],
+        "audience": "",
+        "approach": [],
+        "tools": ["HTML", "CSS", "JavaScript"],
+        "deliverables": [],
+        "results": "",
+        "gallery": [],
+        "resources": [
+          { "type": "demo", "titre": "Ouvrir l'exercice", "url": "https://rodulfo-dmgz.github.io/IA_exercices/ml_supervise" }
+        ]
+      }
+    },
+    {
+      "id": "projet-008",
+      "slug": "reseaux-de-neurones",
+      "demo": false,
+      "etudeComplete": false,
+      "title": "Réseaux de neurones",
+      "category": "innovation-ia",
+      "year": null,
+      "description": "Perceptron, couches et rétropropagation.",
+      "cover": null,
+      "coverAlt": "",
+      "featured": false,
+      "tags": ["Réseaux de neurones", "Rétropropagation"],
+      "content": {
+        "presentation": "Perceptron, couches et rétropropagation.",
+        "context": "",
+        "problem": "",
+        "objectives": [],
+        "audience": "",
+        "approach": [],
+        "tools": ["HTML", "CSS", "JavaScript"],
+        "deliverables": [],
+        "results": "",
+        "gallery": [],
+        "resources": [
+          { "type": "demo", "titre": "Ouvrir l'exercice", "url": "https://rodulfo-dmgz.github.io/IA_exercices/reseau_neurones" }
+        ]
+      }
+    }
+  ]
+}

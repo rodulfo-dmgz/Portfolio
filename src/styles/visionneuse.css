@@ -1,0 +1,143 @@
+/* Visionneuse d'images (élément <dialog> modal : focus piégé, Échap et retour du focus natifs). */
+@layer components {
+  html:has(.visionneuse[open]) { overflow: hidden; }
+
+  .galerie-etude__agrandir {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border-radius: var(--radius-xl);
+    cursor: zoom-in;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .galerie-etude__agrandir img { transition: scale 400ms var(--ease-out); }
+
+  .galerie-etude__agrandir { overflow: hidden; }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .galerie-etude__agrandir:hover img { scale: 1.03; }
+  }
+
+  .visionneuse {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    padding: var(--space-16) var(--space-4);
+    border: 0;
+    background: transparent;
+    color: var(--text-inverse);
+    overscroll-behavior: contain;
+    opacity: 0;
+    transition: opacity 150ms var(--ease-out), overlay 150ms allow-discrete, display 150ms allow-discrete;
+  }
+
+  .visionneuse[open] {
+    opacity: 1;
+    transition-duration: 220ms;
+  }
+
+  @starting-style {
+    .visionneuse[open] { opacity: 0; }
+  }
+
+  .visionneuse::backdrop {
+    background: rgb(2 6 23 / 0.88);
+    transition: opacity 150ms var(--ease-out), overlay 150ms allow-discrete, display 150ms allow-discrete;
+    opacity: 0;
+  }
+
+  .visionneuse[open]::backdrop { opacity: 1; }
+
+  @starting-style {
+    .visionneuse[open]::backdrop { opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .visionneuse {
+      scale: 0.96;
+      transition-property: opacity, scale, overlay, display;
+    }
+
+    .visionneuse[open] { scale: 1; }
+
+    @starting-style {
+      .visionneuse[open] { scale: 0.96; }
+    }
+  }
+
+  .visionneuse__figure {
+    display: grid;
+    gap: var(--space-3);
+    justify-items: center;
+    max-width: 100%;
+  }
+
+  .visionneuse__image {
+    max-width: 100%;
+    max-height: calc(100dvh - 12rem);
+    object-fit: contain;
+    border-radius: var(--radius-md);
+  }
+
+  .visionneuse__legende {
+    max-width: 40rem;
+    text-align: center;
+    font-size: var(--font-body2-size);
+    color: color-mix(in srgb, var(--text-inverse) 80%, transparent);
+  }
+
+  .visionneuse :focus-visible { outline-color: var(--text-inverse); }
+
+  .visionneuse__fermer,
+  .visionneuse__nav {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: var(--radius-full);
+    background: rgb(255 255 255 / 0.12);
+    color: var(--text-inverse);
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 150ms var(--ease-out);
+  }
+
+  .visionneuse__fermer {
+    inset-block-start: var(--space-4);
+    inset-inline-end: var(--space-4);
+  }
+
+  .visionneuse__nav {
+    inset-block-end: var(--space-4);
+  }
+
+  .visionneuse__nav--precedente { inset-inline-start: calc(50% - 3.5rem); }
+  .visionneuse__nav--suivante { inset-inline-start: calc(50% + 0.75rem); }
+
+  .visionneuse__compteur {
+    position: absolute;
+    inset-block-start: var(--space-6);
+    inset-inline-start: var(--space-4);
+    font-family: var(--font-subtitle);
+    font-size: var(--font-caption-size);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--text-inverse) 80%, transparent);
+  }
+
+  @media (hover: hover) {
+    .visionneuse__fermer:hover,
+    .visionneuse__nav:hover { background: rgb(255 255 255 / 0.24); }
+  }
+
+  @media (width >= 48rem) {
+    .visionneuse__nav { inset-block-end: auto; inset-block-start: calc(50% - 1.375rem); }
+    .visionneuse__nav--precedente { inset-inline-start: var(--space-6); }
+    .visionneuse__nav--suivante { inset-inline-start: auto; inset-inline-end: var(--space-6); }
+    .visionneuse__image { max-height: calc(100dvh - 9rem); }
+  }
+}

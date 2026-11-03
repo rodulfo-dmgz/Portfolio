@@ -1,0 +1,150 @@
+/*
+ * Animations du site. Principes : transform et opacité d'abord, aucune animation permanente,
+ * jamais de blocage du défilement. Avec « réduire les animations », les déplacements et le flou
+ * disparaissent et il reste un simple fondu.
+ */
+
+/* ── Changement de thème : le nouveau thème se dévoile en cercle (voir scripts/theme.js) ── */
+@media (prefers-reduced-motion: no-preference) {
+  html.theme-switching::view-transition-old(root),
+  html.theme-switching::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  html.theme-switching::view-transition-old(root) { z-index: 1; }
+  html.theme-switching::view-transition-new(root) { z-index: 2; }
+}
+
+/* Aucune transition de couleur pendant le changement de thème : sinon elles se déclenchent toutes en même temps. */
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition: none !important;
+}
+
+/* ── Navigation entre les pages : fondu court (navigateurs compatibles) ── */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+
+  html:not(.theme-switching)::view-transition-old(root) { animation-duration: 120ms; }
+  html:not(.theme-switching)::view-transition-new(root) { animation-duration: 220ms; }
+}
+
+/* ── Entrées ── */
+@keyframes entree {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes entree-mouvement {
+  from {
+    opacity: 0;
+    translate: 0 12px;
+    filter: blur(var(--flou, 4px));
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+    filter: blur(0);
+  }
+}
+
+@keyframes entree-filtre {
+  from {
+    opacity: 0;
+    translate: 0 8px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@layer components {
+  /* Hero et en-têtes de page : les blocs arrivent l'un après l'autre, à 100 ms d'écart. */
+  .hero__titrage > .eyebrow,
+  .hero__titre span,
+  .hero__intro,
+  .hero__domaines,
+  .hero__portrait,
+  .hero__defiler,
+  .page-tete > * {
+    animation: entree 300ms var(--ease-out) both;
+    animation-delay: calc(var(--rang, 0) * 100ms);
+  }
+
+  .hero__titre span:nth-child(1) { --rang: 1; }
+  .hero__titre span:nth-child(2) { --rang: 2; }
+  .hero__titre span:nth-child(3) { --rang: 3; }
+  .hero__intro { --rang: 4; }
+  .hero__domaines { --rang: 5; }
+  .hero__portrait { --rang: 2; --flou: 0px; }
+  .hero__defiler { --rang: 6; }
+
+  .page-tete > :nth-child(2) { --rang: 1; }
+  .page-tete > :nth-child(3) { --rang: 2; }
+  .page-tete > :nth-child(4) { --rang: 3; }
+  .page-tete > :nth-child(5) { --rang: 4; }
+
+  /* Filtrage des réalisations : les cartes réapparaissent très vite, presque sans décalage. */
+  .galerie .projet {
+    animation: entree 200ms var(--ease-out) both;
+    animation-delay: calc(min(var(--i, 0), 6) * 30ms);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero__titrage > .eyebrow,
+    .hero__titre span,
+    .hero__intro,
+    .hero__domaines,
+    .hero__portrait,
+    .hero__defiler,
+    .page-tete > * {
+      animation-name: entree-mouvement;
+    }
+
+    .galerie .projet { animation-name: entree-filtre; }
+  }
+
+  /* Apparition des sections au défilement (voir scripts/reveal.js).
+     Le contenu n'est masqué que si le script est actif : sans lui, tout reste visible. */
+  .reveal-ready [data-reveal]:not(.est-visible) { opacity: 0; }
+
+  .reveal-ready [data-reveal] {
+    transition-property: opacity, translate, filter;
+    transition-duration: 300ms;
+    transition-timing-function: var(--ease-out);
+    transition-delay: var(--delai, 0ms);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal-ready [data-reveal]:not(.est-visible) {
+      translate: 0 12px;
+      filter: blur(var(--flou, 4px));
+    }
+
+    .reveal-ready .projet[data-reveal],
+    .reveal-ready .apropos__portrait[data-reveal],
+    .reveal-ready .etude__visuel[data-reveal] { --flou: 0px; }
+  }
+
+  /* Indicateur de progression de lecture, sous l'en-tête. */
+  .progression {
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: -1px;
+    height: 2px;
+    pointer-events: none;
+  }
+
+  .progression span {
+    display: block;
+    height: 100%;
+    background: var(--color-accent-600);
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+}

@@ -1,0 +1,15 @@
+/* Ordre des couches : la dernière déclarée l'emporte. */
+@layer tokens, reset, base, components, utilities;
+
+@import './fonts.css';
+@import './tokens.css';
+@import './reset.css';
+@import './typography.css';
+@import './global.css';
+@import './layout.css';
+@import './components.css';
+@import './elements.css';
+@import './home.css';
+@import './pages.css';
+@import './visionneuse.css';
+@import './animations.css';

@@ -1,0 +1,90 @@
+{
+  "etat": "provisoire",
+  "domaines": [
+    {
+      "id": "ingenierie-pedagogique",
+      "numero": "01",
+      "titre": "Ingénierie pédagogique",
+      "resume": "Partir des besoins et des publics pour définir des objectifs clairs, scénariser les apprentissages et en évaluer les effets.",
+      "competences": [
+        "Analyse des besoins",
+        "Analyse des publics",
+        "Définition des objectifs pédagogiques",
+        "Construction de parcours",
+        "Scénarisation pédagogique",
+        "Référentiels de compétences",
+        "Évaluation des apprentissages"
+      ]
+    },
+    {
+      "id": "conception-parcours",
+      "numero": "02",
+      "titre": "Conception de parcours",
+      "resume": "Structurer une formation du plan général à chaque séquence, avec une progression et des modalités adaptées à chaque apprenant.",
+      "competences": [
+        "Architecture de formation",
+        "Structuration macro et micro",
+        "Séquençage pédagogique",
+        "Progression des apprentissages",
+        "Individualisation des parcours",
+        "Modalités pédagogiques"
+      ]
+    },
+    {
+      "id": "formation-professionnelle",
+      "numero": "03",
+      "titre": "Formation professionnelle",
+      "resume": "Animer en présentiel, à distance ou en hybride, accompagner les apprenants et évaluer l'acquisition des compétences.",
+      "competences": [
+        "Animation de formation",
+        "Formation présentielle",
+        "Formation distancielle",
+        "Formation hybride",
+        "Accompagnement des apprenants",
+        "Évaluation des compétences"
+      ]
+    },
+    {
+      "id": "digital-learning",
+      "numero": "04",
+      "titre": "Digital learning et outils numériques",
+      "resume": "Concevoir des ressources et des outils numériques, du LMS au SCORM, et automatiser ce qui peut l'être, avec ou sans IA.",
+      "competences": [
+        "Conception de ressources numériques",
+        "Moodle et LMS",
+        "SCORM",
+        "HTML, CSS et JavaScript",
+        "Outils interactifs",
+        "Intelligence artificielle appliquée à la formation",
+        "Automatisation des processus pédagogiques"
+      ]
+    }
+  ],
+  "methode": [
+    {
+      "numero": "01",
+      "titre": "Analyser",
+      "description": "Cerner le besoin, le contexte et le public avant de concevoir."
+    },
+    {
+      "numero": "02",
+      "titre": "Concevoir",
+      "description": "Fixer les objectifs, structurer le parcours et scénariser les séquences."
+    },
+    {
+      "numero": "03",
+      "titre": "Produire",
+      "description": "Créer les contenus, les activités et les outils dont le parcours a besoin."
+    },
+    {
+      "numero": "04",
+      "titre": "Déployer",
+      "description": "Mettre la formation en œuvre, en présentiel, à distance ou sur une plateforme."
+    },
+    {
+      "numero": "05",
+      "titre": "Évaluer",
+      "description": "Mesurer les acquis et l'efficacité du parcours, puis l'améliorer."
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+/* Polices variables auto-hébergées (public/assets/fonts). Licences dans public/assets/fonts/licences. */
+@layer tokens {
+  @font-face {
+    font-family: 'Cabinet Grotesk';
+    src: url('/assets/fonts/CabinetGrotesk-Variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Switzer';
+    src: url('/assets/fonts/Switzer-Variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Switzer';
+    src: url('/assets/fonts/Switzer-VariableItalic.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Space Mono';
+    src: url('/assets/fonts/SpaceMono-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Space Mono';
+    src: url('/assets/fonts/SpaceMono-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Polices de secours aux métriques ajustées : le texte garde la même emprise avant et après le chargement des vraies polices. */
+  @font-face {
+    font-family: 'Cabinet Grotesk Fallback';
+    src: local('Arial Bold'), local('Arial-BoldMT');
+    font-weight: 100 900;
+    size-adjust: 92.76%;
+    ascent-override: 93.79%;
+    descent-override: 30.18%;
+    line-gap-override: 9.7%;
+  }
+
+  @font-face {
+    font-family: 'Switzer Fallback';
+    src: local('Arial'), local('ArialMT');
+    font-weight: 100 900;
+    size-adjust: 100.86%;
+    ascent-override: 97.16%;
+    descent-override: 24.79%;
+    line-gap-override: 8.92%;
+  }
+
+  @font-face {
+    font-family: 'Space Mono Fallback';
+    src: local('Courier New'), local('CourierNewPSMT');
+    size-adjust: 101.98%;
+    ascent-override: 109.82%;
+    descent-override: 35.4%;
+    line-gap-override: 0%;
+  }
+}

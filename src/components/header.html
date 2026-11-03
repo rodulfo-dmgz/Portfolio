@@ -1,0 +1,35 @@
+<header class="site-header">
+  <div class="site-header__inner container">
+    <a class="site-header__brand" href="/" aria-label="{{profil.nom}}, accueil">
+      <img src="/assets/images/logo-120.webp" alt="" width="40" height="40" decoding="async" />
+      <span>{{profil.nom}}</span>
+    </a>
+
+    <button class="site-header__menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu-principal" data-menu-bouton>
+      <span class="icon-swap">
+        <!--@icon menu-->
+        <!--@icon xmark-->
+      </span>
+    </button>
+
+    <div class="site-header__panel" id="menu-principal" data-menu-panneau>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul role="list">
+          <li><a href="/" data-nav="accueil">Accueil</a></li>
+          <li><a href="/a-propos" data-nav="a-propos">À propos</a></li>
+          <li><a href="/expertises" data-nav="expertises">Expertises</a></li>
+          <li><a href="/realisations" data-nav="realisations">Réalisations</a></li>
+          <li><a class="site-nav__cta" href="/contact" data-nav="contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="theme-selector" role="radiogroup" aria-label="Thème de l’interface" data-valeur="system" data-theme-selecteur>
+        <span class="theme-selector__indicator" aria-hidden="true"></span>
+        <button type="button" role="radio" aria-checked="false" aria-label="Thème clair" title="Thème clair" data-theme-choix="light"><!--@icon sun-light--></button>
+        <button type="button" role="radio" aria-checked="false" aria-label="Thème sombre" title="Thème sombre" data-theme-choix="dark"><!--@icon half-moon--></button>
+        <button type="button" role="radio" aria-checked="false" aria-label="Thème du système" title="Thème du système" data-theme-choix="system"><!--@icon computer--></button>
+      </div>
+    </div>
+  </div>
+  <div class="progression" aria-hidden="true"><span></span></div>
+</header>
