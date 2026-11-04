@@ -1,5 +1,10 @@
 import { envoiDisponible, envoyerMessage } from '../services/contactService.js';
 import { echapperHtml } from '../scripts/utils.js';
+import { monterFond } from '../scripts/fond-hero.js';
+import { MOUVEMENT_REDUIT } from '../scripts/ecran.js';
+
+const page = document.querySelector('main');
+monterFond({ zone: page, orbites: page.querySelector('[data-orbites]'), reduit: MOUVEMENT_REDUIT.matches });
 
 const formulaire = document.querySelector('[data-formulaire]');
 const indisponible = document.querySelector('[data-formulaire-indisponible]');

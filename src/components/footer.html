@@ -27,8 +27,13 @@
   </div>
 
   <div class="site-footer__bas container">
-    <p>© <span data-annee>2026</span> {{profil.nom}}</p>
-    <button class="pause-fond" type="button" data-pause-fond>Mettre en pause le fond animé</button>
+    <div class="site-footer__droits">
+      <p>© <span data-annee>2026</span> {{profil.nom}}</p>
+      <button class="pause-fond" type="button" data-pause-fond aria-label="Mettre en pause le fond animé" data-info="Mettre en pause le fond animé">
+        <span data-icone-pause><!--@icon pause--></span>
+        <span data-icone-lecture hidden><!--@icon play--></span>
+      </button>
+    </div>
     <a href="/mentions-legales">Mentions légales</a>
   </div>
 </footer>

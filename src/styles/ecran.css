@@ -46,24 +46,57 @@
     pointer-events: none;
   }
 
-  /* Bouton de pause du fond animé (scripts/pause.js), visible seulement sur les pages qui ont un fond animé. */
+  /* Bouton de pause du fond animé (scripts/pause.js) : une petite icône à côté du copyright, avec info-bulle.
+     Visible seulement sur les pages qui ont un fond animé. */
+  .site-footer__droits { display: inline-flex; align-items: center; gap: var(--space-2); }
+
   .pause-fond { display: none; }
 
   body[data-fond] .pause-fond {
-    display: inline-flex;
-    align-items: center;
-    min-height: 2.75rem;
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    inline-size: 2.75rem;
+    block-size: 2.75rem;
+    margin-block: -0.5rem;
+    border-radius: var(--radius-full);
     color: inherit;
-    font-size: var(--font-body2-size);
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
     -webkit-tap-highlight-color: transparent;
+    transition: background-color 150ms var(--ease-out), color 150ms var(--ease-out);
   }
 
-  .ecran-unique .pause-fond { min-height: 2rem; }
+  .ecran-unique[data-fond] .pause-fond { inline-size: 2rem; block-size: 2rem; margin-block: 0; }
+
+  .pause-fond .icon { inline-size: 1.125rem; block-size: 1.125rem; stroke-width: 1.8; }
+  .pause-fond [hidden] { display: none; }
+
+  /* Info-bulle : visible au survol et au focus clavier, au-dessus du bouton. */
+  .pause-fond::after {
+    content: attr(data-info);
+    position: absolute;
+    inset-block-end: calc(100% + var(--space-1));
+    inset-inline-start: 0;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-md);
+    background: var(--color-neutral-50);
+    color: var(--color-primary-950);
+    font-size: var(--font-caption-size);
+    white-space: nowrap;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 150ms var(--ease-out);
+  }
+
+  .pause-fond:focus-visible::after { opacity: 1; }
 
   @media (hover: hover) {
-    body[data-fond] .pause-fond:hover { color: var(--text-inverse); }
+    body[data-fond] .pause-fond:hover { background: rgb(255 255 255 / 0.14); color: var(--text-inverse); }
+    .pause-fond:hover::after { opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .pause-fond:active { scale: 0.96; }
   }
 
   @media (width >= 64rem) and (height >= 40rem) {

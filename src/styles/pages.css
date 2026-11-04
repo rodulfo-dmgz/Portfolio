@@ -602,9 +602,23 @@
   }
 
   /* ── Contact ── */
-  .contact {
+  .contact-ecran { position: relative; overflow-x: clip; }
+
+  .contact-ecran__contenu {
+    position: relative;
+    z-index: 1;
     display: grid;
-    gap: var(--space-12);
+    gap: var(--space-10);
+    padding-block: var(--space-12);
+  }
+
+  .contact__tete .page-tete__titre { margin-block: var(--space-3); }
+
+  .contact__gauche { display: grid; gap: var(--space-8); }
+
+  /* Le réseau passe à droite, derrière le formulaire : le texte de gauche reste net. */
+  @media (width >= 64rem) and (height >= 40rem) {
+    .contact-ecran .fond-ecran__orbites { inset-inline-start: 74%; }
   }
 
   .contact__coordonnees .contact-accueil__email { margin-block-start: var(--space-3); }
@@ -626,14 +640,18 @@
     font-size: var(--font-body2-size);
   }
 
-  @media (width >= 64rem) {
-    .contact {
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      column-gap: var(--space-8);
+  /* Un seul écran : texte et coordonnées à gauche, formulaire à droite, centrés dans la hauteur. */
+  @media (width >= 64rem) and (height >= 40rem) {
+    .contact-ecran__contenu {
+      block-size: 100%;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 30rem);
+      align-items: center;
+      column-gap: var(--space-16);
+      padding-block: var(--space-4);
     }
 
-    .contact__coordonnees { grid-column: 1 / span 6; }
-    .formulaire { grid-column: 8 / -1; }
+    .contact-ecran .formulaire { padding: var(--space-6); gap: var(--space-4); }
+    .contact__liens { margin-block: var(--space-4); }
   }
 
   .formulaire {

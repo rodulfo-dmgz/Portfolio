@@ -8,26 +8,32 @@
     <meta property="og:description" content="Contacter Rodulfo Dominguez par email ou sur LinkedIn." />
     <meta property="og:type" content="website" />
   </head>
-  <body data-page="contact">
+  <body data-page="contact" class="ecran-unique" data-fond>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
     <!--@include header-->
 
-    <main id="contenu">
-      <header class="page-tete container">
-        <p class="eyebrow">{{profil.ville}} · {{profil.pays}}</p>
-        <h1 class="page-tete__titre">Contact</h1>
-        <p class="page-tete__intro">Un projet de formation, un parcours à concevoir ou une collaboration : décrivez votre besoin par email ou sur LinkedIn.</p>
-      </header>
+    <main id="contenu" class="contact-ecran">
+      <div class="fond-ecran" aria-hidden="true">
+        <div class="fond-ecran__orbites" data-orbites></div>
+      </div>
 
-      <section class="section container section--serree contact" aria-label="Coordonnées et formulaire">
-        <div class="contact__coordonnees">
-          <p class="eyebrow">Email</p>
-          <a class="contact-accueil__email" href="mailto:{{profil.contact.email}}">{{profil.contact.email}}</a>
-          <ul class="contact__liens" role="list">
-            <li><a class="lien-fleche" href="{{profil.contact.linkedin}}" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (nouvel onglet)</span><!--@icon arrow-up-right--></a></li>
-            <li><a class="lien-fleche" href="{{profil.contact.github}}" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (nouvel onglet)</span><!--@icon arrow-up-right--></a></li>
-          </ul>
-          <p class="contact__note" data-formulaire-indisponible>Le formulaire de contact n'est pas encore en service. Écrivez-moi directement par email ou sur LinkedIn.</p>
+      <div class="contact-ecran__contenu container">
+        <div class="contact__gauche">
+          <header class="contact__tete">
+            <p class="eyebrow" data-scramble>{{profil.ville}} · {{profil.pays}}</p>
+            <h1 class="page-tete__titre">Contact</h1>
+            <p class="page-tete__intro">Un projet de formation, un parcours à concevoir ou une collaboration : décrivez votre besoin par email ou sur LinkedIn.</p>
+          </header>
+
+          <section class="contact__coordonnees" aria-label="Coordonnées">
+            <p class="eyebrow">Email</p>
+            <a class="contact-accueil__email" href="mailto:{{profil.contact.email}}">{{profil.contact.email}}</a>
+            <ul class="contact__liens" role="list">
+              <li><a class="lien-fleche" href="{{profil.contact.linkedin}}" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (nouvel onglet)</span><!--@icon arrow-up-right--></a></li>
+              <li><a class="lien-fleche" href="{{profil.contact.github}}" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (nouvel onglet)</span><!--@icon arrow-up-right--></a></li>
+            </ul>
+            <p class="contact__note" data-formulaire-indisponible>Le formulaire de contact n'est pas encore en service. Écrivez-moi directement par email ou sur LinkedIn.</p>
+          </section>
         </div>
 
         <form class="formulaire" data-formulaire novalidate hidden>
@@ -47,7 +53,7 @@
 
           <div class="champ">
             <label for="champ-message">Message</label>
-            <textarea id="champ-message" name="message" rows="6" required minlength="10" aria-describedby="aide-message erreur-message"></textarea>
+            <textarea id="champ-message" name="message" rows="4" required minlength="10" aria-describedby="aide-message erreur-message"></textarea>
             <p class="champ__aide" id="aide-message">10 caractères minimum.</p>
             <p class="champ__erreur" id="erreur-message" hidden></p>
           </div>
@@ -56,7 +62,7 @@
           <button class="btn btn--cta" type="submit" data-envoyer>Envoyer le message</button>
           <p class="formulaire__confirmation" role="status" data-confirmation hidden></p>
         </form>
-      </section>
+      </div>
     </main>
 
     <!--@include footer-->

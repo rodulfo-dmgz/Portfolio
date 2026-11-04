@@ -49,7 +49,7 @@ Un champ `null` ou vide n'est pas affiché : une réalisation sans année, sans 
 
 ## Pages sur un seul écran
 
-L'accueil, À propos, Expertises et Réalisations tiennent sur un seul écran, sans défilement, dès que la fenêtre fait au moins 64 rem de large et 40 rem de haut (`src/styles/ecran.css`, `src/scripts/ecran.js`). En dessous, ces pages se lisent en défilant, ce qui garde le texte lisible à 200 % de zoom et sur téléphone.
+L'accueil, À propos, Expertises, Réalisations et Contact tiennent sur un seul écran, sans défilement, dès que la fenêtre fait au moins 64 rem de large et 40 rem de haut (`src/styles/ecran.css`, `src/scripts/ecran.js`). En dessous, ces pages se lisent en défilant, ce qui garde le texte lisible à 200 % de zoom et sur téléphone.
 
 - **À propos :** la carte change d'étape avec les boutons, la molette, les flèches ou un balayage ; les autres sujets s'ouvrent en panneaux (`src/pages/a-propos.js`).
 - **Fond commun :** pluie de lettres et réseau de points qui tourne (`src/scripts/fond-hero.js`), ondes émeraude très pâles à chaque arrêt de la souris (`src/scripts/ondes.js`), mots en « pop » (`src/scripts/mots-pop.js`), sur l'accueil seulement.
