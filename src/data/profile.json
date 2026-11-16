@@ -37,7 +37,7 @@
     "linkedin": "https://www.linkedin.com/in/rodulfodominguez/",
     "github": "https://github.com/rodulfo-dmgz"
   },
-  "portrait": null,
+  "portrait": "assets/images/portrait.svg",
   "cv": null,
   "aConfirmer": {
     "source": "README du dépôt GitHub (V1)",
