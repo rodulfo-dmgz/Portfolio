@@ -74,7 +74,7 @@ const rendreEtape = (chapitre, rang, total, precedent) => `
   <article class="voyage__etape" data-etape="${rang}" aria-labelledby="voyage-${e(chapitre.id)}">
     <div class="voyage__texte">
       <p class="voyage__numero"><span>${e(chapitre.numero)}</span> / ${String(total).padStart(2, '0')}</p>
-      <h2 class="voyage__lieu" id="voyage-${e(chapitre.id)}">${e(chapitre.lieu)}</h2>
+      <h2 class="voyage__lieu" id="voyage-${e(chapitre.id)}"><img class="voyage__drapeau" src="${e(chapitre.drapeau)}" alt="" width="36" height="24" />${e(chapitre.lieu)}</h2>
       <p class="voyage__precision">${e(chapitre.precision)}</p>
       <p class="voyage__resume">${e(chapitre.texte)}</p>
       <dl class="voyage__infos">
@@ -135,7 +135,7 @@ export function monterVoyage(racine, chapitres, sujets) {
   });
 
   reperes.innerHTML = chapitres
-    .map((chapitre) => `<div class="repere" data-repere><span class="repere__point"></span><span class="repere__nom">${e(chapitre.precision.split(',')[0])} · ${PAYS[chapitre.id] ?? ''}</span></div>`)
+    .map((chapitre) => `<div class="repere" data-repere><span class="repere__point"></span><span class="repere__nom"><img class="repere__drapeau" src="${e(chapitre.drapeau)}" alt="" width="18" height="12" />${e(chapitre.precision.split(',')[0])} · ${PAYS[chapitre.id] ?? ''}</span></div>`)
     .join('');
   const marques = [...reperes.children];
 

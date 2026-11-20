@@ -45,13 +45,23 @@
       "coordonnees": "14,91° N · 92,26° O",
       "ville": "tapachula",
       "photos": [
-         { "src": "/assets/images/Mexique/mexique1.webp", "alt": "Pico de Basile" },
-         { "src": "/assets/images/Mexique/mexique2.webp", "alt": "Pico de Basile" },
-         { "src": "/assets/images/Mexique/mexique3.webp", "alt": "Pico de Basile" }
-        ],
+        {
+          "src": "/assets/images/Mexique/mexique1.webp",
+          "alt": "Pico de Basile"
+        },
+        {
+          "src": "/assets/images/Mexique/mexique2.webp",
+          "alt": "Pico de Basile"
+        },
+        {
+          "src": "/assets/images/Mexique/mexique3.webp",
+          "alt": "Pico de Basile"
+        }
+      ],
       "lat": 14.91,
       "lon": -92.26,
-      "fuseau": "America/Mexico_City"
+      "fuseau": "America/Mexico_City",
+      "drapeau": "/assets/flags/mx.svg"
     },
     {
       "id": "guinee-equatoriale",
@@ -82,13 +92,23 @@
       "coordonnees": "3,75° N · 8,78° E",
       "ville": "malabo",
       "photos": [
-         { "src": "/assets/images/Malabo/Malabo1.webp", "alt": "Pico de Basile" },
-         { "src": "/assets/images/Malabo/Malabo2.webp", "alt": "Madre e hijo" },
-         { "src": "/assets/images/Malabo/Malabo3.webp", "alt": "Basilica de la madre negra" }
-        ],
+        {
+          "src": "/assets/images/Malabo/Malabo1.webp",
+          "alt": "Pico de Basile"
+        },
+        {
+          "src": "/assets/images/Malabo/Malabo2.webp",
+          "alt": "Madre e hijo"
+        },
+        {
+          "src": "/assets/images/Malabo/Malabo3.webp",
+          "alt": "Basilica de la madre negra"
+        }
+      ],
       "lat": 3.75,
       "lon": 8.78,
-      "fuseau": "Africa/Malabo"
+      "fuseau": "Africa/Malabo",
+      "drapeau": "/assets/flags/gq.svg"
     },
     {
       "id": "france",
@@ -135,13 +155,23 @@
       "coordonnees": "43,61° N · 3,88° E",
       "ville": "montpellier",
       "photos": [
-         { "src": "/assets/images/France/montpellier1.webp", "alt": "Pico de Basile" },
-         { "src": "/assets/images/France/montpellier2.webp", "alt": "Pico de Basile" },
-         { "src": "/assets/images/France/montpellier3.webp", "alt": "Pico de Basile" }
-        ],
+        {
+          "src": "/assets/images/France/montpellier1.webp",
+          "alt": "Pico de Basile"
+        },
+        {
+          "src": "/assets/images/France/montpellier2.webp",
+          "alt": "Pico de Basile"
+        },
+        {
+          "src": "/assets/images/France/montpellier3.webp",
+          "alt": "Pico de Basile"
+        }
+      ],
       "lat": 43.61,
       "lon": 3.88,
-      "fuseau": "Europe/Paris"
+      "fuseau": "Europe/Paris",
+      "drapeau": "/assets/flags/fr.svg"
     }
   ],
   "approche": {
@@ -277,22 +307,34 @@
     {
       "titre": "Musique",
       "texte": "Multi-instrumentiste et créateur audio, je compose des univers sonores qui racontent des histoires. La musique est mon langage universel.",
-      "photo": { "src": "/assets/images/tame_impala.gif", "alt": "FEELS LIKE WE ONLY GO BACKWARDS - VIDEO " } 
+      "photo": {
+        "src": "/assets/images/tame_impala.gif",
+        "alt": "FEELS LIKE WE ONLY GO BACKWARDS - VIDEO "
+      }
     },
     {
       "titre": "Cinéma et photographie",
       "texte": "Le cinéma et la photographie m'enseignent l'art du cadrage, de la lumière et de la narration visuelle.",
-      "photo": { "src": "/assets/images/charles_chaplin.gif", "alt": "absolutely cinema" } 
+      "photo": {
+        "src": "/assets/images/charles_chaplin.gif",
+        "alt": "absolutely cinema"
+      }
     },
     {
       "titre": "Peinture",
       "texte": "Fasciné par le surréalisme de Dalí, je trouve dans la peinture une liberté d'expression absolue.",
-      "photo": { "src": "/assets/images/dali.gif", "alt": "Salvador DALÍ" } 
+      "photo": {
+        "src": "/assets/images/dali.gif",
+        "alt": "Salvador DALÍ"
+      }
     },
     {
       "titre": "Cuisine",
       "texte": "Mes racines mexicaines se mêlent aux influences africaines et françaises pour une cuisine métissée.",
-      "photo": { "src": "/assets/images/tacos.gif", "alt": "Tacos du mexique" } 
+      "photo": {
+        "src": "/assets/images/tacos.gif",
+        "alt": "Tacos du mexique"
+      }
     }
   ],
   "langues": [
