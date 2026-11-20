@@ -96,7 +96,7 @@
       ],
       "experiences": [
         {
-          "periode": "Depuis août 2021",
+          "periode": "AOÛT 2021 – AOÛT 2026",
           "structure": "Adrar Formation",
           "role": "Ingénieur et formateur professionnel d'adultes (CDI)",
           "points": [
@@ -304,6 +304,29 @@
       "salut": "Hello",
       "niveau": "C1",
       "rang": 5
+    }
+  ],
+  "diplomes": [
+    {
+      "niveau": "Master 2",
+      "intitule": "Gestion et administration des entreprises touristiques",
+      "etablissement": "Universidad autonoma de Chiapas",
+      "annee": "2017",
+      "logo": "/assets/images/UNACH.webp"
+    },
+    {
+      "niveau": "BAC +2",
+      "intitule": "Formateur professionnel d'adultes",
+      "etablissement": "AFPA",
+      "annee": "2021",
+      "logo": "/assets/images/AFPA.webp"
+    },
+    {
+      "niveau": "BAC +3",
+      "intitule": "Responsable projets et ingénierie en formation",
+      "etablissement": "GIP Formavie",
+      "annee": "En cours",
+      "logo": "/assets/images/GIP.webp"
     }
   ]
 }

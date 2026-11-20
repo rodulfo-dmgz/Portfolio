@@ -5,6 +5,17 @@ import { echapperHtml as e } from '../scripts/utils.js';
 const liste = (elements, classe = '') => `<ul class="${classe}" role="list">${elements.map((element) => `<li>${element}</li>`).join('')}</ul>`;
 const titreTexte = (element) => `<li><h3>${e(element.titre)}</h3><p>${e(element.texte)}</p></li>`;
 
+/** Un diplôme, au même format qu'une langue : logo, niveau en grand, intitulé, établissement et année. */
+const rendreDiplome = (diplome) => `
+  <li class="langue diplome">
+    <div class="diplome__logo">${diplome.logo
+    ? `<img src="${e(diplome.logo)}" alt="Logo ${e(diplome.etablissement ?? '')}" loading="lazy" decoding="async" />`
+    : (import.meta.env.DEV ? '<span>Logo à venir</span>' : '')}</div>
+    <p class="langue__salut" aria-hidden="true">${e(diplome.niveau ?? '')}</p>
+    <h3 class="langue__nom">${e(diplome.intitule ?? diplome.niveau)}</h3>
+    <p class="langue__niveau">${[diplome.etablissement, diplome.annee].filter(Boolean).map(e).join(' · ')}</p>
+  </li>`;
+
 const rendreExperience = (experience) => `
   <li class="experience">
     <p class="experience__periode">${e(experience.periode)}</p>
@@ -59,7 +70,9 @@ try {
           </div>
         </div>`,
     },
+
     { id: 'experiences', titre: 'Expériences', large: true, html: `<div class="experiences-grille">${contenu.chapitres.map(rendreChapitre).join('')}</div>` },
+    { id: 'diplomes', titre: 'Diplômes', large: true, html: `<ul class="langues diplomes" role="list">${(contenu.diplomes ?? []).map(rendreDiplome).join('')}</ul>` },
     { id: 'langues', titre: 'Langues', large: true, html: `<ul class="langues" role="list">${contenu.langues.map(rendreLangue).join('')}</ul>` },
     {
       id: 'vision',

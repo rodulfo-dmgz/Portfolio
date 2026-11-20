@@ -361,6 +361,48 @@
     .sujet:not([hidden]) .langue__salut { -webkit-text-fill-color: var(--text-primary); }
   }
 
+  /* Logo de l'établissement : une vignette de taille identique pour tous (fond blanc, logo contenu sans déformation). */
+  .diplome__logo {
+    display: grid;
+    place-items: center;
+    inline-size: min(100%, 11rem);
+    block-size: 4.5rem;
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    background: #fff;
+    overflow: hidden;
+    font-family: var(--font-subtitle);
+    font-size: var(--font-caption-size);
+    color: var(--color-primary-950);
+  }
+
+  .diplome__logo:empty { visibility: hidden; }
+  .diplome__logo img { display: block; inline-size: 100%; block-size: 100%; min-inline-size: 0; min-block-size: 0; max-inline-size: 100%; max-block-size: 100%; object-fit: contain; }
+
+  /* Les cartes de diplômes partagent les mêmes lignes (logo, niveau, intitulé, établissement) : tout s'aligne d'une carte à l'autre. */
+  @media (width >= 40rem) {
+    /* Rythme aéré : le logo se détache, le niveau et l'intitulé forment un groupe, l'établissement vient en note. */
+    .diplomes { column-gap: var(--space-12); row-gap: 0; }
+
+    .diplomes .diplome {
+      grid-row: span 4;
+      grid-template-rows: subgrid;
+      row-gap: 0;
+      align-content: start;
+      padding-block-start: 0;
+      border-block-start: 0;
+    }
+
+    .diplomes .diplome > * { margin: 0; }
+    .diplomes .diplome .diplome__logo { margin-block-end: var(--space-8); }
+    .diplomes .diplome .langue__salut { padding-block-end: var(--space-3); font-size: clamp(1.75rem, 4dvh, 2.5rem); }
+    .diplomes .diplome .langue__nom { padding-block-end: var(--space-5); }
+    .diplomes .diplome .langue__niveau { padding-block-end: var(--space-6); align-self: start; }
+
+    .sujet:has(.diplomes) { padding: var(--space-8); }
+    .sujet:has(.diplomes) .sujet__tete { margin-block-end: var(--space-8); }
+  }
+
   .langue__nom { font-size: var(--font-h4-size); margin: 0; }
   .langue__niveau { font-family: var(--font-subtitle); font-size: var(--font-caption-size); letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
 
