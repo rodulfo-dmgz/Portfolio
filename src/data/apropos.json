@@ -295,15 +295,15 @@
       "langue": "Français",
       "code": "fr",
       "salut": "Bonjour",
-      "niveau": "C2",
-      "rang": 6
+      "niveau": "B2",
+      "rang": 4
     },
     {
       "langue": "Anglais",
       "code": "en",
       "salut": "Hello",
-      "niveau": "B2",
-      "rang": 4
+      "niveau": "C1",
+      "rang": 5
     }
   ]
 }
