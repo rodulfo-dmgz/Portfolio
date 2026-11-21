@@ -163,8 +163,6 @@ try {
     // Repères du projet : une ligne discrète sous l'image, sans colonne ni filets.
     const meta = `
       <dl class="meta">
-        ${categorie ? `<div><dt>Catégorie</dt><dd>${e(categorie)}</dd></div>` : ''}
-        ${projet.year ? `<div><dt>Année</dt><dd>${e(projet.year)}</dd></div>` : ''}
         ${c.audience ? `<div><dt>Public</dt><dd>${e(c.audience)}</dd></div>` : ''}
         ${c.tools?.length ? `<div><dt>Outils</dt><dd><ul class="etiquettes" role="list">${c.tools.map((outil) => `<li>${e(outil)}</li>`).join('')}</ul></dd></div>` : ''}
       </dl>`;

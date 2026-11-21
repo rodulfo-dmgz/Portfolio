@@ -25,24 +25,44 @@
       "etudeComplete": false,
       "title": "Comptable Assistant",
       "category": "conception-parcours",
-      "year": null,
-      "description": "Parcours certifiant TOSA niveaux 4 et 5 : plan comptable général, VBA et amortissements.",
-      "cover": null,
-      "coverAlt": "Écran d'accueil du cours RD IA : choix de la civilité, du prénom et du nom, puis bouton « Commencer le parcours ».",
-      "icone": null,
+      "year": "2024",
+      "description": "Manuel interactif d'une journée : maîtrisez le contrôle, l'analyse et la communication des données comptables.",
+      "cover": "/assets/images/Desktop/comptable-assistant.jpg",
+      "coverAlt": "Aperçu du manuel interactif Comptable Assistant avec son menu de navigation modulaire.",
+      "icone": "/assets/images/Desktop/comptable-assistant.jpg",
       "featured": true,
-      "tags": ["Parcours certifiant", "TOSA", "Comptabilité"],
+      "tags": ["Analyse financière", "SIG", "BFR", "Calculatrices", "Cas pratique"],
       "content": {
-        "presentation": "Parcours certifiant TOSA niveaux 4 et 5 : plan comptable général, VBA et amortissements.",
-        "context": "",
-        "problem": "",
-        "objectives": [],
-        "audience": "",
-        "approach": [],
-        "tools": ["Excel VBA", "Web"],
-        "deliverables": [],
-        "results": "",
-        "gallery": [],
+        "presentation": "Manuel interactif d'une journée. Maîtrisez le contrôle, l'analyse et la communication des données comptables. Calculatrices intégrées, quiz de vérification et un cas pratique complet avec corrigé.",
+        "context": "Création d'un parcours de formation condensé pour permettre aux professionnels de la gestion de lire, comprendre et analyser les documents comptables de l'entreprise en une seule journée.",
+        "problem": "L'analyse financière peut sembler ardue. Le défi était de proposer un outil interactif (sans installation) qui permet de manipuler concrètement les chiffres (SIG, BFR) plutôt que de simplement lire de la théorie.",
+        "objectives": [
+          "Décoder le Bilan comptable et le Compte de résultat.",
+          "Calculer et interpréter les Soldes Intermédiaires de Gestion (SIG) et les ratios.",
+          "Comprendre les 3 familles d'indicateurs (Quotidien, Périodique, Fin d'exercice).",
+          "Utiliser des calculatrices intégrées (ex: Calculatrice BFR).",
+          "Mettre en pratique via un cas d'entreprise complet (TechInnov SARL)."
+        ],
+        "audience": "Assistants comptables, gestionnaires, managers non-financiers ou toute personne souhaitant maîtriser rapidement l'analyse des données comptables.",
+        "approach": [
+          "Un parcours structuré en 3 modules : Fondamentaux, Indicateurs, Cas pratique.",
+          "Une approche 'learning by doing' avec des calculatrices interactives intégrées.",
+          "Des quiz de vérification à chaque étape pour valider les acquis.",
+          "Une mise en situation finale réaliste avec l'entreprise TechInnov SARL et son corrigé type."
+        ],
+        "tools": ["HTML", "CSS", "JavaScript", "SCORM API"],
+        "deliverables": [
+          "Manuel interactif complet (format SCORM).",
+          "Calculatrices autonomes (BFR, SIG).",
+          "Quiz d'évaluation.",
+          "Cas pratique complet (énoncé TechInnov SARL + corrigé type)."
+        ],
+        "results": "Les apprenants sont capables de naviguer dans les documents comptables, d'extraire les bons indicateurs et de les communiquer clairement à leur hiérarchie.",
+        "gallery": [
+          { "src": "/assets/images/Desktop/comptable-assistant1.jpg", "alt": "Module 1 : Fondamentaux du bilan et du compte de résultat" },
+          { "src": "/assets/images/Desktop/comptable-assistant2.jpg", "alt": "Module 2 : Analyse des indicateurs (Quotidien, Périodique, Fin d'exercice)" },
+          { "src": "/assets/images/Desktop/comptable-assistant3.jpg", "alt": "Module 3 : Mise en pratique avec le cas TechInnov SARL" }
+        ],
         "resources": [
           { "type": "demo", "titre": "Ouvrir le parcours", "url": "https://rodulfo-dmgz.github.io/rd-gestion/Comptable_assistant/" }
         ]
@@ -275,8 +295,8 @@
       "category": "innovation-ia",
       "year": "2026",
       "description": "Cours interactif SCORM 1.2 pour découvrir l'intelligence artificielle, guidé par MEXA.",
-      "cover": "/assets/images/Desktop/inteligentsia.jpg",
-      "coverAlt": "Aperçu de l'interface du cours interactif Inteligentsia sur l'intelligence artificielle",
+      "cover": null,
+      "coverAlt": null,
       "icone": "/assets/images/Desktop/inteligentsia.jpg",
       "featured": false,
       "tags": ["Cours interactif", "SCORM 1.2", "IA", "Pédagogie", "MEXA"],
