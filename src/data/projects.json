@@ -8,10 +8,19 @@
     { "id": "outils-pedagogiques", "label": "Développement d'outils pédagogiques" },
     { "id": "innovation-ia", "label": "Innovation et intelligence artificielle" }
   ],
+  "types": [
+    { "id": "etude-de-cas", "label": "Étude de cas", "lien": "Lire l'étude de cas" },
+    { "id": "cours", "label": "Cours interactif", "lien": "Voir la fiche du cours" },
+    { "id": "scorm", "label": "Module SCORM", "lien": "Voir la fiche du module" },
+    { "id": "exercice", "label": "Exercice interactif", "lien": "Voir la fiche de l'exercice" },
+    { "id": "application", "label": "Application web", "lien": "Voir la fiche de l'application" },
+    { "id": "site", "label": "Site web", "lien": "Voir la fiche du site" }
+  ],
   "projets": [
     {
       "id": "projet-001",
       "slug": "comptable-assistant",
+      "type": "cours",
       "demo": false,
       "etudeComplete": false,
       "title": "Comptable Assistant",
@@ -19,7 +28,8 @@
       "year": null,
       "description": "Parcours certifiant TOSA niveaux 4 et 5 : plan comptable général, VBA et amortissements.",
       "cover": null,
-      "coverAlt": "",
+      "coverAlt": "Écran d'accueil du cours RD IA : choix de la civilité, du prénom et du nom, puis bouton « Commencer le parcours ».",
+      "icone": null,
       "featured": true,
       "tags": ["Parcours certifiant", "TOSA", "Comptabilité"],
       "content": {
@@ -41,6 +51,7 @@
     {
       "id": "projet-002",
       "slug": "masterclass-kpi-ca",
+      "type": "cours",
       "demo": false,
       "etudeComplete": false,
       "title": "Masterclass KPI CA",
@@ -49,6 +60,7 @@
       "description": "Cours interactif sur les indicateurs commerciaux : visualisation de données et contrôle de gestion.",
       "cover": null,
       "coverAlt": "",
+      "icone": null,
       "featured": true,
       "tags": ["Cours interactif", "KPI", "Contrôle de gestion"],
       "content": {
@@ -70,6 +82,7 @@
     {
       "id": "projet-003",
       "slug": "rd-gestion-beta",
+      "type": "application",
       "demo": false,
       "etudeComplete": false,
       "title": "RD Gestion Beta",
@@ -78,6 +91,7 @@
       "description": "ERP multi-tenant avec des rôles d'administrateur, de formateur et de stagiaire.",
       "cover": null,
       "coverAlt": "",
+      "icone": null,
       "featured": true,
       "tags": ["ERP", "Multi-tenant", "Rôles"],
       "content": {
@@ -99,6 +113,7 @@
     {
       "id": "projet-004",
       "slug": "ml-lab",
+      "type": "exercice",
       "demo": false,
       "etudeComplete": false,
       "title": "ML Lab",
@@ -107,6 +122,7 @@
       "description": "Laboratoire de machine learning interactif, dans le navigateur.",
       "cover": null,
       "coverAlt": "",
+      "icone": null,
       "featured": true,
       "tags": ["Machine learning", "Interactif"],
       "content": {
@@ -121,13 +137,14 @@
         "results": "",
         "gallery": [],
         "resources": [
-          { "type": "demo", "titre": "Ouvrir le laboratoire", "url": "https://rodulfo-dmgz.github.io/IA_exercices/ml-lab" }
+          { "type": "demo", "titre": "Ouvrir le laboratoire", "url": "https://ia.rd-formation.com/LVL1//ml-lab" }
         ]
       }
     },
     {
       "id": "projet-005",
       "slug": "lechoppe-gauloise",
+      "type": "site",
       "demo": false,
       "etudeComplete": false,
       "title": "L'Échoppe Gauloise",
@@ -136,6 +153,7 @@
       "description": "E-commerce pédagogique pour travailler la paie, les RH et la comptabilité, avec Pennylane.",
       "cover": null,
       "coverAlt": "",
+      "icone": null,
       "featured": false,
       "tags": ["E-commerce pédagogique", "Paie", "RH", "Comptabilité"],
       "content": {
@@ -157,6 +175,7 @@
     {
       "id": "projet-006",
       "slug": "ml-non-supervise",
+      "type": "exercice",
       "demo": false,
       "etudeComplete": false,
       "title": "ML non supervisé",
@@ -165,6 +184,7 @@
       "description": "Clustering, K-means et détection de motifs.",
       "cover": null,
       "coverAlt": "",
+      "icone": null,
       "featured": false,
       "tags": ["Machine learning", "Clustering"],
       "content": {
@@ -179,13 +199,14 @@
         "results": "",
         "gallery": [],
         "resources": [
-          { "type": "demo", "titre": "Ouvrir l'exercice", "url": "https://rodulfo-dmgz.github.io/IA_exercices/ml_non_supervise" }
+          { "type": "demo", "titre": "Ouvrir l'exercice", "url": "https://ia.rd-formation.com/LVL1/ml_non_supervise" }
         ]
       }
     },
     {
       "id": "projet-007",
       "slug": "ml-supervise",
+      "type": "exercice",
       "demo": false,
       "etudeComplete": false,
       "title": "ML supervisé",
@@ -194,6 +215,7 @@
       "description": "Classification, régression et évaluation de modèles.",
       "cover": null,
       "coverAlt": "",
+      "icone": null,
       "featured": false,
       "tags": ["Machine learning", "Classification"],
       "content": {
@@ -208,13 +230,14 @@
         "results": "",
         "gallery": [],
         "resources": [
-          { "type": "demo", "titre": "Ouvrir l'exercice", "url": "https://rodulfo-dmgz.github.io/IA_exercices/ml_supervise" }
+          { "type": "demo", "titre": "Ouvrir l'exercice", "url": "https://ia.rd-formation.com/LVL1/ml_supervise" }
         ]
       }
     },
     {
       "id": "projet-008",
       "slug": "reseaux-de-neurones",
+      "type": "exercice",
       "demo": false,
       "etudeComplete": false,
       "title": "Réseaux de neurones",
@@ -223,6 +246,7 @@
       "description": "Perceptron, couches et rétropropagation.",
       "cover": null,
       "coverAlt": "",
+      "icone": null,
       "featured": false,
       "tags": ["Réseaux de neurones", "Rétropropagation"],
       "content": {
@@ -237,7 +261,54 @@
         "results": "",
         "gallery": [],
         "resources": [
-          { "type": "demo", "titre": "Ouvrir l'exercice", "url": "https://rodulfo-dmgz.github.io/IA_exercices/reseau_neurones" }
+          { "type": "demo", "titre": "Ouvrir l'exercice", "url": "https://ia.rd-formation.com/LVL1/reseau_neurones" }
+        ]
+      }
+    },
+    {
+      "id": "projet-009",
+      "slug": "inteligentsia",
+      "type": "scorm",
+      "demo": false,
+      "etudeComplete": false,
+      "title": "Inteligentsia",
+      "category": "innovation-ia",
+      "year": "2026",
+      "description": "Cours interactif SCORM 1.2 pour découvrir l'intelligence artificielle, guidé par MEXA.",
+      "cover": "/assets/images/Desktop/inteligentsia.jpg",
+      "coverAlt": "Aperçu de l'interface du cours interactif Inteligentsia sur l'intelligence artificielle",
+      "icone": "/assets/images/Desktop/inteligentsia.jpg",
+      "featured": false,
+      "tags": ["Cours interactif", "SCORM 1.2", "IA", "Pédagogie", "MEXA"],
+      "content": {
+        "presentation": "Un parcours e-learning interactif guidé par MEXA pour comprendre concrètement ce que fait l'IA, comment elle raisonne et comment elle s'applique au monde réel.",
+        "context": "Développement d'un module de formation complet au format SCORM 1.2, conçu pour être intégré de manière autonome dans n'importe quelle plateforme LMS (Moodle, 360Learning, etc.).",
+        "problem": "L'IA est souvent perçue comme une 'boîte noire' complexe et inaccessible. Le défi était de vulgariser des concepts abstraits (algorithmes, probabilités, philosophie) tout en maintenant un haut niveau d'engagement et d'interactivité.",
+        "objectives": [
+          "Définir clairement ce qu'est l'intelligence artificielle et ses domaines d'application.",
+          "Comprendre le raisonnement dans l'incertain (probabilités, théorème de Bayes).",
+          "Proposer une approche pédagogique ludique avec des exercices concrets."
+        ],
+        "audience": "Tout public : débutants, étudiants, ou professionnels en reconversion souhaitant démystifier l'IA.",
+        "approach": [
+          "Un fil conducteur narratif guidé par MEXA, l'assistant virtuel du cours.",
+          "Une architecture Multi-Page (MPA) générée par Vite pour des transitions fluides.",
+          "Intégration native de l'API SCORM pour le suivi de la progression dans le LMS."
+        ],
+        "tools": ["HTML", "CSS", "JavaScript", "Vite", "SCORM API", "Éditeur d'images sur mesure"],
+        "deliverables": [
+          "Package SCORM 1.2 complet (fichier .zip prêt à l'import).",
+          "Modules interactifs (accueil, inscription, chapitres thématiques, glossaire, bilan).",
+          "Outil interne de gestion et d'édition d'images (mode développement)."
+        ],
+        "results": "Un cours interactif léger, sans dépendance externe, capable de s'ouvrir depuis n'importe quel dossier d'un LMS, avec une expérience utilisateur fluide et un suivi de progression fiable.",
+        "gallery": [
+          { "src": "/assets/images/Desktop/inteligentsia1.jpg", "alt": "Interface du module de définition de l'IA" }, 
+          { "src": "/assets/images/Desktop/inteligentsia2.jpg", "alt": "Exercice interactif sur le raisonnement probabiliste" }, 
+          { "src": "/assets/images/Desktop/inteligentsia3.jpg", "alt": "Page de bilan et de ressources du cours" }
+        ],
+        "resources": [
+          { "type": "demo", "titre": "Ouvrir l'exercice", "url": "https://ia.rd-formation.com/" }
         ]
       }
     }

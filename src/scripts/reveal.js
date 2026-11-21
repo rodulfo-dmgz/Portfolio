@@ -10,7 +10,7 @@ const CIBLES = [
   '.apropos__portrait', '.apropos__presentation', '.faits',
   '.deux-colonnes > :last-child', '.domaine__grille > .liste-trait', '.domaine__resume',
   '.contact-accueil > :not(h2)', '.contact > *', '.appel > :not(h2)',
-  '.etude__visuel', '.etude__fiche', '.etude__section', '.etude__suite',
+  '.apercus', '.meta', '.rubrique', '.etude__suite',
 ].join(',');
 
 const PAS_DE_DECALAGE_MS = 60;

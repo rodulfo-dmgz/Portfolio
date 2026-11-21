@@ -19,7 +19,7 @@ const BAC_A_SABLE = 'allow-scripts allow-same-origin allow-forms allow-popups al
 const lienDemo = (projet) => projet.content?.resources?.find((ressource) => ressource.type === 'demo')?.url ?? null;
 const initiales = (titre) => titre.split(/\s+/).map((mot) => mot[0]).join('').slice(0, 2).toUpperCase();
 
-export function monterBureau(racine, projets, categorie = null) {
+export function monterBureau(racine, projets, categorie = null, types = []) {
   const reduit = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const ecran = racine.querySelector('[data-ecran]');
   const aide = racine.querySelector('[data-aide]');
@@ -57,7 +57,7 @@ export function monterBureau(racine, projets, categorie = null) {
         ${liste.map(({ projet }, rang) => `
           <li>
             <button class="raccourci" type="button" data-slug="${e(projet.slug)}" style="--teinte:${rang % 4}">
-              <span class="raccourci__tuile" aria-hidden="true">${e(initiales(projet.title))}</span>
+              <span class="raccourci__tuile${projet.icone ? ' raccourci__tuile--image' : ''}" aria-hidden="true">${projet.icone ? `<img src="${e(projet.icone)}" alt="" width="60" height="60" decoding="async" />` : e(initiales(projet.title))}</span>
               <span class="raccourci__nom">${e(projet.title)}</span>
             </button>
           </li>`).join('')}
@@ -148,6 +148,8 @@ export function monterBureau(racine, projets, categorie = null) {
     afficherOnglets();
     externe.href = url;
     etude.href = `/realisations/${projet.slug}`;
+    // Le libellé du lien dépend de la nature du projet (cours, exercice, site…), pas toujours « étude de cas ».
+    etude.textContent = types.find((type) => type.id === projet.type)?.lien ?? 'Voir la fiche du projet';
     aide.textContent = `${projet.title} est ouvert dans le navigateur de l’ordinateur.`;
     actions.hidden = false;
   }

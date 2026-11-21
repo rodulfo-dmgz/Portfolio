@@ -178,6 +178,10 @@
   .raccourci[style*='--teinte:2'] { --c1: #ff6b24; --c2: #a33100; }
   .raccourci[style*='--teinte:3'] { --c1: #8b5cf6; --c2: #4c1d95; }
 
+
+  /* Icône personnalisée (champ « icone » de projects.json) : image carrée qui remplit la tuile. */
+  .raccourci__tuile--image { overflow: hidden; background: #fff; }
+  .raccourci__tuile--image img { display: block; inline-size: 100%; block-size: 100%; object-fit: cover; }
   .raccourci__nom {
     font-size: 12px;
     line-height: 1.2;

@@ -1,0 +1,123 @@
+/* Aperçus d'un projet : carrousel minimal (components/carrousel.js). */
+@layer components {
+  .apercus {
+    margin-block-start: var(--space-8);
+  }
+
+  .apercus__piste {
+    display: flex;
+    margin: 0;
+    margin-inline: calc(var(--space-2) * -1);
+    padding: var(--space-2) 0 var(--space-4);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    list-style: none;
+  }
+
+  .apercus__piste::-webkit-scrollbar { display: none; }
+
+  .apercus__diapo {
+    flex: 0 0 100%;
+    padding-inline: var(--space-2);
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+
+  /* Une image : 16:9, coins arrondis, ombre douce ; aucun cadre coloré. */
+  .apercus__image {
+    display: block;
+    inline-size: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    outline: var(--border-width-1) solid oklch(0 0 0 / 0.08);
+    outline-offset: -1px;
+  }
+
+  html.dark .apercus__image { outline-color: oklch(1 0 0 / 0.1); }
+
+  .apercus__image img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  /* Profondeur : l'image courante est nette, les voisines reculent légèrement. */
+  @media (prefers-reduced-motion: no-preference) {
+    .apercus--actif .apercus__diapo {
+      opacity: 0.5;
+      scale: 0.94;
+      transition: opacity 500ms var(--ease-expo), scale 500ms var(--ease-expo);
+    }
+
+    .apercus--actif .apercus__diapo.est-active {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
+  .apercus__commandes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+  }
+
+  .apercus__fleche {
+    display: grid;
+    place-items: center;
+    inline-size: 2.75rem;
+    block-size: 2.75rem;
+    border: var(--border-width-1) solid var(--border-default);
+    border-radius: var(--radius-full);
+    background: var(--surface-base);
+    color: var(--text-primary);
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 150ms var(--ease-out), border-color 150ms var(--ease-out), opacity 150ms var(--ease-out);
+  }
+
+  .apercus__fleche:disabled { opacity: var(--state-disabled-opacity); cursor: not-allowed; }
+  .apercus__fleche .icon { inline-size: 1.25rem; block-size: 1.25rem; stroke-width: 1.8; }
+
+  @media (hover: hover) {
+    .apercus__fleche:not(:disabled):hover { border-color: var(--border-strong); background: var(--surface-subtle); }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .apercus__fleche:not(:disabled):active { scale: 0.96; }
+  }
+
+  .apercus__points { display: flex; align-items: center; }
+
+  /* Points : zone cliquable de 1,5 rem ; le point actif s'allonge en pastille. */
+  .apercus__point {
+    display: grid;
+    place-items: center;
+    inline-size: 1.5rem;
+    block-size: 2rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .apercus__point::before {
+    content: '';
+    inline-size: 0.5rem;
+    block-size: 0.5rem;
+    border-radius: var(--radius-full);
+    background: var(--border-strong);
+    transition: inline-size 400ms var(--ease-expo), background-color 250ms var(--ease-out);
+  }
+
+  .apercus__point[aria-current='true']::before {
+    inline-size: 1.25rem;
+    background: var(--color-secondary-600);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .apercus__piste { scroll-behavior: auto; }
+    .apercus__point::before { transition: none; }
+  }
+}
