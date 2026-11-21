@@ -282,6 +282,25 @@
 
   .navigateur__page iframe { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; border: 0; background: #fff; }
   .navigateur__page iframe[hidden] { display: none; }
+  .navigateur__page [data-slug][hidden] { display: none; }
+
+  /* Projet qui ne s'affiche pas dans un cadre : une carte avec l'image et un lien pour l'ouvrir à part. */
+  .navigateur__repli {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 12px;
+    padding: 24px;
+    overflow: hidden;
+    text-align: center;
+    color: #0f172a;
+  }
+
+  .repli__image { inline-size: auto; max-inline-size: 100%; block-size: 8rem; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 24px rgb(15 23 42 / 0.18); }
+  .repli__titre { margin: 0; font-size: 1.25rem; color: #0f172a; }
+  .repli__texte { max-inline-size: 36ch; margin: 0; font-size: 0.875rem; color: #475569; }
 
   .navigateur__chargement {
     position: absolute;

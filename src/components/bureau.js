@@ -142,7 +142,7 @@ export function monterBureau(racine, projets, categorie = null, types = []) {
   function activer(slug) {
     actif = slug;
     const { projet, url } = par.get(slug);
-    for (const cadre of page.querySelectorAll('iframe')) cadre.hidden = cadre.dataset.slug !== slug;
+    for (const cadre of page.querySelectorAll('[data-slug]')) cadre.hidden = cadre.dataset.slug !== slug;
     vide.hidden = true;
     adresse.textContent = url.replace(/^https?:\/\//, '');
     afficherOnglets();
@@ -157,6 +157,21 @@ export function monterBureau(racine, projets, categorie = null, types = []) {
   function ouvrirOnglet(slug) {
     if (!ouverts.includes(slug)) {
       ouverts.push(slug);
+      const { projet, url } = par.get(slug);
+      if (projet.integrable === false) {
+        // Certains cours refusent d'être affichés dans un cadre : on propose plutôt de les ouvrir à part.
+        const repli = document.createElement('div');
+        repli.className = 'navigateur__repli';
+        repli.dataset.slug = slug;
+        repli.innerHTML = `
+          ${projet.icone ? `<img class="repli__image" src="${e(projet.icone)}" alt="" decoding="async" />` : ''}
+          <h2 class="repli__titre">${e(projet.title)}</h2>
+          <p class="repli__texte">${e(projet.description ?? '')}</p>
+          <a class="btn btn--cta" href="${e(url)}" target="_blank" rel="noopener">Ouvrir dans un nouvel onglet</a>`;
+        page.append(repli);
+        activer(slug);
+        return;
+      }
       const cadre = document.createElement('iframe');
       cadre.dataset.slug = slug;
       cadre.title = par.get(slug).projet.title;
@@ -191,7 +206,7 @@ export function monterBureau(racine, projets, categorie = null, types = []) {
     const fin = () => {
       nav.hidden = true;
       dock.setAttribute('aria-pressed', 'false');
-      for (const cadre of page.querySelectorAll('iframe')) cadre.remove();
+      for (const cadre of page.querySelectorAll('[data-slug]')) cadre.remove();
       ouverts = [];
       actif = null;
       vide.hidden = false;
@@ -212,7 +227,7 @@ export function monterBureau(racine, projets, categorie = null, types = []) {
 
   function fermerOnglet(slug) {
     ouverts = ouverts.filter((autre) => autre !== slug);
-    page.querySelector(`iframe[data-slug="${CSS.escape(slug)}"]`)?.remove();
+    page.querySelector(`[data-slug="${CSS.escape(slug)}"]`)?.remove();
     if (!ouverts.length) { fermerNav(); return; }
     activer(ouverts.at(-1));
   }
