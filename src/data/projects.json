@@ -27,7 +27,7 @@
       "category": "conception-parcours",
       "year": "2024",
       "description": "Manuel interactif d'une journée : maîtrisez le contrôle, l'analyse et la communication des données comptables.",
-      "cover": "/assets/images/Desktop/comptable-assistant.jpg",
+      "cover": "/assets/images/Desktop/CA.png",
       "coverAlt": "Aperçu du manuel interactif Comptable Assistant avec son menu de navigation modulaire.",
       "icone": null,
       "featured": true,
@@ -59,9 +59,9 @@
         ],
         "results": "Les apprenants sont capables de naviguer dans les documents comptables, d'extraire les bons indicateurs et de les communiquer clairement à leur hiérarchie.",
         "gallery": [
-          { "src": "/assets/images/Desktop/comptable-assistant1.jpg", "alt": "Module 1 : Fondamentaux du bilan et du compte de résultat" },
-          { "src": "/assets/images/Desktop/comptable-assistant2.jpg", "alt": "Module 2 : Analyse des indicateurs (Quotidien, Périodique, Fin d'exercice)" },
-          { "src": "/assets/images/Desktop/comptable-assistant3.jpg", "alt": "Module 3 : Mise en pratique avec le cas TechInnov SARL" }
+          { "src": "/assets/images/Desktop/CA1.png", "alt": "Module 1 : Fondamentaux du bilan et du compte de résultat" },
+          { "src": "/assets/images/Desktop/CA2.png", "alt": "Module 2 : Analyse des indicateurs (Quotidien, Périodique, Fin d'exercice)" },
+          { "src": "/assets/images/Desktop/CA3.png", "alt": "Module 3 : Mise en pratique avec le cas TechInnov SARL" }
         ],
         "resources": [
           { "type": "demo", "titre": "Ouvrir le parcours", "url": "https://rodulfo-dmgz.github.io/rd-gestion/Comptable_assistant/" }
@@ -70,63 +70,102 @@
     },
     {
       "id": "projet-002",
-      "slug": "masterclass-kpi-ca",
+      "slug": "masterclass-kpi-gp",
       "type": "cours",
       "demo": false,
       "etudeComplete": false,
-      "title": "Masterclass KPI CA",
+      "title": "Masterclass KPI GP",
       "category": "digital-learning",
-      "year": null,
-      "description": "Cours interactif sur les indicateurs commerciaux : visualisation de données et contrôle de gestion.",
-      "cover": null,
-      "coverAlt": "",
+      "year": "2026",
+      "description": "Formation interactive pour maîtriser les 18 KPIs essentiels du service paie et piloter la performance de votre équipe.",
+      "cover": "/assets/images/Desktop/GP.png",
+      "coverAlt": "Tableau de bord interactif de la Masterclass KPI GP présentant les indicateurs de performance du service paie.",
       "icone": null,
       "featured": true,
-      "tags": ["Cours interactif", "KPI", "Contrôle de gestion"],
+      "tags": ["Gestion de paie", "KPI", "Data-visualisation", "Pilotage de la performance", "RH"],
       "content": {
-        "presentation": "Cours interactif sur les indicateurs commerciaux : visualisation de données et contrôle de gestion.",
-        "context": "",
-        "problem": "",
-        "objectives": [],
-        "audience": "",
-        "approach": [],
-        "tools": ["HTML", "CSS", "JavaScript"],
-        "deliverables": [],
-        "results": "",
-        "gallery": [],
+        "presentation": "Une masterclass interactive de 4 heures pour transformer le service paie en un véritable centre de pilotage stratégique grâce à 18 indicateurs de performance (KPIs) interactifs et des benchmarks sectoriels.",
+        "context": "Le service paie est souvent perçu comme un centre de coûts purement administratif. Cette formation a été conçue pour donner aux gestionnaires de paie les outils visuels et les données nécessaires pour mesurer, analyser et valoriser l'impact de leur travail auprès de la direction.",
+        "problem": "Comment démontrer l'efficacité d'un service paie au-delà de la simple production des bulletins ? Comment réduire les erreurs, éviter les redressements URSSAF et améliorer la satisfaction des collaborateurs sans indicateurs de mesure précis ?",
+        "objectives": [
+          "Comprendre et exploiter les 18 KPIs essentiels d'un service paie.",
+          "Mesurer l'efficacité opérationnelle (coût complet par bulletin, taux de production dans les délais).",
+          "Piloter la qualité et la conformité (taux d'erreur, délais de régularisation, conformité DSN).",
+          "Analyser la performance stratégique et la conformité réglementaire (redressements évités, RGPD)."
+        ],
+        "audience": "Gestionnaires de paie, responsables de service paie, DRH et contrôleurs de gestion souhaitant professionnaliser le pilotage de la paie.",
+        "approach": [
+          "Un parcours structuré en 5 modules thématiques (Efficacité, Qualité, Expérience, Stratégie, Conformité).",
+          "Un tableau de bord interactif avec des valeurs de démonstration et des benchmarks sectoriels.",
+          "Une approche visuelle et concrète pour comprendre l'impact de chaque indicateur."
+        ],
+        "tools": ["HTML", "CSS", "JavaScript", "Data-visualisation"],
+        "deliverables": [
+          "Application web interactive (accès sécurisé).",
+          "5 modules complets de formation.",
+          "Tableau de bord de démonstration avec 18 KPIs interactifs.",
+          "Benchmarks sectoriels pour situer sa performance."
+        ],
+        "results": "Les apprenants sont capables de construire un tableau de bord de pilotage pour leur service paie, de justifier les coûts de production et de démontrer la valeur ajoutée de leur travail à la direction.",
+        "gallery": [
+          { "src": "/assets/images/Desktop/GP1.png", "alt": "Écran de connexion sécurisé de la Masterclass KPI GP" },
+          { "src": "/assets/images/Desktop/GP2.png", "alt": "Tableau de bord principal avec les indicateurs de référence et les modules de cours" },
+          { "src": "/assets/images/Desktop/GP3.png", "alt": "Détail d'un module sur l'efficacité opérationnelle et le coût par bulletin" }
+        ],
         "resources": [
-          { "type": "demo", "titre": "Ouvrir le cours", "url": "https://rodulfo-dmgz.github.io/rd-gestion/CA_KPI/index.html" }
+          { "type": "demo", "titre": "Ouvrir le cours", "url": "https://rodulfo-dmgz.github.io/KPI/GP_KPI/index.html" }
         ]
       }
     },
     {
       "id": "projet-003",
-      "slug": "rd-gestion-beta",
+      "slug": "rd-erp",
       "type": "application",
       "demo": false,
       "etudeComplete": false,
-      "title": "RD Gestion Beta",
+      "title": "RD ERP",
       "category": "outils-pedagogiques",
-      "year": null,
-      "description": "ERP multi-tenant avec des rôles d'administrateur, de formateur et de stagiaire.",
-      "cover": null,
-      "coverAlt": "",
+      "year": "2022 - à présent",
+      "description": "ERP complet pour la gestion d'organismes de formation : planning, LMS, CRM, émargement et signature électronique.",
+      "cover": "/assets/images/Desktop/ERP.png",
+      "coverAlt": "Interface de connexion de RD ERP avec un design bleu et orange, et aperçu du tableau de bord des modules.",
       "icone": null,
       "featured": true,
-      "tags": ["ERP", "Multi-tenant", "Rôles"],
+      "tags": ["ERP", "Next.js", "PostgreSQL", "LMS", "TMS", "CRM"],
       "content": {
-        "presentation": "ERP multi-tenant avec des rôles d'administrateur, de formateur et de stagiaire.",
-        "context": "",
-        "problem": "",
-        "objectives": [],
-        "audience": "",
-        "approach": [],
-        "tools": ["Supabase", "JavaScript", "RLS"],
-        "deliverables": [],
-        "results": "",
-        "gallery": [],
+        "presentation": "Une application web centralisée (ERP) conçue pour piloter l'intégralité d'un organisme de formation : planning, pédagogie et suivi au même endroit. Une architecture multi-tenant robuste avec des rôles dédiés (administrateur, formateur, stagiaire).",
+        "context": "Développement d'une solution sur-mesure pour remplacer la multiplication d'outils disparates (tableurs, logiciels de signature, plateformes LMS) par un écosystème unique et intégré.",
+        "problem": "Les organismes de formation jonglent souvent entre plusieurs logiciels, ce qui entraîne des pertes de données, des erreurs de facturation et une expérience stagiaire fragmentée. Il fallait unifier tout le cycle de vie de la formation (de la demande client jusqu'à la preuve de formation).",
+        "objectives": [
+          "Centraliser la planification (cohortes, séances, salles et formateurs).",
+          "Gérer les parcours e-learning (tests de positionnement, suivi des stagiaires).",
+          "Automatiser l'émargement (feuilles de présence, rattrapages et preuves de formation).",
+          "Piloter la relation client (demandes, devis et signatures électroniques)."
+        ],
+        "audience": "Gestionnaires d'organismes de formation, administrateurs, formateurs et stagiaires.",
+        "approach": [
+          "Architecture Multi-tenant avec contrôle d'accès basé sur les rôles (RLS).",
+          "Interface unifiée et responsive (mode clair/sombre).",
+          "Intégration de briques fonctionnelles : LMS (Learning), TMS (Training), CRM (Client) et SIGN (Signature)."
+        ],
+        "tools": ["Next.js", "PostgreSQL", "TMS", "LMS", "CRM", "SIGN", "Tailwind CSS"],
+        "deliverables": [
+          "Plateforme web SaaS complète.",
+          "Tableau de bord administrateur et espace stagiaire.",
+          "Modules fonctionnels : Planning, Formation en ligne, Émargement, Relation client.",
+          "Système de signature et de preuve de formation."
+        ],
+        "results": "Une plateforme unique offrant une vision à 360° sur l'activité de formation, réduisant considérablement les tâches administratives et améliorant l'expérience utilisateur pour les équipes et les apprenants.",
+        "gallery": [
+          { "src": "/assets/images/Desktop/ERP1.png"},
+          { "src": "/assets/images/Desktop/ERP2.png"},
+          { "src": "/assets/images/Desktop/ERP3.png"},
+          { "src": "/assets/images/Desktop/ERP4.png"},
+          { "src": "/assets/images/Desktop/ERP5.png"},
+          { "src": "/assets/images/Desktop/ERP6.png"}
+        ],
         "resources": [
-          { "type": "demo", "titre": "Ouvrir l'application", "url": "https://rodulfo-dmgz.github.io/rd-gestion/rdgestion-beta/" }
+          { "type": "demo", "titre": "Ouvrir l'application", "url": "https://erp.rd-formation.com/login" }
         ]
       }
     },
@@ -138,54 +177,216 @@
       "etudeComplete": false,
       "title": "ML Lab",
       "category": "innovation-ia",
-      "year": null,
-      "description": "Laboratoire de machine learning interactif, dans le navigateur.",
-      "cover": null,
-      "coverAlt": "",
+      "year": "2025",
+      "description": "Laboratoire interactif pour comprendre les fondamentaux du Machine Learning (supervisé et non supervisé) via des mini-jeux pratiques.",
+      "cover": "/assets/images/Desktop/ml-lab.png",
+      "coverAlt": "Interface du ML Lab montrant le module d'apprentissage supervisé avec des emails à classifier.",
       "icone": null,
       "featured": true,
-      "tags": ["Machine learning", "Interactif"],
+      "tags": ["Machine learning", "Interactif", "Gamification", "Classification", "Clustering"],
       "content": {
-        "presentation": "Laboratoire de machine learning interactif, dans le navigateur.",
-        "context": "",
-        "problem": "",
-        "objectives": [],
-        "audience": "",
-        "approach": [],
-        "tools": ["HTML", "CSS", "JavaScript"],
-        "deliverables": [],
-        "results": "",
-        "gallery": [],
+        "presentation": "Un laboratoire interactif dans le navigateur pour démystifier l'intelligence artificielle. Apprenez le Machine Learning en pratiquant : classifiez des emails, regroupez des profils clients et comprenez la logique des algorithmes sans écrire une seule ligne de code.",
+        "context": "Conçu comme un outil pédagogique complémentaire aux formations en IA. L'objectif est de passer de la théorie abstraite à la pratique concrète en permettant à l'utilisateur de 'jouer' le rôle de l'algorithme.",
+        "problem": "Les concepts de Machine Learning (supervisé, non supervisé) sont souvent expliqués de manière trop mathématique ou théorique. Il fallait créer une interface intuitive où l'apprenant comprend instinctivement la différence entre 'apprendre avec des étiquettes' et 'trouver des groupes tout seul'.",
+        "objectives": [
+          "Distinguer l'apprentissage supervisé (ex: filtre anti-spam) de l'apprentissage non supervisé (ex: segmentation client).",
+          "S'entraîner à classifier des données hétérogènes (textes, images) selon des critères précis.",
+          "Comprendre la notion de regroupement (clustering) en créant des familles de clients aux habitudes similaires.",
+          "Se familiariser avec les métriques de performance (score de précision, gestion des erreurs)."
+        ],
+        "audience": "Débutants en intelligence artificielle, étudiants, ou toute personne curieuse de comprendre comment fonctionnent les algorithmes derrière les applications du quotidien.",
+        "approach": [
+          "Une approche 'Learning by doing' avec une interface de type glisser-déposer.",
+          "Un système de gamification avec barre d'XP (points d'expérience) pour maintenir l'engagement.",
+          "Des exemples ancrés dans le réel (Spotify pour la musique, emails pour le spam) expliqués à chaque étape.",
+          "Un calcul de précision en temps réel basé sur les choix de l'utilisateur."
+        ],
+        "tools": ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+        "deliverables": [
+          "Application web interactive mono-page (SPA).",
+          "Module 1 : Apprentissage supervisé (classification d'emails et d'images).",
+          "Module 2 : Apprentissage non supervisé (regroupement de clients).",
+          "Interface de feedback utilisateur avec calcul de précision et système d'XP."
+        ],
+        "results": "L'apprenant a manipulé concrètement les données et comprend désormais la logique sous-jacente des algorithmes d'IA, ce qui rend l'apprentissage des concepts théoriques beaucoup plus accessible.",
+        "gallery": [
+          { "src": "/assets/images/Desktop/ml-lab1.png" },
+          { "src": "/assets/images/Desktop/ml-lab2.png" }
+        ],
         "resources": [
-          { "type": "demo", "titre": "Ouvrir le laboratoire", "url": "https://ia.rd-formation.com/LVL1//ml-lab" }
+          { "type": "demo", "titre": "Ouvrir le laboratoire", "url": "https://ia.rd-formation.com/LVL1/ml-lab.html" }
         ]
       }
     },
     {
       "id": "projet-005",
+      "slug": "ml-non-supervise",
+      "type": "exercice",
+      "demo": false,
+      "etudeComplete": false,
+      "title": "ML non supervisé",
+      "category": "innovation-ia",
+      "year": "2026",
+      "description": "Découvrez le clustering et l'apprentissage non supervisé en classant des formes géométriques selon leurs propriétés mathématiques.",
+      "cover": "/assets/images/Desktop/ml-non.png",
+      "coverAlt": "Interface du module d'apprentissage non supervisé montrant un trieur automatique de formes (carré, maison, triangle) à classer dans différentes catégories.",
+      "icone": null,
+      "featured": false,
+      "tags": ["Machine learning", "Clustering", "K-means", "Non supervisé"],
+      "content": {
+        "presentation": "Un exercice interactif pour comprendre comment une IA regroupe des données sans aucune étiquette. L'utilisateur doit aider l'algorithme à trier des formes géométriques complexes en se basant uniquement sur leurs caractéristiques intrinsèques (sommets, angles, courbure).",
+        "context": "Ce module s'inscrit dans la suite logique de l'apprentissage supervisé. Une fois que l'on a compris comment l'IA apprend avec des étiquettes, il faut comprendre comment elle peut trouver des motifs (patterns) et créer des catégories par elle-même, sans aide humaine.",
+        "problem": "Comment une machine peut-elle différencier un carré d'un losange sans utiliser leur nom, mais uniquement leur géométrie ? Comment regrouper des données hétérogènes en 'clusters' cohérents ?",
+        "objectives": [
+          "Comprendre le principe fondamental de l'apprentissage non supervisé.",
+          "Découvrir le fonctionnement du clustering (regroupement automatique).",
+          "Apprendre à analyser des propriétés mathématiques (nombre de sommets, courbure des lignes, angles).",
+          "Différencier la classification (supervisé) du regroupement (non supervisé)."
+        ],
+        "audience": "Toute personne ayant déjà des bases en IA ou ayant suivi le module d'apprentissage supervisé, souhaitant approfondir ses connaissances sur les algorithmes de regroupement.",
+        "approach": [
+          "Une interface de type 'Trieur Automatique' où l'utilisateur glisse des formes vers des groupes.",
+          "Une analyse en temps réel basée sur les caractéristiques physiques de chaque forme.",
+          "Quatre catégories cibles (Groupe A, Groupe B, Groupe C, Groupe Complexe) avec des propriétés de plus en plus abstraites."
+        ],
+        "tools": ["HTML", "CSS", "JavaScript"],
+        "deliverables": [
+          "Application web interactive (module d'exercice).",
+          "Interface de glisser-déposer avec feedback visuel.",
+          "Système de validation des regroupements basé sur la géométrie."
+        ],
+        "results": "L'apprenant a compris qu'une IA non supervisée ne cherche pas à nommer les choses, mais à trouver des similarités structurelles pour créer des groupes logiques (clusters).",
+        "gallery": [],
+        "resources": [
+          { "type": "demo", "titre": "Ouvrir l'exercice", "url": "https://ia.rd-formation.com/LVL1/ml_non_supervise.html" }
+        ]
+      }
+    },
+    {
+      "id": "projet-006",
+      "slug": "ml-supervise",
+      "type": "exercice",
+      "demo": false,
+      "etudeComplete": false,
+      "title": "ML supervisé",
+      "category": "innovation-ia",
+      "year": "2026",
+      "description": "Apprenez le Machine Learning en jouant le rôle du professeur : entraînez une IA à classer des fruits, des animaux et des véhicules en corrigeant ses erreurs.",
+      "cover": "/assets/images/Desktop/ml-supervise.png",
+      "coverAlt": "Interface du module d'apprentissage supervisé invitant l'utilisateur à classifier des emojis dans les catégories Fruits, Animaux et Véhicules.",
+      "icone": null,
+      "featured": false,
+      "tags": ["Machine learning", "Supervisé", "Classification", "Gamification"],
+      "content": {
+        "presentation": "Un jeu interactif où vous incarnez le professeur d'une intelligence artificielle. Votre mission : lui apprendre à classer différents éléments (fruits, animaux, véhicules) en validant ses bonnes réponses et en corrigeant ses erreurs.",
+        "context": "Ce module pratique a été conçu pour illustrer de façon intuitive le fonctionnement de l'apprentissage supervisé, qui est l'une des bases fondamentales du Machine Learning.",
+        "problem": "Comment expliquer simplement qu'une IA ne 'connaît' pas la différence entre une pomme et un animal au départ, et qu'elle a besoin de données étiquetées et d'un superviseur humain pour apprendre ?",
+        "objectives": [
+          "Comprendre le principe de l'apprentissage par l'exemple (données étiquetées).",
+          "Assimiler le rôle du 'professeur' (le superviseur humain) dans le processus d'entraînement.",
+          "Observer l'évolution de la précision de l'IA au fil des corrections apportées."
+        ],
+        "audience": "Débutants en intelligence artificielle, étudiants ou tout public souhaitant comprendre les rouages du Machine Learning de manière ludique et sans code.",
+        "approach": [
+          "Une interface de jeu intuitive avec des éléments visuels familiers (emojis).",
+          "Un feedback en temps réel sur les progrès de l'IA (compteur d'éléments appris et d'erreurs).",
+          "Un système d'apprentissage par essais et erreurs (l'IA devine au hasard, l'utilisateur corrige)."
+        ],
+        "tools": ["HTML", "CSS", "JavaScript"],
+        "deliverables": [
+          "Application web interactive mono-page.",
+          "Système de validation et de correction en temps réel.",
+          "Barre de progression dynamique de l'entraînement de l'IA."
+        ],
+        "results": "L'apprenant a expérimenté de manière concrète la nécessité d'avoir des données de qualité et des retours humains (feedback) pour entraîner un modèle d'intelligence artificielle.",
+        "gallery": [],
+        "resources": [
+          { "type": "demo", "titre": "Ouvrir l'exercice", "url": "https://ia.rd-formation.com/LVL1/ml_supervise.html" }
+        ]
+      }
+    },
+    {
+      "id": "projet-007",
+      "slug": "reseaux-de-neurones",
+      "type": "exercice",
+      "demo": false,
+      "etudeComplete": false,
+      "title": "Réseaux de neurones",
+      "category": "innovation-ia",
+      "year": "2026",
+      "description": "Découvrez le fonctionnement d'un réseau de neurones couche par couche en analysant comment l'IA 'voit' et classifie des images.",
+      "cover": "/assets/images/Desktop/reseau_neurones.png",
+      "coverAlt": "Interface interactive montrant un réseau de neurones avec une image d'entrée à gauche, l'analyse des couches (couleurs, formes) au centre, et la prédiction à droite.",
+      "icone": null,
+      "featured": false,
+      "tags": ["Réseaux de neurones", "Deep Learning", "Vision par ordinateur", "Classification"],
+      "content": {
+        "presentation": "Une plongée visuelle dans le fonctionnement d'un réseau de neurones. Sélectionnez un objet (fruit, véhicule, etc.) et observez comment l'image est transformée en pixels, puis analysée couche par couche pour aboutir à une prédiction.",
+        "context": "Conçu pour vulgariser les concepts de la vision par ordinateur et du Deep Learning. L'outil permet de passer outre la notion de 'boîte noire' en rendant visible le cheminement mathématique de la donnée.",
+        "problem": "Le fonctionnement interne d'un réseau de neurones est souvent perçu comme magique ou inaccessible. Comment rendre visible et compréhensible le cheminement d'une donnée à travers les différentes couches (features extraction) pour aboutir à une classification ?",
+        "objectives": [
+          "Comprendre le rôle des différentes couches d'un réseau de neurones (Entrée, Couches cachées, Sortie).",
+          "Visualiser comment les pixels bruts sont transformés en caractéristiques abstraites (couleurs, formes, détails).",
+          "Observer le processus de prise de décision de l'IA en temps réel.",
+          "Appréhender les limites du modèle avec des 'tests difficiles' (ex: différencier une pomme d'une tomate)."
+        ],
+        "audience": "Tout public curieux, étudiants ou professionnels souhaitant comprendre les bases du Machine Learning et des réseaux de neurones sans prérequis mathématiques.",
+        "approach": [
+          "Une visualisation interactive de l'architecture du réseau de neurones.",
+          "Un panneau d'analyse qui détaille les neurones activés pour chaque couche.",
+          "Un journal d'analyse en temps réel expliquant la prédiction finale."
+        ],
+        "tools": ["HTML", "CSS", "JavaScript"],
+        "deliverables": [
+          "Application web interactive.",
+          "Interface d'animation couche par couche.",
+          "Panneau explicatif dynamique avec calcul des prédictions."
+        ],
+        "results": "L'utilisateur comprend que l'IA ne 'voit' pas une pomme comme un humain, mais qu'elle décompose l'image complexe en caractéristiques simples (couleur rouge, forme ronde, présence d'une tige) avant de faire une prédiction.",
+        "gallery": [],
+        "resources": [
+          { "type": "demo", "titre": "Ouvrir l'exercice", "url": "https://ia.rd-formation.com/LVL1/reseau_neurones.html" }
+        ]
+      }
+    },
+    {
+      "id": "projet-008",
       "slug": "lechoppe-gauloise",
       "type": "site",
       "demo": false,
       "etudeComplete": false,
       "title": "L'Échoppe Gauloise",
       "category": "outils-pedagogiques",
-      "year": null,
-      "description": "E-commerce pédagogique pour travailler la paie, les RH et la comptabilité, avec Pennylane.",
-      "cover": null,
-      "coverAlt": "",
+      "year": "2025",
+      "description": "Site e-commerce haut de gamme pour une brasserie artisanale fictive, servant de support pédagogique concret pour la paie, les RH et la comptabilité avec Pennylane.",
+      "cover": "/assets/images/Desktop/lechoppe-gauloise.png",
+      "coverAlt": "Page d'accueil du site L'Échoppe Gauloise affichant une bière pression sur fond noir avec les chiffres clés de l'entreprise.",
       "icone": null,
       "featured": false,
-      "tags": ["E-commerce pédagogique", "Paie", "RH", "Comptabilité"],
+      "tags": ["E-commerce pédagogique", "Paie", "RH", "Comptabilité", "Pennylane"],
       "content": {
-        "presentation": "E-commerce pédagogique pour travailler la paie, les RH et la comptabilité, avec Pennylane.",
-        "context": "",
-        "problem": "",
-        "objectives": [],
-        "audience": "",
-        "approach": [],
-        "tools": ["HTML", "CSS", "JavaScript", "API REST"],
-        "deliverables": [],
-        "results": "",
+        "presentation": "Un site e-commerce vitrine d'exception pour une marque de bières et de vins artisanaux. Conçu comme un véritable simulateur grandeur nature, il permet aux apprenants de s'exercer sur des cas réels de gestion d'entreprise, de la vente à la comptabilisation des flux.",
+        "context": "Création d'une vitrine web réaliste pour immerger les étudiants en gestion, RH et comptabilité. Le site sert de point d'entrée à un écosystème complet, connecté à l'outil de comptabilité Pennylane.",
+        "problem": "L'enseignement de la gestion et de la comptabilité manque souvent de concret. Comment intéresser les apprenants et leur faire manipuler des flux financiers réels sans les plonger directement dans la complexité d'une vraie entreprise ?",
+        "objectives": [
+          "Fournir un support visuel et fonctionnel crédible (fiches produits, panier, gestion des exports).",
+          "Permettre la mise en pratique des processus d'achat et de vente.",
+          "Faciliter l'apprentissage de la comptabilité via la synchronisation des données avec l'outil Pennylane.",
+          "Travailler les scénarios RH et de paie liés à une entreprise de production artisanale."
+        ],
+        "audience": "Étudiants en gestion, comptabilité, RH, ou e-commerce cherchant à valider leurs compétences sur des cas pratiques concrets.",
+        "approach": [
+          "Un design premium et immersif (dark mode, typographie soignée) pour susciter l'intérêt.",
+          "Une interface e-commerce réaliste avec gestion des catégories (Bières, Vins, Export).",
+          "Une architecture technique pensée pour l'intégration d'API (connexion avec des logiciels de gestion externes)."
+        ],
+        "tools": ["HTML", "CSS", "JavaScript", "API REST", "Pennylane"],
+        "deliverables": [
+          "Site vitrine et e-commerce responsive.",
+          "Intégration des données produits et des chiffres clés de l'entreprise.",
+          "Scénarios pédagogiques de gestion et d'exportation."
+        ],
+        "results": "Un outil pédagogique 'wow' qui capte immédiatement l'attention des apprenants et rend l'apprentissage des logiciels de gestion beaucoup plus intuitif et engageant.",
         "gallery": [],
         "resources": [
           { "type": "demo", "titre": "Ouvrir le site", "url": "https://rodulfo-dmgz.github.io/web-sites/lechoppe-gauloise/" }
@@ -193,100 +394,56 @@
       }
     },
     {
-      "id": "projet-006",
-      "slug": "ml-non-supervise",
-      "type": "exercice",
-      "demo": false,
-      "etudeComplete": false,
-      "title": "ML non supervisé",
-      "category": "innovation-ia",
-      "year": null,
-      "description": "Clustering, K-means et détection de motifs.",
-      "cover": null,
-      "coverAlt": "",
-      "icone": null,
-      "featured": false,
-      "tags": ["Machine learning", "Clustering"],
-      "content": {
-        "presentation": "Clustering, K-means et détection de motifs.",
-        "context": "",
-        "problem": "",
-        "objectives": [],
-        "audience": "",
-        "approach": [],
-        "tools": ["HTML", "CSS", "JavaScript"],
-        "deliverables": [],
-        "results": "",
-        "gallery": [],
-        "resources": [
-          { "type": "demo", "titre": "Ouvrir l'exercice", "url": "https://ia.rd-formation.com/LVL1/ml_non_supervise" }
-        ]
-      }
-    },
-    {
-      "id": "projet-007",
-      "slug": "ml-supervise",
-      "type": "exercice",
-      "demo": false,
-      "etudeComplete": false,
-      "title": "ML supervisé",
-      "category": "innovation-ia",
-      "year": null,
-      "description": "Classification, régression et évaluation de modèles.",
-      "cover": null,
-      "coverAlt": "",
-      "icone": null,
-      "featured": false,
-      "tags": ["Machine learning", "Classification"],
-      "content": {
-        "presentation": "Classification, régression et évaluation de modèles.",
-        "context": "",
-        "problem": "",
-        "objectives": [],
-        "audience": "",
-        "approach": [],
-        "tools": ["HTML", "CSS", "JavaScript"],
-        "deliverables": [],
-        "results": "",
-        "gallery": [],
-        "resources": [
-          { "type": "demo", "titre": "Ouvrir l'exercice", "url": "https://ia.rd-formation.com/LVL1/ml_supervise" }
-        ]
-      }
-    },
-    {
-      "id": "projet-008",
-      "slug": "reseaux-de-neurones",
-      "type": "exercice",
-      "demo": false,
-      "etudeComplete": false,
-      "title": "Réseaux de neurones",
-      "category": "innovation-ia",
-      "year": null,
-      "description": "Perceptron, couches et rétropropagation.",
-      "cover": null,
-      "coverAlt": "",
-      "icone": null,
-      "featured": false,
-      "tags": ["Réseaux de neurones", "Rétropropagation"],
-      "content": {
-        "presentation": "Perceptron, couches et rétropropagation.",
-        "context": "",
-        "problem": "",
-        "objectives": [],
-        "audience": "",
-        "approach": [],
-        "tools": ["HTML", "CSS", "JavaScript"],
-        "deliverables": [],
-        "results": "",
-        "gallery": [],
-        "resources": [
-          { "type": "demo", "titre": "Ouvrir l'exercice", "url": "https://ia.rd-formation.com/LVL1/reseau_neurones" }
-        ]
-      }
-    },
-    {
       "id": "projet-009",
+      "slug": "mon-pote-au-miel",
+      "type": "site",
+      "demo": false,
+      "etudeComplete": false,
+      "title": "Mon Pote au Miel",
+      "category": "outils-pedagogiques",
+      "year": "2025",
+      "description": "Site e-commerce pédagogique pour une marque artisanale. Un support concret pour les formations du secteur tertiaire (commerce, marketing, gestion).",
+      "cover": "/assets/images/Desktop/mon-pote-au-miel.png",
+      "coverAlt": "Page d'accueil du site Mon Pote au Miel présentant une sélection de miels et de savons artisanaux avec un design naturel et épuré.",
+      "icone": null,
+      "featured": false,
+      "tags": ["E-commerce pédagogique", "Secteur tertiaire", "Marketing", "Commerce", "Relation client"],
+      "content": {
+        "presentation": "Une boutique en ligne vitrine pour une marque de miel et de savons artisanaux. Conçue comme un support pédagogique immersif, elle permet aux apprenants du tertiaire de s'exercer sur des cas concrets de marketing, de merchandising et de relation client.",
+        "context": "Création d'une vitrine e-commerce fictive pour immerger les étudiants des filières tertiaires (BTS, BUT, Licences pro) dans la réalité d'une entreprise commerciale. Le site simule une véritable marque avec son identité, ses produits et son storytelling.",
+        "problem": "Les étudiants du tertiaire ont besoin de cas concrets pour appliquer la théorie (stratégie de marque, argumentaire de vente, fiches produits). Comment leur fournir un écosystème réaliste, crédible et esthétique pour s'entraîner sans utiliser de vraies plateformes e-commerce ?",
+        "objectives": [
+          "Analyser et comprendre le positionnement d'une marque artisanale (branding, storytelling).",
+          "Travailler sur la mise en valeur des produits (merchandising, création de fiches produits, copywriting).",
+          "Appréhender le parcours utilisateur (UX) et les techniques d'incitation à l'achat.",
+          "Mettre en pratique les fondamentaux de la relation client et de la communication digitale."
+        ],
+        "audience": "Étudiants et alternants du secteur tertiaire (Commerce, Marketing, Communication, Gestion d'entreprise, Vente).",
+        "approach": [
+          "Un design artisanal et premium qui illustre parfaitement les notions de branding et de positionnement.",
+          "Une navigation claire (Accueil, Histoire, Boutique, Livraison) pour travailler le parcours client.",
+          "Une mise en avant des produits via des fiches détaillées et des visuels de qualité (merchandising)."
+        ],
+        "tools": ["HTML", "CSS", "JavaScript"],
+        "deliverables": [
+          "Support de cours et d'exercices basé sur le site (études de cas).",
+          "Exemples de fiches produits et d'argumentaires commerciaux.",
+          "Scénarios pédagogiques pour l'analyse de la stratégie de marque."
+        ],
+        "results": "Un support pédagogique 'wow' qui capte l'attention des étudiants et leur permet de manipuler des concepts commerciaux abstraits sur un cas d'école concret, esthétique et réaliste.",
+        "gallery": [
+          { "src": "/assets/images/Desktop/mon-pote-au-miel1.png" },
+          { "src": "/assets/images/Desktop/mon-pote-au-miel2.png" },
+          { "src": "/assets/images/Desktop/mon-pote-au-miel3.png" },
+          { "src": "/assets/images/Desktop/mon-pote-au-miel4.png" }
+        ],
+        "resources": [
+          { "type": "demo", "titre": "Ouvrir le site", "url": "https://rodulfo-dmgz.github.io/web-sites/mon_pot_au_miel/index.html" }
+        ]
+      }
+    },
+    {
+      "id": "projet-010",
       "slug": "inteligentsia",
       "type": "scorm",
       "demo": false,
